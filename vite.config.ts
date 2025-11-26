@@ -10,7 +10,7 @@ export default defineConfig({
       },
     }),
   ],
-  base: '/app/symbiomes/',
+  base: '/games/app/symbiomes/',
   server: {
     host: true, // <-- listen on all network interfaces
     port: 5173, // optional, defaults to 5173
