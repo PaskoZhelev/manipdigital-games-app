@@ -3,25 +3,28 @@
 # Stop script on first error
 set -e
 
-echo "🚀 Starting Deployment for Symbiomes..."
+echo "🚀 Starting Simplified Deployment for Symbiomes..."
 
 # 1. Pull latest changes
-# using -X theirs to force overwrite local changes with remote ones if conflicts exist
 echo "📥 Pulling from Git..."
-git pull -X theirs origin main
+# Use git reset --hard to ensure clean state before building
+git fetch origin
+git reset --hard origin/main 
 
-# 2. Build and Restart Docker Containers
-# --build ensures the Dockerfile is re-run (to capture the new git code)
-# -d runs in detached mode (background)
-# --remove-orphans cleans up old containers if services changed
-echo "🐳 Building and updating Docker containers..."
-docker-compose up -d --build --remove-orphans
+# 2. Build the application and extract files to the host machine (build_output)
+# Use 'docker compose run' to run the builder once, which executes the Dockerfile's RUN npm run build
+echo "🐳 Building static files and copying to host build_output folder..."
+docker compose build symbiomes-builder 
+docker compose run --rm symbiomes-builder # The --rm removes the container immediately after success
 
-# 3. Cleanup (Optional)
-# Removes unused images (older versions of your build) to save VPS disk space
-echo "🧹 Cleaning up old images..."
+# 3. Clean up the container image history
+echo "🧹 Cleaning up old Docker images..."
 docker image prune -f
 
+# 4. Restart host Nginx to serve the new files
+echo "🔄 Restarting host Nginx..."
+# Assuming you use systemctl or similar command on your VPS
+sudo systemctl restart nginx 
+
 echo "✅ Deployment Complete!"
-echo "👉 App should be running on localhost:5173"
-echo "   (Make sure your Main Host Nginx proxies /games/app/symbiomes to port 5173)"
+echo "👉 Static files are now in the 'build_output' folder on your VPS."

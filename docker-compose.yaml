@@ -1,12 +1,16 @@
 version: '3.8'
 
 services:
-  manipdigital-games-app:
+  symbiomes-builder:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: manipdigital-games-app
-    restart: always
-    ports:
-      # VPS Port 5173 -> Container Port 80
-      - "5173:80"
+    container_name: symbiomes-builder-temp
+    
+    # Map the container's /app/dist folder to a new local folder named 'build_output'
+    volumes:
+      - ./build_output:/app/dist 
+    
+    # Run the container only to execute the build, then stop it immediately
+    command: ["tail", "-f", "/dev/null"] 
+    # The actual build command happens when the service is built (via Dockerfile RUN)
