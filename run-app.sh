@@ -9,7 +9,7 @@ echo "🚀 Starting Simplified Deployment for Symbiomes..."
 echo "📥 Pulling from Git..."
 # Use git reset --hard to ensure clean state before building
 git fetch origin
-git reset --hard origin/main 
+git reset --hard origin/master 
 
 # 2. Build the application and extract files to the host machine (build_output)
 # Use 'docker compose run' to run the builder once, which executes the Dockerfile's RUN npm run build

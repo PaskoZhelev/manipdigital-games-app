@@ -5,7 +5,7 @@ WORKDIR /app
 
 # Install dependencies
 COPY package.json package-lock.json ./
-RUN npm ci --production
+RUN npm ci
 
 # Copy source code and run build
 COPY . .
