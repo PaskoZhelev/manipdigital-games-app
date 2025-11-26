@@ -31,7 +31,7 @@ const getFilenameFromDate = (date: Date) => {
   const dd = String(date.getDate()).padStart(2, '0');
   const mm = String(date.getMonth() + 1).padStart(2, '0');
   const yyyy = date.getFullYear();
-  return `/assets/symbiomes/levels/${dd}.${mm}.${yyyy}.json`;
+  return `${import.meta.env.BASE_URL}assets/symbiomes/levels/${dd}.${mm}.${yyyy}.json`;
 };
 
 const formatDateForInput = (date: Date) => {
@@ -101,7 +101,7 @@ export const SymbiomesGame: React.FC = () => {
       // 2. Fetch Level JSON
       try {
         const targetFilename = getFilenameFromDate(targetDate);
-        const defaultFile = '/assets/symbiomes/levels/default-level.json';
+        const defaultFile = import.meta.env.BASE_URL + '/assets/symbiomes/levels/default-level.json';
         
         const safeFetch = async (url: string) => {
           const res = await fetch(url);
