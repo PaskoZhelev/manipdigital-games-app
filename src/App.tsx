@@ -6,7 +6,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/symbiomes" element={<SymbiomesGame />} />
+      <Route path="/symbiomes/*" element={<SymbiomesGame />} />
 
       {/* <Route path="*" element={<NotFound />} /> */}
     </Routes>
