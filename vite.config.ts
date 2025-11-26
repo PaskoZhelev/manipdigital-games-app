@@ -10,6 +10,7 @@ export default defineConfig({
       },
     }),
   ],
+  base: '/games/app/',
   server: {
     host: true, // <-- listen on all network interfaces
     port: 5173, // optional, defaults to 5173
