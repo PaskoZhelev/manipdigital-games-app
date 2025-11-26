@@ -11,6 +11,3 @@ services:
     volumes:
       - ./build_output:/app/dist 
     
-    # Run the container only to execute the build, then stop it immediately
-    command: ["tail", "-f", "/dev/null"] 
-    # The actual build command happens when the service is built (via Dockerfile RUN)

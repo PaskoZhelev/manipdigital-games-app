@@ -5,26 +5,28 @@ set -e
 
 echo "🚀 Starting Simplified Deployment for Symbiomes..."
 
-# 1. Pull latest changes
+# 1. Pull latest changes (Keep this unchanged)
 echo "📥 Pulling from Git..."
-# Use git reset --hard to ensure clean state before building
 git fetch origin
-git reset --hard origin/master 
+git reset --hard origin/main 
 
-# 2. Build the application and extract files to the host machine (build_output)
-# Use 'docker compose run' to run the builder once, which executes the Dockerfile's RUN npm run build
+# 2. Execute the Build and Extract files
 echo "🐳 Building static files and copying to host build_output folder..."
-docker compose build symbiomes-builder 
-docker compose run --rm symbiomes-builder # The --rm removes the container immediately after success
 
-# 3. Clean up the container image history
+# Build the image first (this executes the npm ci step)
+docker compose build symbiomes-builder 
+
+# Run the container once to execute the build command, ensuring it exits after completion.
+# The 'npm run build:no-check' command extracts the files to the mapped volume.
+# The '--rm' flag cleans up the container immediately after it exits.
+docker compose run --rm symbiomes-builder sh -c "npm run build:no-check"
+
+# 3. Clean up the container image history (Keep this unchanged)
 echo "🧹 Cleaning up old Docker images..."
 docker image prune -f
 
-# 4. Restart host Nginx to serve the new files
+# 4. Restart host Nginx (Keep this unchanged)
 echo "🔄 Restarting host Nginx..."
-# Assuming you use systemctl or similar command on your VPS
 sudo systemctl restart nginx 
 
 echo "✅ Deployment Complete!"
-echo "👉 Static files are now in the 'build_output' folder on your VPS."
