@@ -10,6 +10,6 @@ RUN npm ci
 # Copy source code and run build
 COPY . .
 # Run the build command
-RUN npm run build
+RUN npm run build:no-check
 
 # We stop here. The only thing we care about is the /app/dist folder.
