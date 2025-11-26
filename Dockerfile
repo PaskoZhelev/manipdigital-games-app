@@ -17,9 +17,8 @@ FROM nginx:alpine
 # Copy the custom nginx config for subpath routing
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Copy the build output from Stage 1. 
-# We copy the entire 'dist' folder to the Nginx root directory.
-COPY --from=builder /app/dist /usr/share/nginx/html
+RUN mkdir -p /usr/share/nginx/html/games/app
+COPY --from=builder /app/dist/ /usr/share/nginx/html/games/app/
 
 # Expose the default HTTP port
 EXPOSE 80
