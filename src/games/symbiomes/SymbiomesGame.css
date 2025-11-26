@@ -1,0 +1,1063 @@
+.game-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 20px 10px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  touch-action: pan-y;
+}
+
+/* Drag Preview */
+.drag-preview {
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  opacity: 0.8;
+}
+
+.drag-preview img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.8));
+}
+
+/* Start Screen */
+.start-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.start-content {
+  text-align: center;
+}
+
+.start-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #e0e0e0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.grid-template {
+  margin: 2rem 0;
+  display: inline-block;
+}
+
+.template-cell {
+  width: 80px;
+  height: 80px;
+  border: 2px dashed #555;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #888;
+}
+
+/* Main Content Layout */
+.game-main-content {
+  display: grid;
+  grid-template-columns: auto 450px;
+  gap: 10px;
+  margin-bottom: 0.3rem;
+  width: 100%;
+  max-width: 1400px;
+  align-items: start;
+  justify-content: center;
+  position: relative; /* For positioning discrete date */
+}
+
+/* Discrete Date Badge */
+.discrete-date-badge {
+  position: absolute;
+  top: -35px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #aaa;
+  font-size: 0.85rem;
+  padding: 5px 12px;
+  border-radius: 16px;
+  border: 1px solid #444;
+  letter-spacing: 0.5px;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+/* Board Section - Grid + Animals */
+.board-section {
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+  border: 1px solid #2a2a2a;
+}
+
+.board-container {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Animals Palette - Compact vertical list */
+.animals-palette {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 65px;
+}
+
+.animal-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: move;
+  transition: transform 0.2s, opacity 0.2s;
+  padding: 4px;
+  border-radius: 6px;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.animal-item:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.animal-item:active {
+  cursor: grabbing;
+  opacity: 0.7;
+}
+
+/* LOCKED / COMPLETED STATE FOR ITEMS */
+.animal-item.locked {
+  cursor: default;
+  opacity: 0.8;
+  filter: grayscale(0.5);
+}
+.animal-item.locked:hover {
+  transform: none;
+  background: transparent;
+}
+
+.animal-palette-image {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+  pointer-events: none;
+}
+
+.animal-name {
+  font-size: 0.65rem;
+  color: #999;
+  text-transform: capitalize;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 2px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.all-placed-message {
+  text-align: center;
+  color: #4caf50;
+  font-weight: bold;
+  padding: 8px 4px;
+  font-size: 0.75rem;
+}
+
+/* Grid */
+.grid {
+  display: inline-block;
+  background: transparent;
+}
+
+.grid-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.grid-row:last-child {
+  margin-bottom: 0;
+}
+
+.grid-cell {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 2px solid #444;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+  background: #2a2a2a;
+}
+
+.grid-cell:hover {
+  border-color: #666;
+}
+
+.grid-cell.dragging-active {
+  border-color: #999;
+  border-width: 3px;
+  box-shadow: 0 0 15px rgba(200, 200, 200, 0.3);
+}
+
+.cell-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.terrain-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Object in upper-left corner */
+.cell-object {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 28px;
+  height: 28px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.object-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+}
+
+.cell-animal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 55%;
+  height: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: move;
+  z-index: 10;
+  touch-action: none;
+}
+
+.cell-animal:active {
+  cursor: grabbing;
+}
+
+.animal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.8));
+  pointer-events: none;
+}
+
+.cell-label {
+  position: absolute;
+  bottom: 3px;
+  right: 5px;
+  font-size: 0.7rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-weight: bold;
+  pointer-events: none;
+  z-index: 15;
+}
+
+/* Clues Section */
+.clues-section {
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+  border: 1px solid #2a2a2a;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Clues - Single column on PC, 2 columns on mobile */
+.clues-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.clue-item {
+  display: flex;
+  gap: 8px;
+  padding: 8px 10px;
+  background: #2a2a2a;
+  border-radius: 4px;
+  border-left: 2px solid #555;
+  transition: all 0.2s;
+  cursor: pointer;
+  user-select: none;
+}
+
+.clue-item:hover {
+  background: #333;
+}
+
+.clue-item.clue-used {
+  opacity: 0.5;
+  text-decoration: line-through;
+  border-left-color: #4caf50;
+}
+
+.clue-number {
+  font-weight: bold;
+  color: #999;
+  min-width: 22px;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.clue-text {
+  flex: 1;
+  color: #d0d0d0;
+  line-height: 1.5;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.clue-text strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+.clue-animal-icon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 2px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+}
+
+.clue-terrain-icon,
+.clue-object-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 2px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+  border-radius: 3px;
+}
+
+/* Toggle button at bottom of clues */
+.toggle-images-btn-bottom {
+  background: #2a2a2a;
+  border: 1px solid #444;
+  color: #e0e0e0;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+  width: 100%;
+  text-align: center;
+}
+
+.toggle-images-btn-bottom:hover {
+  background: #333;
+  border-color: #555;
+}
+
+/* Game Actions */
+.game-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 10px 28px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background: #4caf50;
+  color: white;
+  box-shadow: 0 3px 12px rgba(76, 175, 80, 0.3);
+}
+
+.btn-primary:hover {
+  background: #5cbd5f;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 18px rgba(76, 175, 80, 0.5);
+}
+
+.btn-secondary {
+  background: #2a2a2a;
+  color: #e0e0e0;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.6);
+  border: 1px solid #444;
+}
+
+.btn-secondary:hover {
+  background: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.8);
+}
+
+/* Game Info Section */
+.game-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  max-width: 1200px;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.info-section {
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
+  border: 1px solid #2a2a2a;
+}
+
+.info-section h3 {
+  margin: 0 0 0.8rem 0;
+  color: #e0e0e0;
+  font-size: 1.1rem;
+}
+
+.info-section ul {
+  margin: 0;
+  padding-left: 1.3rem;
+  color: #b0b0b0;
+  line-height: 1.7;
+  font-size: 0.85rem;
+}
+
+.info-section li {
+  margin-bottom: 0.6rem;
+}
+
+.info-section li:last-child {
+  margin-bottom: 0;
+}
+
+.info-section strong {
+  color: #e0e0e0;
+  font-weight: 600;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background: #1a1a1a;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 450px;
+  width: 100%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9), 0 0 0 2000px rgba(0,0,0,0.1);
+  border: 1px solid #444;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #e0e0e0;
+}
+
+.stats-display {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  padding: 1.2rem;
+  background: #2a2a2a;
+  border-radius: 8px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-size: 1.6rem;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* --- Loading & Error Screens --- */
+.loading-screen, .error-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #e0e0e0;
+}
+
+.error-screen h2 { color: #ff6b6b; }
+
+/* --- Relative Wrapper --- */
+.relative-wrapper {
+  position: relative;
+}
+
+/* --- Start Game Overlay --- */
+.game-start-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.game-start-overlay h1 {
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+  margin-bottom: 0.5rem;
+}
+
+.game-start-overlay p {
+  color: #bbb;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+.start-btn {
+  font-size: 1.2rem;
+  padding: 12px 40px;
+}
+
+/* --- Hidden / Empty Cell Styling --- */
+.grid-cell.terrain-hidden {
+  background: #1a1a1a;
+  border: 2px solid #333;
+}
+
+.cell-label {
+  z-index: 20;
+}
+
+/* --- Clues Placeholder --- */
+.clues-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 200px;
+    color: #555;
+    border: 2px dashed #333;
+    border-radius: 8px;
+}
+
+/* --- Date Selector in Overlay --- */
+.date-selector-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+.date-selector-container label {
+  color: #ccc;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.date-picker-input {
+  background: #333;
+  color: #fff;
+  border: 1px solid #555;
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.date-picker-input:focus {
+  border-color: #4caf50;
+}
+
+.date-picker-input::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+.level-date-display {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.loading-text {
+  color: #e0e0e0;
+  font-size: 1.2rem;
+  margin: 20px 0;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+/* --- Game Controls Container --- */
+.game-controls-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 0;
+  gap: 15px;
+}
+
+/* --- Completion Banner --- */
+.completion-banner {
+  background: rgba(76, 175, 80, 0.15);
+  border: 1px solid #4caf50;
+  border-radius: 8px;
+  padding: 10px 25px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.completion-banner h3 {
+  color: #4caf50;
+  margin: 0 0 5px 0;
+  font-size: 1.1rem;
+}
+
+.completion-stats {
+  display: flex;
+  gap: 15px;
+  color: #e0e0e0;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Share Button --- */
+.btn-share {
+  background: #3f51b5;
+  border-color: #5c6bc0;
+  color: white;
+}
+
+.btn-share:hover {
+  background: #5c6bc0;
+}
+
+.btn-share.copied {
+  background: #4caf50;
+  border-color: #66bb6a;
+}
+
+/* --- STRICT VIEW ONLY MODE --- */
+/* This ensures that when a level is finished, no interactions are possible on the board */
+.view-only-mode .grid-cell,
+.view-only-mode .animal-item,
+.view-only-mode .cell-animal {
+    pointer-events: none !important;
+    cursor: default !important;
+}
+
+/* Re-enable pointer events for the controls area so buttons work */
+.game-controls-container .btn-secondary,
+.game-controls-container .btn-primary {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+
+.btn-share-completed.copied {
+    background-color: #4caf50;
+    border-color: #66bb6a;
+}
+
+.level-date-footer {
+  margin-bottom: 10px;
+  text-align: center;
+  color: #828282;;
+  font-size: 0.8rem;
+  font-style: italic;
+  width: 100%;
+  /* border-top: 1px solid #333; */
+  /* padding-top: 8px; */
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+  .game-main-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .discrete-date-badge {
+    position: static;
+    margin: 0 auto 10px auto;
+    width: fit-content;
+  }
+
+  .clues-section {
+    order: 2;
+  }
+
+  .board-section {
+    order: 1;
+  }
+
+  /* 2 columns on tablet/mobile */
+  .clues-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .clue-text {
+    font-size: 0.8rem;
+  }
+
+  .clue-number {
+    font-size: 0.75rem;
+    min-width: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .game-container {
+    padding: 10px 5px;
+  }
+
+  .board-section {
+    padding: 10px;
+  }
+
+  .board-container {
+    gap: 10px;
+  }
+
+  .animals-palette {
+    gap: 6px;
+    min-width: 60px;
+  }
+
+  .animal-palette-image {
+    width: 45px;
+    height: 45px;
+  }
+
+  .animal-name {
+    font-size: 0.6rem;
+  }
+
+  .grid-cell {
+    width: 90px;
+    height: 90px;
+  }
+
+  .cell-object {
+    width: 24px;
+    height: 24px;
+    top: 5px;
+    left: 5px;
+  }
+
+  .clues-section {
+    padding: 8px;
+  }
+
+  .clue-item {
+    padding: 5px 6px;
+  }
+
+  .clue-text {
+    font-size: 0.78rem;
+  }
+
+  .clue-animal-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .clue-terrain-icon,
+  .clue-object-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .game-info {
+    grid-template-columns: 1fr;
+  }
+
+  .start-content h1 {
+    font-size: 2rem;
+  }
+
+  .template-cell {
+    width: 70px;
+    height: 70px;
+  }
+
+  .drag-preview img {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-cell {
+    width: 80px;
+    height: 80px;
+  }
+
+  .grid-row {
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+
+  .cell-object {
+    width: 22px;
+    height: 22px;
+    top: 4px;
+    left: 4px;
+  }
+
+  .animal-palette-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .clues-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .clue-text {
+    font-size: 0.76rem;
+  }
+
+  .modal-content {
+    padding: 1.5rem;
+  }
+
+  .stats-display {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 9px 22px;
+    font-size: 0.85rem;
+  }
+
+  .info-section {
+    padding: 12px;
+  }
+
+  .info-section ul {
+    font-size: 0.8rem;
+  }
+
+  .drag-preview img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 380px) {
+  .grid-cell {
+    width: 70px;
+    height: 70px;
+  }
+
+  .animals-palette {
+    min-width: 55px;
+  }
+
+  .animal-palette-image {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* =========================================
+   DESKTOP OPTIMIZATIONS (Monitors > 1024px)
+   ========================================= */
+@media (min-width: 1025px) {
+  
+  .game-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+  }
+
+  .game-main-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    max-width: 1600px;
+  }
+  
+  /* Badge positioning for desktop */
+  .discrete-date-badge {
+    top: -40px;
+    right: 470px; /* Position it above the board, not clues */
+  }
+
+  .grid-cell {
+    width: 130px;
+    height: 130px;
+  }
+
+  .cell-object {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .cell-label {
+    font-size: 1rem;
+  }
+
+  .animals-palette {
+    gap: 20px;
+    min-width: 100px;
+  }
+
+  .animal-palette-image {
+    width: 75px;
+    height: 75px;
+  }
+
+  .animal-name {
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+
+  .clues-section {
+    width: 450px;
+    flex-shrink: 0;
+    padding: 25px;
+  }
+
+  .clue-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .clue-number {
+    font-size: 1.1rem;
+  }
+
+  .clue-animal-icon, 
+  .clue-terrain-icon, 
+  .clue-object-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .game-info {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+  }
+}

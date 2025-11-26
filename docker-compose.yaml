@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  manipdigital-games-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: manipdigital-games-app
+    restart: always
+    ports:
+      # VPS Port 5173 -> Container Port 80
+      - "5173:80"
