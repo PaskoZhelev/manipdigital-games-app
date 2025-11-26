@@ -31,7 +31,7 @@ const getFilenameFromDate = (date: Date) => {
   const dd = String(date.getDate()).padStart(2, '0');
   const mm = String(date.getMonth() + 1).padStart(2, '0');
   const yyyy = date.getFullYear();
-  return `/levels/${dd}.${mm}.${yyyy}.json`;
+  return `assets/symbiomes/levels/${dd}.${mm}.${yyyy}.json`;
 };
 
 const formatDateForInput = (date: Date) => {
@@ -101,7 +101,7 @@ export const SymbiomesGame: React.FC = () => {
       // 2. Fetch Level JSON
       try {
         const targetFilename = getFilenameFromDate(targetDate);
-        const defaultFile = '/levels/default-level.json';
+        const defaultFile = 'assets/symbiomes/levels/default-level.json';
         
         const safeFetch = async (url: string) => {
           const res = await fetch(url);
@@ -386,7 +386,7 @@ export const SymbiomesGame: React.FC = () => {
       const regex = new RegExp(`\\b${animalCapitalized}\\b`, 'g');
       processedDescription = processedDescription.replace(
         regex,
-        `<img src="/assets/symbiomes/animals/${animal}.png" alt="${animal}" class="clue-animal-icon" title="${animalCapitalized}" />`
+        `<img src="assets/symbiomes/animals/${animal}.png" alt="${animal}" class="clue-animal-icon" title="${animalCapitalized}" />`
       );
     });
 
@@ -394,7 +394,7 @@ export const SymbiomesGame: React.FC = () => {
       const regex = new RegExp(`\\b${terrain}\\b`, 'g');
       processedDescription = processedDescription.replace(
         regex,
-        `<img src="/assets/symbiomes/terrains/${terrain.toLowerCase()}.png" alt="${terrain}" class="clue-terrain-icon" title="${terrain}" />`
+        `<img src="assets/symbiomes/terrains/${terrain.toLowerCase()}.png" alt="${terrain}" class="clue-terrain-icon" title="${terrain}" />`
       );
     });
 
@@ -402,7 +402,7 @@ export const SymbiomesGame: React.FC = () => {
       const regex = new RegExp(`\\b${obj}\\b`, 'g');
       processedDescription = processedDescription.replace(
         regex,
-        `<img src="/assets/symbiomes/objects/${obj.toLowerCase()}.png" alt="${obj}" class="clue-object-icon" title="${obj}" />`
+        `<img src="assets/symbiomes/objects/${obj.toLowerCase()}.png" alt="${obj}" class="clue-object-icon" title="${obj}" />`
       );
     });
 
@@ -429,7 +429,7 @@ export const SymbiomesGame: React.FC = () => {
     >
       {dragPreview && (
         <div className="drag-preview" style={{ left: `${dragPreview.x}px`, top: `${dragPreview.y}px` }}>
-          <img src={`/assets/symbiomes/animals/${dragPreview.animal}.png`} alt={dragPreview.animal} />
+          <img src={`assets/symbiomes/animals/${dragPreview.animal}.png`} alt={dragPreview.animal} />
         </div>
       )}
 
@@ -486,7 +486,7 @@ export const SymbiomesGame: React.FC = () => {
                   onTouchMove={handleTouchMove} 
                   onTouchEnd={handleTouchEnd}
                 >
-                  <img src={`/assets/symbiomes/animals/${animal}.png`} alt={animal} className="animal-palette-image" />
+                  <img src={`assets/symbiomes/animals/${animal}.png`} alt={animal} className="animal-palette-image" />
                   <span className="animal-name">{animal}</span>
                 </div>
               ))}
@@ -508,8 +508,8 @@ export const SymbiomesGame: React.FC = () => {
                            onDragOver={handleDragOver}>
                         {isInteractable && (
                           <>
-                            <div className="cell-background"><img src={`/assets/symbiomes/terrains/${cell.terrain}.png`} alt={cell.terrain} className="terrain-image" /></div>
-                            {cell.object !== 'none' && <div className="cell-object"><img src={`/assets/symbiomes/objects/${cell.object}.png`} alt={cell.object} className="object-image" /></div>}
+                            <div className="cell-background"><img src={`assets/symbiomes/terrains/${cell.terrain}.png`} alt={cell.terrain} className="terrain-image" /></div>
+                            {cell.object !== 'none' && <div className="cell-object"><img src={`assets/symbiomes/objects/${cell.object}.png`} alt={cell.object} className="object-image" /></div>}
                             {animalAtPosition && (
                                 <div className="cell-animal" 
                                      draggable={!isLevelCompleted}
@@ -519,7 +519,7 @@ export const SymbiomesGame: React.FC = () => {
                                      onTouchMove={handleTouchMove} 
                                      onTouchEnd={handleTouchEnd} 
                                      onClick={() => !isLevelCompleted && removeAnimal(animalAtPosition)}>
-                                    <img src={`/assets/symbiomes/animals/${animalAtPosition}.png`} alt={animalAtPosition} className="animal-image" />
+                                    <img src={`assets/symbiomes/animals/${animalAtPosition}.png`} alt={animalAtPosition} className="animal-image" />
                                 </div>
                             )}
                           </>
