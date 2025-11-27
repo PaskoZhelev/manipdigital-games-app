@@ -35,4 +35,4 @@ jobs:
             # 3. Run your app script with SUDO
             # We pipe the secret password into sudo -S so it runs non-interactively
             #echo "Running deployment script with sudo..."
-            # echo "${{ secrets.VPS_SUDO_PASSWORD }}" | sudo -S ./run-app.sh
+            echo "${{ secrets.VPS_SUDO_PASSWORD }}" | sudo -S ./run-app.sh
