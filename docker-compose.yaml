@@ -6,8 +6,6 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: symbiomes-builder-temp
-    restart: always
-    ports:
-      # Map the container's port 80 to port 5173 on the host VPS.
-      - "5173:80"
+    volumes:
+      - ./build_output:/app/dist 
     
