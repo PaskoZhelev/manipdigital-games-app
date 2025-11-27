@@ -1,0 +1,33 @@
+name: Deploy to Server
+
+on:
+  # Trigger on push to main (e.g., when level generator pushes new json files)
+  push:
+    branches: [ "main" ]
+  
+  # Allow manual trigger
+  workflow_dispatch:
+
+jobs:
+  deploy-via-ssh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Execute remote commands via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          # We use secrets so your IP and Keys aren't public
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT }} # Uses your custom port from secrets
+          # stop the script if any command fails
+          script_stop: true 
+          script: |
+            # 1. Navigate to your app folder on the VPS
+            # CHANGE THIS PATH to where your repo is cloned on the VPS
+            cd /home/pasko/dev/manipdigital-games-app
+
+            # 2. Run your app script with SUDO
+            # We pipe the secret password into sudo -S so it runs non-interactively
+            echo "Running deployment script with sudo..."
+            echo "${{ secrets.VPS_SUDO_PASSWORD }}" | sudo -S ./run-app.sh
