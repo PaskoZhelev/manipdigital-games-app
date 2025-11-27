@@ -24,7 +24,7 @@ const EMPTY_LEVEL: GameLevel = {
   clues: [],
   solution: {}
 };
-const EARLIEST_ARCHIVE_DATE = '2025-11-25'; 
+const EARLIEST_ARCHIVE_DATE = '2025-11-01'; 
 
 // --- HELPERS ---
 const getFilenameFromDate = (date: Date) => {
