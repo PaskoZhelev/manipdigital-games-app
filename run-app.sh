@@ -5,14 +5,8 @@ set -e
 
 echo "🚀 Starting Deployment for Symbiomes..."
 
-# 1. Pull latest changes (Keep this unchanged)
-echo "📥 Pulling from Git..."
-git fetch origin
-git reset --hard origin/master 
-
 # 2. Execute the Build and Extract files
 echo "🐳 Building static files and copying to host build_output folder..."
-
 # Build the image first (this executes the npm ci step)
 docker compose build symbiomes-builder 
 
