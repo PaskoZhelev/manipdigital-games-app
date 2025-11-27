@@ -1,0 +1,88 @@
+name: Generate Game Levels
+run-name: Generate Game Levels for dates between ${{ inputs.from_date }} and ${{ inputs.to_date }}
+
+on:
+  # Trigger manually with date inputs
+  workflow_dispatch:
+    inputs:
+      from_date:
+        description: 'Start date (YYYY-MM-DD)'
+        required: true
+        default: '2025-11-01'
+      to_date:
+        description: 'End date (YYYY-MM-DD)'
+        required: true
+        default: '2025-11-01'
+      difficulty:
+        description: 'Difficulty of the generated level(s)'
+        type: choice
+        required: true
+        default: 'hard'
+        options:
+          - easy
+          - medium
+          - hard
+          - expert
+  
+
+permissions:
+  contents: write
+
+jobs:
+  generate-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Generate Level JSONs
+        run: |
+          # Capture inputs
+          START_DATE="${{ inputs.from_date }}"
+          END_DATE="${{ inputs.to_date }}"
+          
+          # Initialize iterator
+          CURRENT="$START_DATE"
+          
+          echo "Starting generation from $START_DATE to $END_DATE..."
+          
+          # Ensure directory exists
+          mkdir -p public/levels
+          
+          # Loop while CURRENT is less than or equal to END_DATE
+          while [[ "$CURRENT" < "$END_DATE" ]] || [[ "$CURRENT" == "$END_DATE" ]]; do
+          
+            # Convert YYYY-MM-DD iterator to DD.MM.YYYY filename format
+            FILENAME_DATE=$(date -d "$CURRENT" +'%d.%m.%Y')
+            TARGET_FILE="public/assets/symbiomes/levels/${FILENAME_DATE}.json"
+            
+            echo "Generating level for: $FILENAME_DATE"
+            
+            # Run the JAR and redirect output
+            java -jar tools/symbiomes-level-generator.jar > "$TARGET_FILE"
+            
+            # Increment date by 1 day using standard ISO format
+            CURRENT=$(date -I -d "$CURRENT + 1 day")
+          done
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          
+          # Stage all generated json files
+          git add public/assets/symbiomes/levels/*.json
+          
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Generate levels: from ${{ inputs.from_date }} to ${{ inputs.to_date }}"
+            git push
+          fi
