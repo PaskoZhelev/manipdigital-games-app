@@ -30,7 +30,7 @@ jobs:
 
             # 2. Pull the latest changes (including new levels)
             echo "Pulling latest code..."
-            git pull origin main
+            git pull origin master
 
             # 3. Run your app script with SUDO
             # We pipe the secret password into sudo -S so it runs non-interactively
