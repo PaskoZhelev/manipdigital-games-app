@@ -1,0 +1,87 @@
+{
+  "difficulty": "hard",
+  "grid": [
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ],
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "mud", "object": "none"}
+    ],
+    [
+      {"terrain": "mud", "object": "rock"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "sand", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Monkey is adjacent to Elephant",
+      "complexity": 4
+    },
+    {
+      "id": 2,
+      "description": "Rabbit is in Row 3",
+      "complexity": 2
+    },
+    {
+      "id": 3,
+      "description": "Frog is in Column B",
+      "complexity": 2
+    },
+    {
+      "id": 4,
+      "description": "Rabbit is in Column C",
+      "complexity": 2
+    },
+    {
+      "id": 5,
+      "description": "Monkey is in Row 2 OR Row 3",
+      "complexity": 4
+    },
+    {
+      "id": 6,
+      "description": "Frog is NOT adjacent to Fox",
+      "complexity": 3
+    },
+    {
+      "id": 7,
+      "description": "Fox is on WATER",
+      "complexity": 1
+    },
+    {
+      "id": 8,
+      "description": "Fox is in Column C",
+      "complexity": 2
+    },
+    {
+      "id": 9,
+      "description": "There are exactly 3 animal(s) on WATER",
+      "complexity": 5
+    },
+    {
+      "id": 10,
+      "description": "Frog is NOT adjacent to Rabbit",
+      "complexity": 3
+    }
+  ],
+  "solution": {
+    "frog": {"row": 2, "column": "B"},
+    "monkey": {"row": 2, "column": "A"},
+    "elephant": {"row": 1, "column": "A"},
+    "rabbit": {"row": 3, "column": "C"},
+    "fox": {"row": 1, "column": "C"}
+  }
+}
+
