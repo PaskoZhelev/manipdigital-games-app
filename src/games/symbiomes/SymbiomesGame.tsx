@@ -565,9 +565,6 @@ export const SymbiomesGame: React.FC = () => {
                         <span>⏱️ {Math.floor(stats.timeSpent / 60)}:{(stats.timeSpent % 60).toString().padStart(2, '0')}</span>
                         <span>❌ {stats.errors} Errors</span>
                     </div>
-                    <div style={{marginTop: '10px', fontSize: '0.9em', color: '#8bc34a'}}>
-                        (View Only Mode)
-                    </div>
                 </div>
             )}
             
