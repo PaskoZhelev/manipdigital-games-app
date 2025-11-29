@@ -1,0 +1,11 @@
+{
+  "solution": [3, 3, 2, 1],
+  "mode": "glitched",
+  "clues": [
+    "The sum of A + D is 4",
+    "The largest number in the code is 5",
+    "The range (Max - Min) is exactly 2",
+    "The sum of B + C is 5",
+    "The sum of C + D is 3"
+  ]
+}

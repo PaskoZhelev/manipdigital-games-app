@@ -1,0 +1,12 @@
+{
+  "solution": [4, 2, 3, 3],
+  "mode": "glitched",
+  "clues": [
+    "The smallest number in the code is 2",
+    "The sum of A + D is 7",
+    "The range (Max - Min) is exactly 2",
+    "A is NOT 3",
+    "C equals D",
+    "The sum of B + C is 3"
+  ]
+}

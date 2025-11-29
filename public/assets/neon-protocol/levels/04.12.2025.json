@@ -1,0 +1,13 @@
+{
+  "solution": [3, 2, 5, 5],
+  "mode": "glitched",
+  "clues": [
+    "C is greater than 2",
+    "The sum of B + C is 7",
+    "D is greater than 4",
+    "There are exactly 2 Even numbers",
+    "The code contains NO 4's",
+    "The sum of all numbers is 15",
+    "A is greater than 2"
+  ]
+}

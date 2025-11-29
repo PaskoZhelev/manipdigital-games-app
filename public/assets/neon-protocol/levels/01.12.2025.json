@@ -1,0 +1,15 @@
+{
+  "solution": [1, 4, 2, 5],
+  "mode": "glitched",
+  "clues": [
+    "A is less than 3",
+    "The sum of A + D is Even",
+    "The code contains NO 3's",
+    "B is greater than 3",
+    "A is NOT 2",
+    "C is less than 3",
+    "D is greater than 2",
+    "B and C are both Even",
+    "The sum of A + B is 7"
+  ]
+}
