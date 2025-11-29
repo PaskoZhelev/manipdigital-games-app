@@ -5,14 +5,13 @@ import type { GameLevel, Animal, Position } from './types/game';
 import './SymbiomesGame.css';
 
 // --- TYPES ---
-// Interface for the data we save to LocalStorage
 interface SavedDailyProgress {
   placements: Record<string, Position>;
   timeSpent: number;
   errors: number;
   isCompleted: boolean;
-  usedClues: number[]; // We save the IDs of used clues
-  lastPlayed: number; // Timestamp
+  usedClues: number[];
+  lastPlayed: number;
 }
 
 // --- CONSTANTS ---
@@ -41,7 +40,6 @@ const formatDateForInput = (date: Date) => {
   return `${yyyy}-${mm}-${dd}`;
 };
 
-// Helper to get all progress from local storage
 const getAllProgress = (): Record<string, SavedDailyProgress> => {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
@@ -50,6 +48,89 @@ const getAllProgress = (): Record<string, SavedDailyProgress> => {
     console.error("Failed to parse game progress", e);
     return {};
   }
+};
+
+// --- SUB-COMPONENT: CUSTOM CALENDAR ---
+const CustomCalendar: React.FC<{
+  currentDate: Date;
+  minDateStr: string;
+  onSelect: (date: Date) => void;
+  onClose: () => void;
+  completedDates: Set<string>; 
+}> = ({ currentDate, minDateStr, onSelect, onClose, completedDates }) => {
+  const [viewDate, setViewDate] = useState(new Date(currentDate));
+
+  // Boundaries
+  const minDate = new Date(minDateStr);
+  minDate.setHours(0, 0, 0, 0); 
+  
+  const maxDate = new Date(); 
+  maxDate.setHours(23, 59, 59, 999); 
+
+  const daysInMonth = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 0).getDate();
+  const firstDay = new Date(viewDate.getFullYear(), viewDate.getMonth(), 1).getDay(); // 0 = Sun
+  
+  // Adjust so Monday is first day
+  const startOffset = (firstDay === 0 ? 6 : firstDay - 1); 
+
+  const handlePrevMonth = () => {
+    setViewDate(new Date(viewDate.getFullYear(), viewDate.getMonth() - 1, 1));
+  };
+  const handleNextMonth = () => {
+    setViewDate(new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 1));
+  };
+
+  const handleDayClick = (day: number) => {
+    const selected = new Date(viewDate.getFullYear(), viewDate.getMonth(), day);
+    onSelect(selected);
+    onClose();
+  };
+
+  const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+  return (
+    <div className="calendar-modal-overlay" onClick={onClose}>
+      <div className="calendar-modal" onClick={e => e.stopPropagation()}>
+        <div className="calendar-header">
+          <button className="calendar-nav-btn" onClick={handlePrevMonth}>&lt;</button>
+          <span>{monthNames[viewDate.getMonth()]} {viewDate.getFullYear()}</span>
+          <button className="calendar-nav-btn" onClick={handleNextMonth}>&gt;</button>
+        </div>
+        
+        <div className="calendar-grid">
+          {['M','T','W','T','F','S','S'].map((d,i) => (
+            <div key={i} className="calendar-day-header">{d}</div>
+          ))}
+          
+          {Array.from({length: startOffset}).map((_, i) => (
+            <div key={`empty-${i}`} className="calendar-day empty"></div>
+          ))}
+
+          {Array.from({length: daysInMonth}).map((_, i) => {
+            const day = i + 1;
+            const thisDate = new Date(viewDate.getFullYear(), viewDate.getMonth(), day);
+            thisDate.setHours(12, 0, 0, 0); 
+            
+            const dateStr = formatDateForInput(thisDate);
+            const isSolved = completedDates.has(dateStr);
+            const isSelected = dateStr === formatDateForInput(currentDate);
+            
+            const isDisabled = thisDate < minDate || thisDate > maxDate;
+
+            return (
+              <div 
+                key={day} 
+                className={`calendar-day ${isDisabled ? 'disabled' : ''} ${isSolved ? 'solved' : ''} ${isSelected ? 'selected' : ''}`}
+                onClick={isDisabled ? undefined : () => handleDayClick(day)}
+              >
+                {day}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export const SymbiomesGame: React.FC = () => {
@@ -73,20 +154,21 @@ export const SymbiomesGame: React.FC = () => {
   const [showClueImages, setShowClueImages] = useState(true);
   const [dragPreview, setDragPreview] = useState<{ x: number; y: number; animal: Animal } | null>(null);
 
+  // --- CALENDAR STATE ---
+  const [showCalendar, setShowCalendar] = useState(false);
+  const [completedDates, setCompletedDates] = useState<Set<string>>(new Set());
+
   // --- 1. LOAD LEVEL & SAVED STATE ---
   useEffect(() => {
     document.title = "Symbiomes";
     const fetchLevelAndState = async () => {
-      console.log('fetching level');
       setIsLoading(true);
       setLoadError(null);
       setShowResult(false);
       setValidationResult(null);
       
-      // 1. Check Local Storage for this date
       const allProgress = getAllProgress();
       const currentProgress = allProgress[dateKey];
-      console.log(currentProgress);
 
       if (currentProgress) {
         setSavedProgress(currentProgress);
@@ -98,7 +180,6 @@ export const SymbiomesGame: React.FC = () => {
         setUsedClues(new Set());
       }
 
-      // 2. Fetch Level JSON
       try {
         const targetFilename = getFilenameFromDate(targetDate);
         const defaultFile = import.meta.env.BASE_URL + '/assets/symbiomes/levels/default-level.json';
@@ -152,16 +233,19 @@ export const SymbiomesGame: React.FC = () => {
     stopTimer,
   } = useGameState(level || EMPTY_LEVEL, savedProgress); 
 
-  // --- 3. AUTO-SAVE EFFECT ---
-  // Saves progress to LocalStorage whenever relevant state changes
+  // --- 3. AUTO-SAVE & UPDATE CALENDAR ---
   useEffect(() => {
-    if (!level || isLoading) return;
+    // Update completed dates list whenever game state changes significantly
+    const all = getAllProgress();
+    const solvedSet = new Set<string>();
+    Object.keys(all).forEach(key => {
+      if (all[key].isCompleted) solvedSet.add(key);
+    });
+    setCompletedDates(solvedSet);
 
-    // Don't save if game hasn't started and no progress exists
+    if (!level || isLoading) return;
     if (!gameStarted && !savedProgress) return;
 
-    const allProgress = getAllProgress();
-    
     const stateToSave: SavedDailyProgress = {
       placements: placements,
       timeSpent: stats.timeSpent,
@@ -171,21 +255,12 @@ export const SymbiomesGame: React.FC = () => {
       lastPlayed: Date.now()
     };
 
-    // Save to localStorage
-    allProgress[dateKey] = stateToSave;
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(allProgress));
+    all[dateKey] = stateToSave;
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(all));
 
   }, [placements, stats, isLevelCompleted, usedClues, dateKey, gameStarted, level, isLoading]);
 
   // --- HANDLERS ---
-
-  const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.value) {
-        const newDate = new Date(e.target.value);
-        setTargetDate(newDate);
-    }
-  };
-
   const handleDragStart = (animal: Animal, e: React.DragEvent) => {
     if (isLevelCompleted) { e.preventDefault(); return; } 
     setDraggedAnimal(animal);
@@ -284,13 +359,11 @@ export const SymbiomesGame: React.FC = () => {
       setIsLevelCompleted(true); 
       stopTimer();
       setShowResult(true);
-      // Logic for saving 'true' is handled by the useEffect [isLevelCompleted]
     }
   };
 
   const handleRestart = () => {
     if (isLevelCompleted) return;
-
       resetGame();
       setShowResult(false);
       setValidationResult(null);
@@ -304,49 +377,34 @@ export const SymbiomesGame: React.FC = () => {
     resumeTimer();
   };
 
-  // --- NEW: Safe Start Wrapper ---
-  // Prevents overwriting completed saves if the user navigates back to menu and clicks start again
   const handleStartRequest = () => {
     const allProgress = getAllProgress();
     const existingSave = allProgress[dateKey];
 
     if (existingSave) {
-      // If we found a save, DO NOT start a fresh game.
-      // Instead, reload the save into state.
       setSavedProgress(existingSave);
       setUsedClues(new Set(existingSave.usedClues));
-      
       if (existingSave.isCompleted) {
         setIsLevelCompleted(true);
-        // The hook will see the new 'savedProgress' prop and switch to View Mode automatically
       } else {
-        // If it was an incomplete save, we can resume it
         startGame(); 
       }
     } else {
-      // No save exists on disk, safe to start a fresh game
       startGame();
     }
   };
 
   const handleBackToMenu = () => {
-    // 1. Clear local view state
     setIsLevelCompleted(false);
     setSavedProgress(null);
     setShowResult(false);
-    
-    // 2. Tell the hook to stop the game session
     quitGame();
-    
-    // Note: We do NOT clear the LocalStorage here.
   };
 
-  // --- SHARE FUNCTION ---
   const handleShare = async () => {
     const dateStr = targetDate.toDateString();
     const minutes = Math.floor(stats.timeSpent / 60);
     const seconds = (stats.timeSpent % 60).toString().padStart(2, '0');
-    
     const summary = `Daily Symbiomes 🌿\n📅 ${dateStr}\n✅ Completed Level in ${minutes}:${seconds}\n Failed Attempts: ${stats.errors}`;
 
     try {
@@ -437,7 +495,6 @@ export const SymbiomesGame: React.FC = () => {
         
         {/* BOARD SECTION */}
         <div className="board-section relative-wrapper">
-          {/* NEW: Discrete Date Display */}
           {(gameStarted || isLevelCompleted) && (
             <div className="level-date-footer">
               📅 {getDisplayDate()}
@@ -449,31 +506,41 @@ export const SymbiomesGame: React.FC = () => {
             <div className="game-start-overlay">
               <h1>Daily Symbiomes</h1>
               <div className="date-selector-container">
-                  <label htmlFor="level-date">Select Date:</label>
-                  <input 
-                    type="date" 
-                    id="level-date"
-                    value={formatDateForInput(targetDate)}
-                    max={formatDateForInput(new Date())}
-                    min={EARLIEST_ARCHIVE_DATE}
-                    onChange={handleDateChange}
-                    className="date-picker-input"
-                  />
+                  <label>Select Date:</label>
+                  
+                  {/* NEW CUSTOM TRIGGER */}
+                  <button 
+                      className="custom-date-trigger" 
+                      onClick={() => setShowCalendar(true)}
+                  >
+                      📅 {targetDate.toLocaleDateString()}
+                  </button>
               </div>
+
+              {/* CALENDAR MODAL */}
+              {showCalendar && (
+                <CustomCalendar 
+                    currentDate={targetDate} 
+                    minDateStr={EARLIEST_ARCHIVE_DATE}
+                    onSelect={setTargetDate} 
+                    onClose={() => setShowCalendar(false)} 
+                    completedDates={completedDates}
+                />
+              )}
+
               {isLoading ? (
                   <p className="loading-text">Loading Puzzle...</p>
               ) : (
                   <>
                     <p className="level-date-display">Playing: {targetDate.toLocaleDateString()}</p>
-                    {/* FIXED: Uses handleStartRequest instead of startGame */}
                     <button className="btn-primary start-btn" onClick={handleStartRequest}>Start Game</button>
                   </>
               )}
             </div>
           )}
           
+          {/* ... Rest of the board content ... */}
           <div className={`board-container ${(!gameStarted && !isLevelCompleted && !savedProgress) ? 'blurred-content' : ''}`}>
-            {/* Palette & Grid */}
             <div className="animals-palette animals-drop-zone" onDragOver={handleDragOver} onDrop={handleDropToPalette}>
               {(gameStarted || isLevelCompleted) && getUnplacedAnimals().map((animal) => (
                 <div 
@@ -532,7 +599,6 @@ export const SymbiomesGame: React.FC = () => {
               ))}
             </div>
           </div>
-
         </div>
 
         {/* CLUES SECTION */}

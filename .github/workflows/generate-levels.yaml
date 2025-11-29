@@ -1,29 +1,49 @@
 name: Generate Game Levels
-run-name: Generate Game Levels for dates between ${{ inputs.from_date }} and ${{ inputs.to_date }}
+run-name: Generate ${{ inputs.game }} levels (${{ inputs.from_date }} to ${{ inputs.to_date }})
 
 on:
-  # Trigger manually with date inputs
   workflow_dispatch:
     inputs:
+      game:
+        description: 'Select Game'
+        required: true
+        type: choice
+        default: 'neon-protocol'
+        options:
+          - symbiomes
+          - neon-protocol
+      
       from_date:
         description: 'Start date (YYYY-MM-DD)'
         required: true
         default: '2025-11-01'
+      
       to_date:
         description: 'End date (YYYY-MM-DD)'
         required: true
         default: '2025-11-01'
+
+      # Symbiomes Specific
       difficulty:
-        description: 'Difficulty of the generated level(s)'
+        description: '[Symbiomes Only] Difficulty'
         type: choice
-        required: true
+        required: false
         default: 'hard'
         options:
           - easy
           - medium
           - hard
           - expert
-  
+
+      # Neon Protocol Specific
+      neon_mode:
+        description: '[Neon Protocol Only] Mode'
+        type: choice
+        required: false
+        default: 'standard'
+        options:
+          - standard
+          - glitched
 
 permissions:
   contents: write
@@ -46,31 +66,52 @@ jobs:
 
       - name: Generate Level JSONs
         run: |
-          # Capture inputs
+          # --- CONFIGURATION SWITCHER ---
+          GAME="${{ inputs.game }}"
           START_DATE="${{ inputs.from_date }}"
           END_DATE="${{ inputs.to_date }}"
           
+          if [[ "$GAME" == "symbiomes" ]]; then
+            echo "Configuring for Symbiomes..."
+            OUTPUT_DIR="public/assets/symbiomes/levels"
+            JAR_FILE="tools/symbiomes-level-generator.jar"
+            # Pass difficulty as argument
+            JAR_ARGS="${{ inputs.difficulty }}" 
+            
+          elif [[ "$GAME" == "neon-protocol" ]]; then
+            echo "Configuring for Neon Protocol..."
+            OUTPUT_DIR="public/assets/neon-protocol/levels"
+            JAR_FILE="tools/neon-protocol-level-generator.jar"
+            # Pass mode (standard/glitched) as argument
+            JAR_ARGS="${{ inputs.neon_mode }}"
+          fi
+
+          echo "--------------------------------"
+          echo "Target Directory: $OUTPUT_DIR"
+          echo "Using JAR: $JAR_FILE"
+          echo "Arguments: $JAR_ARGS"
+          echo "--------------------------------"
+
+          # Ensure directory exists
+          mkdir -p "$OUTPUT_DIR"
+          
           # Initialize iterator
           CURRENT="$START_DATE"
-          
-          echo "Starting generation from $START_DATE to $END_DATE..."
-          
-          # Ensure directory exists
-          mkdir -p public/levels
-          
-          # Loop while CURRENT is less than or equal to END_DATE
+
+          # Loop dates
           while [[ "$CURRENT" < "$END_DATE" ]] || [[ "$CURRENT" == "$END_DATE" ]]; do
           
-            # Convert YYYY-MM-DD iterator to DD.MM.YYYY filename format
+            # Format filename as DD.MM.YYYY.json
             FILENAME_DATE=$(date -d "$CURRENT" +'%d.%m.%Y')
-            TARGET_FILE="public/assets/symbiomes/levels/${FILENAME_DATE}.json"
+            TARGET_FILE="${OUTPUT_DIR}/${FILENAME_DATE}.json"
             
-            echo "Generating level for: $FILENAME_DATE"
+            echo "Generating $GAME level for: $FILENAME_DATE"
             
-            # Run the JAR and redirect output
-            java -jar tools/symbiomes-level-generator.jar > "$TARGET_FILE"
+            # Execute Java JAR with the specific arguments
+            # We explicitly pass JAR_ARGS here
+            java -jar "$JAR_FILE" "$JAR_ARGS" > "$TARGET_FILE"
             
-            # Increment date by 1 day using standard ISO format
+            # Increment date
             CURRENT=$(date -I -d "$CURRENT + 1 day")
           done
 
@@ -79,12 +120,13 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           
-          # Stage all generated json files
-          git add public/assets/symbiomes/levels/*.json
+          # Add whichever folder was modified
+          git add public/assets/symbiomes/levels/*.json || true
+          git add public/assets/neon-protocol/levels/*.json || true
           
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Generate levels: from ${{ inputs.from_date }} to ${{ inputs.to_date }}"
+            git commit -m "Generate $GAME levels ($JAR_ARGS): ${{ inputs.from_date }} to ${{ inputs.to_date }}"
             git push
           fi
