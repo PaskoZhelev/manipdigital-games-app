@@ -1,0 +1,11 @@
+{
+  "solution": [5, 1, 2, 2],
+  "mode": "standard",
+  "clues": [
+    "The sum of A + C is 7",
+    "The sum of B + D is 3",
+    "C is less than 5",
+    "B is NOT 2",
+    "The code contains NO 4's"
+  ]
+}
