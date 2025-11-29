@@ -347,15 +347,11 @@ export const NeonProtocol: React.FC = () => {
 
   const handleRestart = () => {
      if (!level || isLevelCompleted) return;
-     if (confirm("Are you sure you want to restart? This will clear your notes.")) {
         const cols = level.codeLength;
         setEliminations(Array(cols).fill(null).map(() => Array(6).fill(false)));
         setCurrentGuess(Array(cols).fill(null));
-        setErrors(0);
-        setTimeSpent(0);
         setUsedClues(new Set());
         setTimerActive(true);
-     }
   };
 
   const handleShare = async () => {
