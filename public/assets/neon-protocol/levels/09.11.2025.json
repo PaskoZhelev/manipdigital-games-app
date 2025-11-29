@@ -1,14 +1,11 @@
 {
-  "solution": [5, 4, 5, 3],
+  "solution": [2, 5, 1, 1],
   "codeLength": 4,
-  "mode": "glitched",
+  "mode": "standard",
   "clues": [
-    "The code does NOT contain the number 2",
-    "The code contains NO 1's",
-    "B and C are both Even",
-    "The sum A + C + D is Odd",
-    "There are exactly 3 Odd numbers",
-    "The sum of A + C is 10",
-    "The sum of B + D is less than 8"
+    "B is greater than 4",
+    "The code contains exactly 2 - 1's",
+    "C and D are both Odd",
+    "The code contains at least one 2"
   ]
 }

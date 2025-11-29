@@ -1,15 +1,12 @@
 {
-  "solution": [4, 1, 3, 4, 4],
+  "solution": [3, 2, 5, 2, 3],
   "codeLength": 5,
   "mode": "standard",
   "clues": [
-    "The sum of A + D is 8",
-    "The largest number in the code is 4",
-    "The sum of C + D is Odd",
-    "The sum of D + E is Even",
-    "The sum of A + B is Odd",
-    "E is NOT 2",
-    "The sum of C + D is greater than 6",
-    "The code contains exactly 1 - 3"
+    "The sum of A + C is 8",
+    "The sum of D + E is less than 6",
+    "B is less than E",
+    "The code contains NO 1's",
+    "A equals E"
   ]
 }

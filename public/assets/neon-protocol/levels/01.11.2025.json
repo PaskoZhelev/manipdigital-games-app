@@ -1,12 +1,12 @@
 {
-  "solution": [1, 3, 5, 5, 2],
+  "solution": [2, 5, 2, 2, 2],
   "codeLength": 5,
   "mode": "standard",
   "clues": [
-    "The sum of A + C is 6",
-    "The sum of B + E is 5",
-    "The sum of all numbers is 16",
-    "C equals D",
-    "The sum of C + E is 7"
+    "The sum of B + C is greater than 6",
+    "The sum A + D + E is Even",
+    "C and D are both Even",
+    "The sum A + B + C is Odd",
+    "The code contains NO 4's"
   ]
 }

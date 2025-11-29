@@ -1,12 +1,14 @@
 {
-  "solution": [2, 5, 2, 2],
+  "solution": [5, 5, 2, 1],
   "codeLength": 4,
-  "mode": "glitched",
+  "mode": "standard",
   "clues": [
-    "The code contains exactly 3 - 2's",
-    "The sum of A + D is 4",
-    "The sum of A + D is a multiple of 3",
-    "The sum of B + C is greater than 6",
-    "The sum of C + D is 4"
+    "The sum of B + D is less than 8",
+    "A equals B",
+    "B is greater than C",
+    "The sum A + B + C is Even",
+    "The code contains at least one 2",
+    "The sum A + B + D is Odd",
+    "The largest number in the code is 5"
   ]
 }

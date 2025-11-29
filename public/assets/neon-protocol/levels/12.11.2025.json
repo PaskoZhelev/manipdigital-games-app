@@ -1,13 +1,11 @@
 {
-  "solution": [1, 2, 3, 3],
+  "solution": [2, 3, 4, 4],
   "codeLength": 4,
   "mode": "standard",
   "clues": [
-    "C is greater than 2",
-    "The sum of A + D is a multiple of 4",
-    "A and D are both Odd",
-    "The sum of A + B is 3",
-    "The sum of B + C is less than 7",
-    "The sum of C + D is Even"
+    "A and D are both Even",
+    "The sum of A + B is less than 6",
+    "The sum of B + D is 7",
+    "The code contains exactly 2 - 4's"
   ]
 }

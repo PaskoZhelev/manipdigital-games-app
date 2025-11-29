@@ -1,14 +1,13 @@
 {
-  "solution": [3, 1, 2, 1],
+  "solution": [2, 2, 3, 2],
   "codeLength": 4,
-  "mode": "glitched",
+  "mode": "standard",
   "clues": [
-    "B is less than 4",
-    "The largest number in the code is 5",
-    "The code contains exactly 2 - 1's",
-    "The sum of A + C is 5",
-    "D is less than 2",
-    "The sum of B + C is Odd",
-    "The largest number in the code is 3"
+    "There is exactly 1 Odd number",
+    "B is NOT 4",
+    "The sum of A + D is 4",
+    "C is less than 4",
+    "C is NOT equal to D",
+    "The sum of all numbers is greater than 8"
   ]
 }

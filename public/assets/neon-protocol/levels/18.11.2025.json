@@ -1,11 +1,13 @@
 {
-  "solution": [5, 5, 2, 2],
-  "codeLength": 4,
+  "solution": [1, 5, 1, 5, 1],
+  "codeLength": 5,
   "mode": "standard",
   "clues": [
-    "The sum A + B + D is Even",
-    "D is NOT 4",
-    "The sum of B + C is 7",
-    "The sum of A + B is 10"
+    "The sum of B + D is greater than 5",
+    "The code contains exactly 2 - 5's",
+    "The code contains NO 2's",
+    "C is less than 3",
+    "A equals E",
+    "The sum of D + E is less than 7"
   ]
 }

@@ -1,11 +1,12 @@
 {
-  "solution": [4, 4, 3, 1],
+  "solution": [5, 2, 1, 1],
   "codeLength": 4,
   "mode": "standard",
   "clues": [
-    "The sum of A + C is greater than 6",
-    "There are exactly 2 Even numbers",
-    "The sum of C + D is 4",
-    "The code does NOT contain the number 2"
+    "The code contains at least one 5",
+    "The sum of B + C is a multiple of 3",
+    "B is less than 5",
+    "D is less than 2",
+    "C is less than 2"
   ]
 }
