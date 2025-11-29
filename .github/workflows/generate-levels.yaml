@@ -40,10 +40,11 @@ on:
         description: '[Neon Protocol Only] Mode'
         type: choice
         required: false
-        default: 'standard'
+        default: 'random'
         options:
           - standard
           - glitched
+          - random
 
 permissions:
   contents: write
