@@ -1,0 +1,12 @@
+{
+  "solution": [1, 2, 5, 4, 5],
+  "codeLength": 5,
+  "mode": "standard",
+  "clues": [
+    "The code contains exactly 1 - 2",
+    "The sum of B + C is Odd",
+    "The sum of C + E is 10",
+    "The sum of A + B is 3",
+    "The sum A + D + E is Even"
+  ]
+}

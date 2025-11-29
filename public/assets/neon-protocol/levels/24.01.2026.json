@@ -1,0 +1,12 @@
+{
+  "solution": [3, 1, 3, 5],
+  "codeLength": 4,
+  "mode": "standard",
+  "clues": [
+    "The sum of A + D is greater than 4",
+    "The sum of A + B is less than 6",
+    "A and B are both Odd",
+    "The sum of C + D is 8",
+    "The sum of A + D is a multiple of 4"
+  ]
+}

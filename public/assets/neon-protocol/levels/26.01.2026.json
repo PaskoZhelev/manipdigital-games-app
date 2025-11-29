@@ -1,0 +1,12 @@
+{
+  "solution": [1, 2, 2, 3, 2],
+  "codeLength": 5,
+  "mode": "standard",
+  "clues": [
+    "The sum of C + E is Even",
+    "C is greater than 1",
+    "The largest number in the code is 3",
+    "B equals C",
+    "The sum of A + C is 3"
+  ]
+}

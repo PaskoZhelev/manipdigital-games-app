@@ -1,0 +1,13 @@
+{
+  "solution": [1, 5, 4, 3],
+  "codeLength": 4,
+  "mode": "standard",
+  "clues": [
+    "C is NOT 2",
+    "A and B are both Odd",
+    "The sum of B + D is 8",
+    "The sum of A + D is less than 8",
+    "The sum of A + B is a multiple of 3",
+    "The sum of B + C is Odd"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "solution": [1, 2, 1, 2, 1],
+  "codeLength": 5,
+  "mode": "standard",
+  "clues": [
+    "D is NOT equal to E",
+    "The sum of A + D is 3",
+    "B equals D",
+    "The sum of C + E is 2"
+  ]
+}

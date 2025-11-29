@@ -1,0 +1,14 @@
+{
+  "solution": [2, 4, 4, 4, 1],
+  "codeLength": 5,
+  "mode": "standard",
+  "clues": [
+    "The sum A + C + D is Even",
+    "The sum of A + B is a multiple of 3",
+    "The sum of A + B is less than 9",
+    "The sum of A + D is Even",
+    "The code contains at least one 1",
+    "The sum of B + C is 8",
+    "A is NOT equal to D"
+  ]
+}

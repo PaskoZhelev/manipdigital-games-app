@@ -1,0 +1,13 @@
+{
+  "solution": [3, 1, 2, 1],
+  "codeLength": 4,
+  "mode": "standard",
+  "clues": [
+    "The sum of A + C is 5",
+    "A is greater than D",
+    "The sum of C + D is Odd",
+    "B and D are both Odd",
+    "The code contains exactly 1 - 3",
+    "B is less than 4"
+  ]
+}

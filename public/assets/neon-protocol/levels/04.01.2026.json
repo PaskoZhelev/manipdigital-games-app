@@ -1,0 +1,14 @@
+{
+  "solution": [5, 3, 4, 5, 1],
+  "codeLength": 5,
+  "mode": "standard",
+  "clues": [
+    "A equals D",
+    "The sum of D + E is less than 7",
+    "The sum A + D + E is Odd",
+    "The sum of A + B is greater than 7",
+    "The sum of B + C is less than 8",
+    "D is NOT equal to E",
+    "The sum of C + E is 5"
+  ]
+}

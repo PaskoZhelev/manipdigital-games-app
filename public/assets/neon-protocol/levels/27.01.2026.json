@@ -1,0 +1,13 @@
+{
+  "solution": [3, 3, 2, 3, 3],
+  "codeLength": 5,
+  "mode": "standard",
+  "clues": [
+    "B and D are both Odd",
+    "E is NOT 2",
+    "E is less than 4",
+    "The sum of B + D is a multiple of 3",
+    "A equals B",
+    "The smallest number in the code is 2"
+  ]
+}

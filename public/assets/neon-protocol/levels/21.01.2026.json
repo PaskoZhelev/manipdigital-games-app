@@ -1,0 +1,11 @@
+{
+  "solution": [4, 5, 2, 3],
+  "codeLength": 4,
+  "mode": "standard",
+  "clues": [
+    "A and C are both Even",
+    "The sum of A + B is 9",
+    "The sum of A + C is 6",
+    "The code contains exactly 1 - 3"
+  ]
+}

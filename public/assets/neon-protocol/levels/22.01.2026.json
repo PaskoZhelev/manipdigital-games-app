@@ -1,0 +1,12 @@
+{
+  "solution": [4, 1, 4, 4],
+  "codeLength": 4,
+  "mode": "standard",
+  "clues": [
+    "The sum of A + C is 8",
+    "The sum of B + D is 5",
+    "The sum of C + D is greater than 7",
+    "The range (Max - Min) is exactly 3",
+    "D is NOT 3"
+  ]
+}

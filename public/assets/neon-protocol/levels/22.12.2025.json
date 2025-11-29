@@ -1,0 +1,15 @@
+{
+  "solution": [1, 3, 5, 4, 3],
+  "codeLength": 5,
+  "mode": "standard",
+  "clues": [
+    "The sum A + B + D is Even",
+    "The sum of A + C is less than 7",
+    "The code contains NO 2's",
+    "C and E are both Odd",
+    "A is less than C",
+    "The sum of A + B is a multiple of 4",
+    "The sum of C + E is greater than 7",
+    "The sum of B + E is less than 8"
+  ]
+}

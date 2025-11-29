@@ -1,0 +1,12 @@
+{
+  "solution": [5, 2, 1, 3],
+  "codeLength": 4,
+  "mode": "standard",
+  "clues": [
+    "A is greater than B",
+    "All numbers are different",
+    "The sum of A + D is Even",
+    "The code contains at least one 2",
+    "The sum of A + C is 6"
+  ]
+}

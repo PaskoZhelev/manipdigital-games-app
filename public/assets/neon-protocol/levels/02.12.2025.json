@@ -1,12 +1,13 @@
 {
-  "solution": [4, 2, 3, 3],
-  "mode": "glitched",
+  "solution": [2, 3, 3, 5],
+  "codeLength": 4,
+  "mode": "standard",
   "clues": [
-    "The smallest number in the code is 2",
-    "The sum of A + D is 7",
-    "The range (Max - Min) is exactly 2",
-    "A is NOT 3",
-    "C equals D",
-    "The sum of B + C is 3"
+    "D is greater than 3",
+    "The sum of C + D is 8",
+    "The code contains exactly 1 - 5",
+    "B is greater than 2",
+    "The code contains exactly 1 - 2",
+    "The sum A + B + C is Even"
   ]
 }

@@ -1,0 +1,11 @@
+{
+  "solution": [2, 3, 5, 1],
+  "codeLength": 4,
+  "mode": "standard",
+  "clues": [
+    "A is greater than 1",
+    "The sum of all numbers is 11",
+    "The sum of B + C is 8",
+    "C is greater than 4"
+  ]
+}

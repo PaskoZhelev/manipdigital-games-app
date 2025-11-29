@@ -1,0 +1,13 @@
+{
+  "solution": [4, 4, 3, 3, 5],
+  "codeLength": 5,
+  "mode": "standard",
+  "clues": [
+    "C and E are both Odd",
+    "The sum of D + E is greater than 6",
+    "The sum of C + E is greater than 6",
+    "The code contains exactly 2 - 4's",
+    "The sum of C + D is Even",
+    "The sum of C + D is less than 8"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "solution": [2, 4, 4, 4],
+  "codeLength": 4,
+  "mode": "standard",
+  "clues": [
+    "The smallest number in the code is 2",
+    "There are exactly 4 Even numbers",
+    "The sum of C + D is 8",
+    "B is greater than 3"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "solution": [1, 4, 5, 3, 4],
+  "codeLength": 5,
+  "mode": "standard",
+  "clues": [
+    "The sum of D + E is less than 8",
+    "The sum A + B + D is Even",
+    "The sum of A + B is less than 9",
+    "The code does NOT contain the number 2",
+    "The sum of all numbers is 17",
+    "The sum of A + E is Odd",
+    "The sum of D + E is greater than 6",
+    "The code contains exactly 1 - 3"
+  ]
+}

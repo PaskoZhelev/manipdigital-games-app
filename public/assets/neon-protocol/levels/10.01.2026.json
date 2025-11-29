@@ -1,0 +1,12 @@
+{
+  "solution": [3, 2, 4, 2, 4],
+  "codeLength": 5,
+  "mode": "standard",
+  "clues": [
+    "The sum of D + E is a multiple of 3",
+    "The code contains NO 5's",
+    "The sum of A + B is 5",
+    "The sum of C + E is 8",
+    "The sum of B + E is 6"
+  ]
+}

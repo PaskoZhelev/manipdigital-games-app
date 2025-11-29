@@ -1,0 +1,10 @@
+{
+  "solution": [2, 2, 2, 5],
+  "codeLength": 4,
+  "mode": "standard",
+  "clues": [
+    "The code contains exactly 3 - 2's",
+    "The sum of A + C is 4",
+    "The sum of A + D is 7"
+  ]
+}

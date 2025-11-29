@@ -1,0 +1,14 @@
+{
+  "solution": [5, 5, 1, 2, 2],
+  "codeLength": 5,
+  "mode": "standard",
+  "clues": [
+    "C is less than D",
+    "The sum of all numbers is 15",
+    "The code does NOT contain the number 4",
+    "The sum of D + E is Even",
+    "The sum of A + B is greater than 4",
+    "The sum of A + E is Odd",
+    "The sum of A + C is a multiple of 3"
+  ]
+}

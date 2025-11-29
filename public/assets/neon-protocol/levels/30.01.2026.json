@@ -1,0 +1,11 @@
+{
+  "solution": [2, 2, 2, 5, 5],
+  "codeLength": 5,
+  "mode": "standard",
+  "clues": [
+    "B is less than D",
+    "D equals E",
+    "The code contains exactly 3 - 2's",
+    "The sum of B + E is greater than 6"
+  ]
+}

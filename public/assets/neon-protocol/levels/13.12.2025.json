@@ -1,0 +1,14 @@
+{
+  "solution": [1, 4, 4, 1],
+  "codeLength": 4,
+  "mode": "standard",
+  "clues": [
+    "The code does NOT contain the number 3",
+    "The sum of C + D is Odd",
+    "The sum of C + D is less than 9",
+    "A is less than 3",
+    "C is greater than 3",
+    "The sum B + C + D is Odd",
+    "The code does NOT contain the number 2"
+  ]
+}

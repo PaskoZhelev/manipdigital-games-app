@@ -1,0 +1,14 @@
+{
+  "solution": [2, 2, 4, 4, 2],
+  "codeLength": 5,
+  "mode": "standard",
+  "clues": [
+    "A is NOT equal to C",
+    "A and C are both Even",
+    "The sum of C + E is a multiple of 3",
+    "The sum of A + B is less than 6",
+    "The sum of C + E is less than 9",
+    "The sum B + C + D is Even",
+    "C equals D"
+  ]
+}

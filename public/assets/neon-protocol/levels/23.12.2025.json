@@ -1,0 +1,12 @@
+{
+  "solution": [4, 1, 4, 1],
+  "codeLength": 4,
+  "mode": "standard",
+  "clues": [
+    "B is less than 3",
+    "The code contains NO 3's",
+    "The sum of A + C is 8",
+    "There are exactly 2 Odd numbers",
+    "The sum of C + D is less than 6"
+  ]
+}

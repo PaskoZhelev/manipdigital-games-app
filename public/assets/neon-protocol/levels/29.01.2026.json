@@ -1,0 +1,15 @@
+{
+  "solution": [5, 2, 3, 1, 5],
+  "codeLength": 5,
+  "mode": "standard",
+  "clues": [
+    "B is less than C",
+    "B is greater than 1",
+    "The sum of A + D is Even",
+    "D is less than 2",
+    "C is less than 4",
+    "A is NOT 1",
+    "A is NOT 3",
+    "The sum of D + E is 6"
+  ]
+}

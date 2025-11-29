@@ -1,0 +1,11 @@
+{
+  "solution": [4, 1, 5, 1, 1],
+  "codeLength": 5,
+  "mode": "standard",
+  "clues": [
+    "A is less than C",
+    "The sum of A + B is 5",
+    "D is less than 2",
+    "The sum of B + E is 2"
+  ]
+}

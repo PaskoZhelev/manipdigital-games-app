@@ -1,0 +1,16 @@
+{
+  "solution": [4, 2, 1, 4],
+  "codeLength": 4,
+  "mode": "standard",
+  "clues": [
+    "The sum of A + C is less than 9",
+    "B is less than 4",
+    "A is NOT equal to B",
+    "The sum of A + D is less than 9",
+    "A is greater than 1",
+    "The range (Max - Min) is exactly 3",
+    "The code contains NO 3's",
+    "B is NOT equal to D",
+    "The sum of B + D is Even"
+  ]
+}

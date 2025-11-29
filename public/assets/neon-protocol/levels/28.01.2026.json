@@ -1,0 +1,13 @@
+{
+  "solution": [1, 5, 3, 4],
+  "codeLength": 4,
+  "mode": "standard",
+  "clues": [
+    "B is NOT equal to C",
+    "C is NOT 1",
+    "The code contains exactly 1 - 1",
+    "B is greater than 4",
+    "The sum B + C + D is Even",
+    "The sum of B + D is 9"
+  ]
+}
