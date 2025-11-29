@@ -121,7 +121,7 @@ jobs:
             
             # Execute Java JAR with the specific arguments
             # We explicitly pass JAR_ARGS here
-            java -jar "$JAR_FILE" "$JAR_ARGS" > "$TARGET_FILE"
+            java -jar "$JAR_FILE" $JAR_ARGS > "$TARGET_FILE"
             
             # Increment date
             CURRENT=$(date -I -d "$CURRENT + 1 day")
