@@ -1,0 +1,72 @@
+{
+  "difficulty": "hard",
+  "grid": [
+    [
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "grass", "object": "rock"},
+      {"terrain": "mud", "object": "none"}
+    ],
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "sand", "object": "none"}
+    ],
+    [
+      {"terrain": "sand", "object": "tree"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "grass", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Elephant is in the same column as Rabbit",
+      "complexity": 3
+    },
+    {
+      "id": 2,
+      "description": "Fox is on a space with a ROCK",
+      "complexity": 2
+    },
+    {
+      "id": 3,
+      "description": "Frog is on SAND",
+      "complexity": 1
+    },
+    {
+      "id": 4,
+      "description": "Monkey is on WATER",
+      "complexity": 1
+    },
+    {
+      "id": 5,
+      "description": "Rabbit is on MUD",
+      "complexity": 1
+    },
+    {
+      "id": 6,
+      "description": "Frog is in Row 2",
+      "complexity": 2
+    },
+    {
+      "id": 7,
+      "description": "Elephant is on a space with a TREE",
+      "complexity": 2
+    }
+  ],
+  "solution": {
+    "frog": {"row": 2, "column": "C"},
+    "monkey": {"row": 2, "column": "B"},
+    "elephant": {"row": 3, "column": "A"},
+    "rabbit": {"row": 1, "column": "A"},
+    "fox": {"row": 1, "column": "B"}
+  }
+}
+

@@ -1,0 +1,82 @@
+{
+  "difficulty": "hard",
+  "grid": [
+    [
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "grass", "object": "tree"}
+    ],
+    [
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ],
+    [
+      {"terrain": "grass", "object": "rock"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "mud", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Monkey is in Row 2",
+      "complexity": 2
+    },
+    {
+      "id": 2,
+      "description": "Frog is on a space with a ROCK",
+      "complexity": 2
+    },
+    {
+      "id": 3,
+      "description": "Rabbit is adjacent to Fox",
+      "complexity": 4
+    },
+    {
+      "id": 4,
+      "description": "Fox is on SAND OR GRASS",
+      "complexity": 4
+    },
+    {
+      "id": 5,
+      "description": "Monkey is on WATER",
+      "complexity": 1
+    },
+    {
+      "id": 6,
+      "description": "Elephant is on MUD",
+      "complexity": 1
+    },
+    {
+      "id": 7,
+      "description": "Elephant is in Row 3 OR Row 1",
+      "complexity": 4
+    },
+    {
+      "id": 8,
+      "description": "There are exactly 1 animal(s) on spaces with Objects",
+      "complexity": 5
+    },
+    {
+      "id": 9,
+      "description": "Elephant is in the same row as Rabbit",
+      "complexity": 3
+    }
+  ],
+  "solution": {
+    "frog": {"row": 3, "column": "A"},
+    "monkey": {"row": 2, "column": "C"},
+    "elephant": {"row": 3, "column": "C"},
+    "rabbit": {"row": 3, "column": "B"},
+    "fox": {"row": 2, "column": "B"}
+  }
+}
+

@@ -1,0 +1,77 @@
+{
+  "difficulty": "hard",
+  "grid": [
+    [
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "sand", "object": "none"}
+    ],
+    [
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "sand", "object": "rock"},
+      {"terrain": "sand", "object": "ruin"}
+    ],
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "mud", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Rabbit is in the same column as Fox",
+      "complexity": 3
+    },
+    {
+      "id": 2,
+      "description": "Frog is in Row 1",
+      "complexity": 2
+    },
+    {
+      "id": 3,
+      "description": "Monkey is on a space with a ROCK",
+      "complexity": 2
+    },
+    {
+      "id": 4,
+      "description": "Rabbit is in Row 1",
+      "complexity": 2
+    },
+    {
+      "id": 5,
+      "description": "Elephant is in the same row as Rabbit",
+      "complexity": 3
+    },
+    {
+      "id": 6,
+      "description": "Elephant is in Column A",
+      "complexity": 2
+    },
+    {
+      "id": 7,
+      "description": "Fox is in Column C",
+      "complexity": 2
+    },
+    {
+      "id": 8,
+      "description": "There are exactly 3 animal(s) on SAND",
+      "complexity": 5
+    }
+  ],
+  "solution": {
+    "frog": {"row": 1, "column": "B"},
+    "monkey": {"row": 2, "column": "B"},
+    "elephant": {"row": 1, "column": "A"},
+    "rabbit": {"row": 1, "column": "C"},
+    "fox": {"row": 3, "column": "C"}
+  }
+}
+

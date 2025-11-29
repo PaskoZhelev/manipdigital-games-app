@@ -1,0 +1,82 @@
+{
+  "difficulty": "hard",
+  "grid": [
+    [
+      {"terrain": "grass", "object": "rock"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "mud", "object": "ruin"}
+    ],
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "mud", "object": "none"}
+    ],
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Fox is in Row 2 OR Row 3",
+      "complexity": 4
+    },
+    {
+      "id": 2,
+      "description": "There is exactly 1 animal(s) on WATER",
+      "complexity": 5
+    },
+    {
+      "id": 3,
+      "description": "Frog is in Row 1",
+      "complexity": 2
+    },
+    {
+      "id": 4,
+      "description": "Monkey is on WATER",
+      "complexity": 1
+    },
+    {
+      "id": 5,
+      "description": "There are exactly 2 animal(s) on MUD",
+      "complexity": 5
+    },
+    {
+      "id": 6,
+      "description": "There is exactly 1 animal(s) on GRASS",
+      "complexity": 5
+    },
+    {
+      "id": 7,
+      "description": "Fox is in Column C",
+      "complexity": 2
+    },
+    {
+      "id": 8,
+      "description": "Monkey is adjacent to Elephant",
+      "complexity": 4
+    },
+    {
+      "id": 9,
+      "description": "Elephant is in Column B",
+      "complexity": 2
+    }
+  ],
+  "solution": {
+    "frog": {"row": 1, "column": "A"},
+    "monkey": {"row": 3, "column": "C"},
+    "elephant": {"row": 3, "column": "B"},
+    "rabbit": {"row": 2, "column": "B"},
+    "fox": {"row": 2, "column": "C"}
+  }
+}
+

@@ -1,0 +1,72 @@
+{
+  "difficulty": "hard",
+  "grid": [
+    [
+      {"terrain": "mud", "object": "rock"},
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ],
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ],
+    [
+      {"terrain": "sand", "object": "tree"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "sand", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Frog is in the same column as Fox",
+      "complexity": 3
+    },
+    {
+      "id": 2,
+      "description": "Frog is adjacent to Elephant",
+      "complexity": 4
+    },
+    {
+      "id": 3,
+      "description": "Elephant is in Column C",
+      "complexity": 2
+    },
+    {
+      "id": 4,
+      "description": "There are exactly 2 animal(s) on spaces with Objects",
+      "complexity": 5
+    },
+    {
+      "id": 5,
+      "description": "Fox is in Row 2",
+      "complexity": 2
+    },
+    {
+      "id": 6,
+      "description": "Monkey is on a space with a ROCK",
+      "complexity": 2
+    },
+    {
+      "id": 7,
+      "description": "There are exactly 3 animal(s) on SAND",
+      "complexity": 5
+    }
+  ],
+  "solution": {
+    "frog": {"row": 3, "column": "B"},
+    "monkey": {"row": 1, "column": "A"},
+    "elephant": {"row": 3, "column": "C"},
+    "rabbit": {"row": 3, "column": "A"},
+    "fox": {"row": 2, "column": "B"}
+  }
+}
+

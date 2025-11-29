@@ -1,0 +1,87 @@
+{
+  "difficulty": "hard",
+  "grid": [
+    [
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "grass", "object": "rock"},
+      {"terrain": "water", "object": "none"}
+    ],
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "grass", "object": "none"}
+    ],
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "sand", "object": "tree"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Monkey is on GRASS OR WATER",
+      "complexity": 4
+    },
+    {
+      "id": 2,
+      "description": "Frog is in a corner",
+      "complexity": 2
+    },
+    {
+      "id": 3,
+      "description": "Monkey is adjacent to Rabbit",
+      "complexity": 4
+    },
+    {
+      "id": 4,
+      "description": "Elephant is in Row 1",
+      "complexity": 2
+    },
+    {
+      "id": 5,
+      "description": "Frog is on MUD",
+      "complexity": 1
+    },
+    {
+      "id": 6,
+      "description": "There are exactly 2 animal(s) on MUD",
+      "complexity": 5
+    },
+    {
+      "id": 7,
+      "description": "Elephant is on WATER",
+      "complexity": 1
+    },
+    {
+      "id": 8,
+      "description": "There are exactly 2 animal(s) on WATER",
+      "complexity": 5
+    },
+    {
+      "id": 9,
+      "description": "Frog is adjacent to Fox",
+      "complexity": 4
+    },
+    {
+      "id": 10,
+      "description": "Rabbit is NOT adjacent to any animal on WATER",
+      "complexity": 5
+    }
+  ],
+  "solution": {
+    "frog": {"row": 1, "column": "A"},
+    "monkey": {"row": 2, "column": "B"},
+    "elephant": {"row": 1, "column": "C"},
+    "rabbit": {"row": 3, "column": "B"},
+    "fox": {"row": 2, "column": "A"}
+  }
+}
+
