@@ -1,0 +1,11 @@
+{
+  "solution": [3, 1, 5, 2],
+  "mode": "standard",
+  "clues": [
+    "D is NOT 1",
+    "The sum of B + D is 3",
+    "C is greater than 3",
+    "The sum of A + C is Even",
+    "The code contains exactly 1 - 3"
+  ]
+}

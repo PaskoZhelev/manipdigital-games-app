@@ -1,0 +1,15 @@
+{
+  "solution": [2, 2, 1, 5],
+  "mode": "glitched",
+  "clues": [
+    "B is greater than 1",
+    "The sum of A + C is Odd",
+    "A equals D",
+    "The sum of all numbers is greater than 8",
+    "C and D are both Odd",
+    "B is less than 3",
+    "A is NOT 4",
+    "A is less than D",
+    "C is less than 3"
+  ]
+}

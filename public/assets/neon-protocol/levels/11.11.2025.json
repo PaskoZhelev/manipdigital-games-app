@@ -1,0 +1,10 @@
+{
+  "solution": [1, 4, 3, 4],
+  "mode": "standard",
+  "clues": [
+    "The sum of A + B is 5",
+    "The code contains exactly 1 - 3",
+    "A is less than D",
+    "B equals D"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "solution": [3, 2, 4, 5],
+  "mode": "glitched",
+  "clues": [
+    "The range (Max - Min) is exactly 3",
+    "D is greater than 4",
+    "B and C are both Even",
+    "A is greater than 2",
+    "The sum of B + D is Even",
+    "A is less than C"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "solution": [3, 2, 4, 1],
+  "mode": "standard",
+  "clues": [
+    "A is NOT 1",
+    "B is less than 4",
+    "A is NOT 5",
+    "The sum of B + C is 6",
+    "D is less than 2",
+    "The code contains exactly 1 - 2",
+    "The code contains exactly 1 - 4"
+  ]
+}

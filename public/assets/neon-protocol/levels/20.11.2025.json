@@ -1,0 +1,9 @@
+{
+  "solution": [2, 1, 1, 5],
+  "mode": "standard",
+  "clues": [
+    "The sum of all numbers is 9",
+    "A is NOT 1",
+    "D is greater than 4"
+  ]
+}

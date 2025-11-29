@@ -1,0 +1,12 @@
+{
+  "solution": [1, 4, 1, 5],
+  "mode": "standard",
+  "clues": [
+    "The sum of all numbers is 11",
+    "The code contains exactly 2 - 1's",
+    "A is NOT 4",
+    "C and D are both Odd",
+    "A is NOT 5",
+    "C is less than 5"
+  ]
+}

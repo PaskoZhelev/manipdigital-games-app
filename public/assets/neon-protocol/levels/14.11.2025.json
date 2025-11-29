@@ -1,0 +1,12 @@
+{
+  "solution": [3, 5, 3, 1],
+  "mode": "standard",
+  "clues": [
+    "C is NOT 1",
+    "B is greater than 4",
+    "The range (Max - Min) is exactly 4",
+    "The code contains NO 2's",
+    "The sum of A + B is 8",
+    "C is less than 4"
+  ]
+}
