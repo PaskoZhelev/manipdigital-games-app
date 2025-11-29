@@ -1,12 +1,11 @@
 {
-  "solution": [2, 2, 4, 5],
+  "solution": [5, 5, 2, 2],
   "codeLength": 4,
   "mode": "standard",
   "clues": [
-    "The sum of A + C is greater than 5",
-    "The sum of all numbers is 13",
-    "D is greater than 4",
-    "C is less than 5",
-    "The sum of A + D is less than 8"
+    "The sum A + B + D is Even",
+    "D is NOT 4",
+    "The sum of B + C is 7",
+    "The sum of A + B is 10"
   ]
 }

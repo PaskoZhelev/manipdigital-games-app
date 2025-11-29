@@ -1,13 +1,12 @@
 {
-  "solution": [5, 4, 4, 1],
+  "solution": [3, 5, 4, 5],
   "codeLength": 4,
-  "mode": "standard",
+  "mode": "glitched",
   "clues": [
-    "The smallest number in the code is 1",
-    "A is NOT 4",
-    "A is greater than C",
-    "The code contains NO 2's",
-    "The sum A + B + C is Odd",
-    "The sum of A + C is Odd"
+    "A is less than C",
+    "C is less than 5",
+    "The sum of B + D is 10",
+    "The sum of A + D is 8",
+    "The sum of B + C is 4"
   ]
 }

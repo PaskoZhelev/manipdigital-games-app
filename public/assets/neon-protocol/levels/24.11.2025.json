@@ -1,13 +1,14 @@
 {
-  "solution": [2, 5, 4, 1],
-  "codeLength": 4,
+  "solution": [5, 4, 4, 5, 1],
+  "codeLength": 5,
   "mode": "standard",
   "clues": [
-    "The code contains NO 3's",
-    "A is less than 5",
-    "The code contains exactly 1 - 4",
-    "B is greater than C",
-    "A is greater than D",
-    "C is greater than 3"
+    "The sum of C + D is Odd",
+    "The sum A + B + E is Even",
+    "The sum B + C + E is Odd",
+    "The sum of A + E is a multiple of 3",
+    "The sum of B + D is 9",
+    "The code contains exactly 2 - 4's",
+    "The sum of C + E is less than 6"
   ]
 }

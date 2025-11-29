@@ -1,13 +1,13 @@
 {
-  "solution": [3, 5, 3, 2],
-  "codeLength": 4,
+  "solution": [5, 4, 3, 4, 5],
+  "codeLength": 5,
   "mode": "standard",
   "clues": [
-    "The code contains NO 4's",
-    "A is less than B",
-    "A is greater than D",
-    "The sum of B + D is 7",
-    "C is greater than 2",
-    "C is NOT 5"
+    "A is greater than 4",
+    "E is greater than 4",
+    "The sum A + B + C is Even",
+    "B is greater than 3",
+    "The range (Max - Min) is exactly 2",
+    "The sum of D + E is 9"
   ]
 }

@@ -1,16 +1,12 @@
 {
-  "solution": [4, 2, 3, 1],
-  "codeLength": 4,
+  "solution": [4, 5, 5, 1, 5],
+  "codeLength": 5,
   "mode": "standard",
   "clues": [
-    "The sum of B + C is Odd",
-    "The sum A + B + D is Odd",
-    "The sum of A + D is Odd",
-    "A is NOT 2",
-    "The sum B + C + D is Even",
-    "B is less than 4",
-    "C is NOT 5",
-    "The sum of B + D is a multiple of 3",
-    "C is NOT equal to D"
+    "The sum A + B + D is Even",
+    "The sum of A + B is 9",
+    "C equals E",
+    "The sum of C + D is less than 8",
+    "The sum of B + E is 10"
   ]
 }

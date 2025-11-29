@@ -1,10 +1,14 @@
 {
-  "solution": [5, 4, 5, 5],
-  "codeLength": 4,
-  "mode": "standard",
+  "solution": [3, 3, 3, 1, 5],
+  "codeLength": 5,
+  "mode": "glitched",
   "clues": [
-    "B is NOT equal to C",
-    "The sum of all numbers is 19",
-    "The sum of B + D is Odd"
+    "The sum of A + C is 4",
+    "D is less than E",
+    "The sum of all numbers is 15",
+    "B equals C",
+    "The sum of A + E is a multiple of 4",
+    "The sum of B + D is a multiple of 4",
+    "The sum of A + B is 6"
   ]
 }

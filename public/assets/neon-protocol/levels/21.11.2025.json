@@ -1,13 +1,12 @@
 {
-  "solution": [5, 4, 2, 2],
-  "codeLength": 4,
+  "solution": [1, 4, 1, 1, 5],
+  "codeLength": 5,
   "mode": "standard",
   "clues": [
-    "D is NOT 4",
-    "B is greater than C",
-    "B is NOT 5",
-    "The sum of all numbers is 13",
-    "The sum of A + D is 7",
-    "The sum A + B + C is Odd"
+    "The sum of D + E is a multiple of 3",
+    "B is less than E",
+    "The code contains exactly 3 - 1's",
+    "D and E are both Odd",
+    "The sum of B + D is greater than 4"
   ]
 }

@@ -1,14 +1,14 @@
 {
-  "solution": [5, 5, 5, 2],
-  "codeLength": 4,
-  "mode": "standard",
+  "solution": [5, 3, 5, 5, 2],
+  "codeLength": 5,
+  "mode": "glitched",
   "clues": [
-    "The code contains at least one 5",
-    "The code contains NO 3's",
-    "A is NOT equal to D",
-    "The sum of C + D is less than 8",
-    "The code does NOT contain the number 1",
-    "The sum of B + C is Even",
-    "The sum A + B + D is Even"
+    "The sum of B + D is less than 9",
+    "The sum of B + E is less than 7",
+    "The code contains exactly 3 - 5's",
+    "The sum of A + C is 5",
+    "The sum of D + E is less than 9",
+    "The sum of all numbers is 20",
+    "The sum A + D + E is Even"
   ]
 }

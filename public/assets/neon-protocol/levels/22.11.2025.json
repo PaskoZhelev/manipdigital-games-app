@@ -1,11 +1,12 @@
 {
-  "solution": [2, 2, 5, 2],
+  "solution": [2, 5, 2, 2],
   "codeLength": 4,
-  "mode": "standard",
+  "mode": "glitched",
   "clues": [
-    "The code contains NO 4's",
-    "C is greater than 3",
-    "The sum of A + D is Even",
-    "A and B are both Even"
+    "The code contains exactly 3 - 2's",
+    "The sum of A + D is 4",
+    "The sum of A + D is a multiple of 3",
+    "The sum of B + C is greater than 6",
+    "The sum of C + D is 4"
   ]
 }

@@ -1,13 +1,11 @@
 {
-  "solution": [4, 4, 1, 4],
+  "solution": [4, 4, 3, 1],
   "codeLength": 4,
   "mode": "standard",
   "clues": [
-    "C is NOT 2",
-    "A is greater than C",
-    "A is greater than 3",
-    "A and B are both Even",
-    "The code does NOT contain the number 3",
-    "The sum of B + D is 8"
+    "The sum of A + C is greater than 6",
+    "There are exactly 2 Even numbers",
+    "The sum of C + D is 4",
+    "The code does NOT contain the number 2"
   ]
 }

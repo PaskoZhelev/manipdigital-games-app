@@ -1,13 +1,14 @@
 {
-  "solution": [3, 3, 2, 4],
+  "solution": [5, 4, 5, 3],
   "codeLength": 4,
-  "mode": "standard",
+  "mode": "glitched",
   "clues": [
-    "The sum of all numbers is 12",
-    "C is NOT 4",
-    "The sum of A + B is Even",
-    "The sum of A + D is 7",
-    "The sum B + C + D is Odd",
-    "D is greater than 2"
+    "The code does NOT contain the number 2",
+    "The code contains NO 1's",
+    "B and C are both Even",
+    "The sum A + C + D is Odd",
+    "There are exactly 3 Odd numbers",
+    "The sum of A + C is 10",
+    "The sum of B + D is less than 8"
   ]
 }

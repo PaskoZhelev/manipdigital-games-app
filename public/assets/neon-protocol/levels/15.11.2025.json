@@ -1,12 +1,17 @@
 {
-  "solution": [1, 5, 3, 3],
-  "codeLength": 4,
+  "solution": [3, 3, 4, 1, 3],
+  "codeLength": 5,
   "mode": "standard",
   "clues": [
-    "The sum of B + D is greater than 7",
-    "The sum of A + C is Even",
-    "C equals D",
-    "The sum of C + D is less than 8",
-    "The sum of A + B is less than 8"
+    "The code contains at least one 4",
+    "The sum of B + E is less than 8",
+    "The sum A + C + E is Even",
+    "The sum of C + E is less than 8",
+    "B is greater than 1",
+    "C is NOT 5",
+    "The sum B + C + D is Even",
+    "The sum of A + D is 4",
+    "The sum of A + C is greater than 4",
+    "The sum of A + E is a multiple of 3"
   ]
 }
