@@ -1,0 +1,13 @@
+{
+  "solution": [5, 4, 2, 2],
+  "codeLength": 4,
+  "mode": "standard",
+  "clues": [
+    "D is NOT 4",
+    "B is greater than C",
+    "B is NOT 5",
+    "The sum of all numbers is 13",
+    "The sum of A + D is 7",
+    "The sum A + B + C is Odd"
+  ]
+}

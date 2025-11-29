@@ -1,0 +1,10 @@
+{
+  "solution": [5, 4, 5, 5],
+  "codeLength": 4,
+  "mode": "standard",
+  "clues": [
+    "B is NOT equal to C",
+    "The sum of all numbers is 19",
+    "The sum of B + D is Odd"
+  ]
+}

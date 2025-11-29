@@ -1,0 +1,11 @@
+{
+  "solution": [2, 2, 5, 2],
+  "codeLength": 4,
+  "mode": "standard",
+  "clues": [
+    "The code contains NO 4's",
+    "C is greater than 3",
+    "The sum of A + D is Even",
+    "A and B are both Even"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "solution": [3, 5, 3, 2],
+  "codeLength": 4,
+  "mode": "standard",
+  "clues": [
+    "The code contains NO 4's",
+    "A is less than B",
+    "A is greater than D",
+    "The sum of B + D is 7",
+    "C is greater than 2",
+    "C is NOT 5"
+  ]
+}

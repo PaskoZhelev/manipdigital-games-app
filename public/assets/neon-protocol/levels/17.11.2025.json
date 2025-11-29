@@ -1,0 +1,12 @@
+{
+  "solution": [3, 3, 1, 4],
+  "codeLength": 4,
+  "mode": "standard",
+  "clues": [
+    "A and B are both Odd",
+    "A is greater than 1",
+    "The sum of B + D is greater than 6",
+    "C is less than 2",
+    "The code does NOT contain the number 5"
+  ]
+}

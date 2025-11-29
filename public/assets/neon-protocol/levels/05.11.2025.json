@@ -1,0 +1,13 @@
+{
+  "solution": [5, 4, 4, 1],
+  "codeLength": 4,
+  "mode": "standard",
+  "clues": [
+    "The smallest number in the code is 1",
+    "A is NOT 4",
+    "A is greater than C",
+    "The code contains NO 2's",
+    "The sum A + B + C is Odd",
+    "The sum of A + C is Odd"
+  ]
+}

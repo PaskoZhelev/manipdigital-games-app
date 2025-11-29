@@ -1,0 +1,12 @@
+{
+  "solution": [5, 3, 4, 2],
+  "codeLength": 4,
+  "mode": "standard",
+  "clues": [
+    "The sum of A + C is 9",
+    "B is NOT 2",
+    "The sum of B + D is less than 6",
+    "The code contains NO 1's",
+    "The sum of A + D is Odd"
+  ]
+}
