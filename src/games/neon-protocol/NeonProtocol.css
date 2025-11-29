@@ -14,42 +14,46 @@
 
 /* --- COLORS --- */
 :root {
-  --neon-col-A: #ff5f5f;
-  --neon-col-B: #4caf50;
-  --neon-col-C: #44aaff;
-  --neon-col-D: #ffff55;
+  --neon-col-A: #ff5f5f; /* Red */
+  --neon-col-B: #4caf50; /* Green */
+  --neon-col-C: #44aaff; /* Blue */
+  --neon-col-D: #ffff55; /* Yellow */
+  --neon-col-E: #d500f9; /* Purple (New for 5th digit) */
 }
+
+/* ... (Rest of the CSS remains unchanged) ... */
+/* Make sure to keep your existing compact calendar styles at the bottom */
 
 /* --- HEADER --- */
 .game-info-header {
   display: flex;
   flex-direction: row;
-  align-items: center; /* Ensures vertical alignment */
+  align-items: center; 
   justify-content: center;
   gap: 12px;
   margin-bottom: 20px;
   font-size: 1rem;
-  height: 30px; /* Fixed height to enforce alignment */
+  height: 30px; 
 }
 
 .level-date-display {
   color: #aaa;
   font-weight: 500;
-  line-height: 1; /* Fix vertical drift */
+  line-height: 1; 
   margin-bottom: 0;
 }
 
 /* MODE BADGES */
 .mode-badge {
-  padding: 4px 8px; /* Compact padding */
+  padding: 4px 8px; 
   border-radius: 4px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  font-size: 0.75rem; /* Smaller font */
+  font-size: 0.75rem; 
   line-height: 1;
-  cursor: help; /* Indicates interactivity */
-  position: relative; /* For tooltip positioning */
+  cursor: help; 
+  position: relative; 
   transition: transform 0.1s;
 }
 
@@ -57,21 +61,14 @@
   transform: translateY(-1px);
 }
 
-/* TOOLTIP LOGIC */
 .mode-badge::after {
-  content: attr(data-tooltip); /* Pull text from attribute */
-  
-  /* Hidden state */
+  content: attr(data-tooltip);
   visibility: hidden;
   opacity: 0;
   transform: translateX(-50%) translateY(5px);
-  
-  /* Positioning */
   position: absolute;
-  bottom: -100%; /* Above the badge */
+  bottom: -100%;
   left: 50%;
-  
-  /* Styling */
   width: 220px;
   background: #222;
   color: #eee;
@@ -81,7 +78,7 @@
   border: 1px solid #444;
   font-size: 0.75rem;
   font-weight: 400;
-  text-transform: none; /* Normal case for description */
+  text-transform: none;
   line-height: 1.4;
   box-shadow: 0 4px 15px rgba(0,0,0,0.5);
   pointer-events: none;
@@ -89,7 +86,6 @@
   transition: opacity 0.2s, transform 0.2s;
 }
 
-/* Tooltip Arrow */
 .mode-badge::before {
   content: "";
   visibility: hidden;
@@ -100,11 +96,10 @@
   transform: translateX(-50%);
   border-width: 6px;
   border-style: solid;
-  border-color: #444 transparent transparent transparent; /* Arrow color */
+  border-color: #444 transparent transparent transparent;
   transition: opacity 0.2s;
 }
 
-/* Show Tooltip on Hover */
 .mode-badge:hover::after,
 .mode-badge:hover::before {
   visibility: visible;
@@ -112,15 +107,14 @@
   transform: translateX(-50%) translateY(0);
 }
 
-/* COLORS */
 .mode-badge.standard {
-  background: #1b5e20; /* Darker Green */
+  background: #1b5e20;
   color: #a5d6a7;
   border: 1px solid #2e7d32;
 }
 
 .mode-badge.glitched {
-  background: #3a0b0b; /* Darker Red */
+  background: #3a0b0b;
   color: #ff8a80;
   border: 1px solid #b71c1c;
   box-shadow: 0 0 8px rgba(255, 0, 0, 0.2);
@@ -330,7 +324,7 @@
   .digit-label { font-size: 1.4rem; }
 }
 
-/* --- CALENDAR MODAL --- */
+/* --- CALENDAR MODAL (Compact Fix) --- */
 .calendar-modal-overlay {
   position: fixed;
   top: 0;
@@ -349,9 +343,11 @@
   background: #111;
   border: 1px solid #333;
   border-radius: 12px;
-  width: 90%;
-  max-width: 400px;
-  padding: 20px;
+  /* FORCE COMPACT WIDTH */
+  width: fit-content; 
+  min-width: auto;
+  max-width: 90vw;
+  padding: 15px; 
   box-shadow: 0 0 30px rgba(0, 255, 128, 0.1);
 }
 
@@ -359,18 +355,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   color: #e0e0e0;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .calendar-nav-btn {
   background: transparent;
   border: 1px solid #333;
   color: #888;
-  width: 30px;
-  height: 30px;
+  width: 28px; 
+  height: 28px;
   border-radius: 4px;
   cursor: pointer;
   display: flex;
@@ -386,31 +382,33 @@
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
+  gap: 4px; 
 }
 
 .calendar-day-header {
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: #555;
-  padding-bottom: 5px;
+  padding-bottom: 4px;
 }
 
 .calendar-day {
-  aspect-ratio: 1;
+  /* FIXED SIZE to prevent growing */
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #1a1a1a;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #aaa;
   position: relative;
   transition: all 0.2s;
 }
 
-.calendar-day:hover:not(.empty) {
+.calendar-day:hover:not(.empty):not(.disabled) {
   background: #333;
   color: #fff;
 }
@@ -418,14 +416,17 @@
 .calendar-day.empty {
   background: transparent;
   cursor: default;
+  pointer-events: none;
 }
 
 .calendar-day.selected {
   border: 2px solid #fff;
+  background: #222;
+  color: #fff;
 }
 
 .calendar-day.solved {
-  background: rgba(46, 125, 50, 0.3); /* Green Tint */
+  background: rgba(46, 125, 50, 0.3); 
   border: 1px solid #2e7d32;
   color: #a5d6a7;
   font-weight: bold;
@@ -435,11 +436,19 @@
   content: "✓";
   position: absolute;
   font-size: 0.6rem;
-  top: 2px;
-  right: 2px;
+  top: 1px;
+  right: 1px;
 }
 
-/* Replaces the old date input styling */
+.calendar-day.disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+  pointer-events: none;
+  background: #000;
+  border: 1px solid #222;
+}
+
+/* Custom Trigger Button */
 .custom-date-trigger {
   background: #111;
   border: 1px solid #333;
@@ -456,12 +465,4 @@
 
 .custom-date-trigger:hover {
   border-color: #555;
-}
-
-.calendar-day.disabled {
-  opacity: 0.2;
-  cursor: not-allowed;
-  pointer-events: none; /* Prevents clicking */
-  background: #000;
-  border: 1px solid #222;
 }

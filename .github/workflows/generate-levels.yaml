@@ -46,6 +46,17 @@ on:
           - glitched
           - random
 
+      neon_digits:
+        description: '[Neon Protocol Only] Digits'
+        type: choice
+        required: false
+        default: 'random'
+        options:
+          - "3"
+          - "4"
+          - "5"    
+          - random  
+
 permissions:
   contents: write
 
@@ -84,7 +95,7 @@ jobs:
             OUTPUT_DIR="public/assets/neon-protocol/levels"
             JAR_FILE="tools/neon-protocol-level-generator.jar"
             # Pass mode (standard/glitched) as argument
-            JAR_ARGS="${{ inputs.neon_mode }}"
+            JAR_ARGS="${{ inputs.neon_mode }} ${{ inputs.neon_digits }}"
           fi
 
           echo "--------------------------------"

@@ -5,13 +5,15 @@ import './NeonProtocol.css';
 
 // --- CONSTANTS ---
 const STORAGE_KEY = 'neon_protocol_daily';
-const EARLIEST_ARCHIVE_DATE = '2025-11-01';
+const EARLIEST_ARCHIVE_DATE = '2025-01-01';
 
+// UPDATED: Added color for E
 const LETTER_COLORS: Record<string, string> = {
   'A': 'var(--neon-col-A)',
   'B': 'var(--neon-col-B)',
   'C': 'var(--neon-col-C)',
   'D': 'var(--neon-col-D)',
+  'E': 'var(--neon-col-E)', 
 };
 
 // --- HELPERS ---
@@ -50,15 +52,14 @@ const CustomCalendar: React.FC<{
 
   // Boundaries
   const minDate = new Date(minDateStr);
-  minDate.setHours(0, 0, 0, 0); // Normalize to start of day
+  minDate.setHours(0, 0, 0, 0); 
   
-  const maxDate = new Date(); // Today
-  maxDate.setHours(23, 59, 59, 999); // Normalize to end of day
+  const maxDate = new Date(); 
+  maxDate.setHours(23, 59, 59, 999); 
 
   const daysInMonth = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 0).getDate();
   const firstDay = new Date(viewDate.getFullYear(), viewDate.getMonth(), 1).getDay(); // 0 = Sun
   
-  // Adjust so Monday is first day (Optional, typical for EU)
   const startOffset = (firstDay === 0 ? 6 : firstDay - 1); 
 
   const handlePrevMonth = () => {
@@ -90,24 +91,18 @@ const CustomCalendar: React.FC<{
             <div key={i} className="calendar-day-header">{d}</div>
           ))}
           
-          {/* Empty cells for offset */}
           {Array.from({length: startOffset}).map((_, i) => (
             <div key={`empty-${i}`} className="calendar-day empty"></div>
           ))}
 
-          {/* Days */}
           {Array.from({length: daysInMonth}).map((_, i) => {
             const day = i + 1;
             const thisDate = new Date(viewDate.getFullYear(), viewDate.getMonth(), day);
-            
-            // Normalize time for comparison
             thisDate.setHours(12, 0, 0, 0); 
             
             const dateStr = formatDateForInput(thisDate);
             const isSolved = completedDates.has(dateStr);
             const isSelected = dateStr === formatDateForInput(currentDate);
-            
-            // Disable Logic
             const isDisabled = thisDate < minDate || thisDate > maxDate;
 
             return (
@@ -127,23 +122,17 @@ const CustomCalendar: React.FC<{
 };
 
 export const NeonProtocol: React.FC = () => {
-  // --- STATE ---
   const [targetDate, setTargetDate] = useState<Date>(new Date());
   const [level, setLevel] = useState<NeonLevel | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [gameStarted, setGameStarted] = useState(false);
   
-  // UI State for Calendar
   const [showCalendar, setShowCalendar] = useState(false);
-
-  // Persistence State
   const dateKey = useMemo(() => formatDateForInput(targetDate), [targetDate]);
-  
-  // Completed Dates
   const [completedDates, setCompletedDates] = useState<Set<string>>(new Set());
 
-  // Update list of completed dates
+  // Completed Dates logic
   useEffect(() => {
     const all = getAllProgress();
     const solvedSet = new Set<string>();
@@ -158,13 +147,11 @@ export const NeonProtocol: React.FC = () => {
   const [currentGuess, setCurrentGuess] = useState<(number | null)[]>([]);
   const [usedClues, setUsedClues] = useState<Set<string>>(new Set());
   
-  // Stats
   const [timeSpent, setTimeSpent] = useState(0);
   const [errors, setErrors] = useState(0);
   const [isLevelCompleted, setIsLevelCompleted] = useState(false);
   const [timerActive, setTimerActive] = useState(false);
   
-  // UI State
   const [showResult, setShowResult] = useState(false);
   const [copyFeedback, setCopyFeedback] = useState(false);
   const [validationResult, setValidationResult] = useState<'CORRECT' | 'WRONG' | null>(null);
@@ -220,6 +207,7 @@ export const NeonProtocol: React.FC = () => {
             return clue;
         });
 
+        // Use codeLength from JSON, default to 3
         const validCodeLength = rawData.codeLength || rawData.solution?.length || 3;
 
         const data: NeonLevel = {
@@ -231,7 +219,6 @@ export const NeonProtocol: React.FC = () => {
 
         setLevel(data);
 
-        // --- RESTORE SAVE ---
         if (saved) {
           setEliminations(saved.eliminations);
           setCurrentGuess(saved.currentGuess);
@@ -248,7 +235,7 @@ export const NeonProtocol: React.FC = () => {
              setValidationResult(null);
           }
         } else {
-          // New Game / No Save
+          // Dynamic initialization based on codeLength
           const cols = data.codeLength;
           const emptyElims = Array(cols).fill(null).map(() => Array(6).fill(false));
           setEliminations(emptyElims);
@@ -288,11 +275,9 @@ export const NeonProtocol: React.FC = () => {
   }, [eliminations, currentGuess, timeSpent, errors, isLevelCompleted, usedClues, gameStarted]);
 
   // --- HANDLERS ---
-  
   const handleStartGame = () => {
     const allProgress = getAllProgress();
     const saved = allProgress[dateKey];
-
     if (saved && saved.isCompleted) {
         setIsLevelCompleted(true);
         setValidationResult('CORRECT');
@@ -362,17 +347,21 @@ export const NeonProtocol: React.FC = () => {
 
   const handleRestart = () => {
      if (!level || isLevelCompleted) return;
+     if (confirm("Are you sure you want to restart? This will clear your notes.")) {
         const cols = level.codeLength;
         setEliminations(Array(cols).fill(null).map(() => Array(6).fill(false)));
         setCurrentGuess(Array(cols).fill(null));
+        setErrors(0);
+        setTimeSpent(0);
         setUsedClues(new Set());
         setTimerActive(true);
+     }
   };
 
   const handleShare = async () => {
     const minutes = Math.floor(timeSpent / 60);
     const seconds = (timeSpent % 60).toString().padStart(2, '0');
-    const summary = `Neon Protocol 🤖\n📅 ${targetDate.toDateString()}\nMode: ${level?.mode}\n✅ Cracked in ${minutes}:${seconds}\n🛑 Errors: ${errors}`;
+    const summary = `Neon Protocol 🤖\n📅 ${targetDate.toLocaleDateString()}\nMode: ${level?.mode}\n✅ Cracked in ${minutes}:${seconds}\n🛑 Errors: ${errors}`;
     
     try {
       await navigator.clipboard.writeText(summary);
@@ -383,8 +372,9 @@ export const NeonProtocol: React.FC = () => {
 
   const getColLabel = (idx: number) => String.fromCharCode(65 + idx);
 
+  // UPDATED: Regex now matches [A-E]
   const formatClueText = (text: string) => {
-    let formatted = text.replace(/\b([A-D])\b/g, (match) => {
+    let formatted = text.replace(/\b([A-E])\b/g, (match) => {
         return `<strong style="color: ${LETTER_COLORS[match]}">${match}</strong>`;
     });
     formatted = formatted.replace(/\b(NOT|OR|AND|EITHER)\b/g, '<strong style="color:#ff6b6b">$1</strong>');
@@ -397,8 +387,7 @@ export const NeonProtocol: React.FC = () => {
 
   return (
     <div className="game-container neon-container">
-      
-      {/* START OVERLAY */}
+
       {!gameStarted && !isLevelCompleted && (
         <div className="game-start-overlay">
           <h1 className="game-title-neon">NEON PROTOCOL</h1>
@@ -413,7 +402,6 @@ export const NeonProtocol: React.FC = () => {
             </button>
           </div>
 
-          {/* CALENDAR MODAL */}
           {showCalendar && (
             <CustomCalendar 
                 currentDate={targetDate} 
@@ -525,7 +513,7 @@ export const NeonProtocol: React.FC = () => {
         </div>
       </div>
 
-      {/* FOOTER ACTIONS */}
+      {/* FOOTER & RULES (unchanged from previous step, but included for completeness) */}
       {gameStarted && (
         <div className="game-controls-container">
            {isLevelCompleted && (
@@ -572,7 +560,8 @@ export const NeonProtocol: React.FC = () => {
         <div className="rules-box">
             <h3>📋 Protocol Rules</h3>
             <ul>
-                <li>The code consists of 3 or 4 digits (A, B, C, D), each between 1 and 5.</li>
+                {/* UPDATED RULE TEXT */}
+                <li>The code consists of <strong>3, 4, or 5 digits</strong> (A, B, C, D, E), each between 1 and 5.</li>
                 <li><strong>Columns:</strong> A is the 1st digit, B is 2nd, etc.</li>
                 <li><strong style={{color: '#4caf50'}}>STANDARD MODE:</strong> All clues provided are TRUE facts.</li>
                 <li>

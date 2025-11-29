@@ -1,9 +1,0 @@
-{
-  "solution": [1, 2, 3, 4],
-  "mode": "standard",
-  "clues": [
-    "The sum of B + D is Even",
-    "B is less than 3",
-    "The numbers are in ascending order"
-  ]
-}
