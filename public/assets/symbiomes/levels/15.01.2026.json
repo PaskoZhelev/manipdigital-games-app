@@ -1,82 +1,13 @@
 {
-  "difficulty": "hard",
-  "grid": [
-    [
-      {"terrain": "mud", "object": "none"},
-      {"terrain": "sand", "object": "ruin"},
-      {"terrain": "grass", "object": "none"}
-    ],
-    [
-      {"terrain": "water", "object": "none"},
-      {"terrain": "mud", "object": "none"},
-      {"terrain": "sand", "object": "ruin"}
-    ],
-    [
-      {"terrain": "grass", "object": "none"},
-      {"terrain": "water", "object": "none"},
-      {"terrain": "water", "object": "none"}
-    ]
-  ],
-  "animals": [
-    "fox",
-    "monkey",
-    "frog",
-    "rabbit",
-    "elephant"
-  ],
+  "solution": [5, 5, 1, 4],
+  "codeLength": 4,
+  "mode": "glitched",
   "clues": [
-    {
-      "id": 1,
-      "description": "Frog is in Row 2",
-      "complexity": 2
-    },
-    {
-      "id": 2,
-      "description": "Monkey is in Column B",
-      "complexity": 2
-    },
-    {
-      "id": 3,
-      "description": "Elephant is in Column B",
-      "complexity": 2
-    },
-    {
-      "id": 4,
-      "description": "Rabbit is on WATER OR GRASS",
-      "complexity": 4
-    },
-    {
-      "id": 5,
-      "description": "Rabbit is NOT adjacent to Fox",
-      "complexity": 3
-    },
-    {
-      "id": 6,
-      "description": "There are exactly 2 animal(s) on spaces with Objects",
-      "complexity": 5
-    },
-    {
-      "id": 7,
-      "description": "Frog is NOT adjacent to Rabbit",
-      "complexity": 3
-    },
-    {
-      "id": 8,
-      "description": "There are exactly 3 animal(s) on WATER",
-      "complexity": 5
-    },
-    {
-      "id": 9,
-      "description": "Monkey is adjacent to Fox",
-      "complexity": 4
-    }
-  ],
-  "solution": {
-    "frog": {"row": 2, "column": "C"},
-    "monkey": {"row": 3, "column": "B"},
-    "elephant": {"row": 1, "column": "B"},
-    "rabbit": {"row": 2, "column": "A"},
-    "fox": {"row": 3, "column": "C"}
-  }
+    "The sum of B + D is greater than 7",
+    "The sum of all numbers is 15",
+    "B is NOT equal to D",
+    "The code contains exactly 4 - 2's",
+    "A is greater than D",
+    "The code does NOT contain the number 3"
+  ]
 }
-

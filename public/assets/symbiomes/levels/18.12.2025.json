@@ -1,87 +1,13 @@
 {
-  "difficulty": "hard",
-  "grid": [
-    [
-      {"terrain": "mud", "object": "none"},
-      {"terrain": "water", "object": "none"},
-      {"terrain": "grass", "object": "tree"}
-    ],
-    [
-      {"terrain": "grass", "object": "none"},
-      {"terrain": "grass", "object": "tree"},
-      {"terrain": "mud", "object": "none"}
-    ],
-    [
-      {"terrain": "mud", "object": "none"},
-      {"terrain": "grass", "object": "none"},
-      {"terrain": "mud", "object": "none"}
-    ]
-  ],
-  "animals": [
-    "fox",
-    "monkey",
-    "frog",
-    "rabbit",
-    "elephant"
-  ],
+  "solution": [4, 2, 4, 3],
+  "codeLength": 4,
+  "mode": "standard",
   "clues": [
-    {
-      "id": 1,
-      "description": "There are exactly 2 animal(s) on GRASS",
-      "complexity": 5
-    },
-    {
-      "id": 2,
-      "description": "Elephant is in Row 3",
-      "complexity": 2
-    },
-    {
-      "id": 3,
-      "description": "Elephant is in Column C",
-      "complexity": 2
-    },
-    {
-      "id": 4,
-      "description": "Monkey is NOT adjacent to any animal on WATER",
-      "complexity": 5
-    },
-    {
-      "id": 5,
-      "description": "Frog is in Row 2",
-      "complexity": 2
-    },
-    {
-      "id": 6,
-      "description": "Fox is on MUD",
-      "complexity": 1
-    },
-    {
-      "id": 7,
-      "description": "Rabbit is on WATER",
-      "complexity": 1
-    },
-    {
-      "id": 8,
-      "description": "Rabbit is adjacent to Fox",
-      "complexity": 4
-    },
-    {
-      "id": 9,
-      "description": "Monkey is in Row 3 OR Row 1",
-      "complexity": 4
-    },
-    {
-      "id": 10,
-      "description": "Frog is NOT adjacent to Fox",
-      "complexity": 3
-    }
-  ],
-  "solution": {
-    "frog": {"row": 2, "column": "B"},
-    "monkey": {"row": 3, "column": "B"},
-    "elephant": {"row": 3, "column": "C"},
-    "rabbit": {"row": 1, "column": "B"},
-    "fox": {"row": 1, "column": "A"}
-  }
+    "A is greater than 3",
+    "The sum of A + B is less than 7",
+    "The code contains exactly 1 - 3",
+    "C is greater than 2",
+    "The sum of B + C is Even",
+    "The range (Max - Min) is exactly 2"
+  ]
 }
-

@@ -1,77 +1,14 @@
 {
-  "difficulty": "hard",
-  "grid": [
-    [
-      {"terrain": "mud", "object": "none"},
-      {"terrain": "mud", "object": "none"},
-      {"terrain": "grass", "object": "none"}
-    ],
-    [
-      {"terrain": "sand", "object": "ruin"},
-      {"terrain": "water", "object": "none"},
-      {"terrain": "sand", "object": "none"}
-    ],
-    [
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "mud", "object": "none"},
-      {"terrain": "water", "object": "none"}
-    ]
-  ],
-  "animals": [
-    "fox",
-    "monkey",
-    "frog",
-    "rabbit",
-    "elephant"
-  ],
+  "solution": [1, 5, 5, 3],
+  "codeLength": 4,
+  "mode": "glitched",
   "clues": [
-    {
-      "id": 1,
-      "description": "Monkey is on a space with a RUIN",
-      "complexity": 2
-    },
-    {
-      "id": 2,
-      "description": "Elephant is adjacent to Fox",
-      "complexity": 4
-    },
-    {
-      "id": 3,
-      "description": "Frog is in Column B",
-      "complexity": 2
-    },
-    {
-      "id": 4,
-      "description": "There are exactly 2 animal(s) on MUD",
-      "complexity": 5
-    },
-    {
-      "id": 5,
-      "description": "Rabbit is in Row 1",
-      "complexity": 2
-    },
-    {
-      "id": 6,
-      "description": "Fox is in Column C",
-      "complexity": 2
-    },
-    {
-      "id": 7,
-      "description": "Elephant is in the same column as Rabbit",
-      "complexity": 3
-    },
-    {
-      "id": 8,
-      "description": "Fox is on WATER",
-      "complexity": 1
-    }
-  ],
-  "solution": {
-    "frog": {"row": 2, "column": "B"},
-    "monkey": {"row": 2, "column": "A"},
-    "elephant": {"row": 3, "column": "B"},
-    "rabbit": {"row": 1, "column": "B"},
-    "fox": {"row": 3, "column": "C"}
-  }
+    "The code contains exactly 2 - 3's",
+    "The sum of B + D is greater than 7",
+    "A and D are both Odd",
+    "The sum of A + C is 6",
+    "A is less than D",
+    "B equals C",
+    "C is greater than D"
+  ]
 }
-

@@ -1,82 +1,14 @@
 {
-  "difficulty": "hard",
-  "grid": [
-    [
-      {"terrain": "water", "object": "none"},
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "sand", "object": "none"}
-    ],
-    [
-      {"terrain": "mud", "object": "none"},
-      {"terrain": "water", "object": "none"},
-      {"terrain": "grass", "object": "none"}
-    ],
-    [
-      {"terrain": "grass", "object": "none"},
-      {"terrain": "mud", "object": "tree"},
-      {"terrain": "water", "object": "none"}
-    ]
-  ],
-  "animals": [
-    "fox",
-    "monkey",
-    "frog",
-    "rabbit",
-    "elephant"
-  ],
+  "solution": [5, 3, 2, 2],
+  "codeLength": 4,
+  "mode": "glitched",
   "clues": [
-    {
-      "id": 1,
-      "description": "Monkey is NOT adjacent to Rabbit",
-      "complexity": 3
-    },
-    {
-      "id": 2,
-      "description": "Frog is in the same row as Monkey",
-      "complexity": 3
-    },
-    {
-      "id": 3,
-      "description": "Monkey is adjacent to Fox",
-      "complexity": 4
-    },
-    {
-      "id": 4,
-      "description": "Rabbit is in the same row as a TREE",
-      "complexity": 3
-    },
-    {
-      "id": 5,
-      "description": "Elephant is in the same row as Fox",
-      "complexity": 3
-    },
-    {
-      "id": 6,
-      "description": "Frog is adjacent to Monkey",
-      "complexity": 4
-    },
-    {
-      "id": 7,
-      "description": "Elephant is on MUD",
-      "complexity": 1
-    },
-    {
-      "id": 8,
-      "description": "There is exactly 1 animal(s) on MUD",
-      "complexity": 5
-    },
-    {
-      "id": 9,
-      "description": "Elephant is in Column B",
-      "complexity": 2
-    }
-  ],
-  "solution": {
-    "frog": {"row": 2, "column": "B"},
-    "monkey": {"row": 2, "column": "C"},
-    "elephant": {"row": 3, "column": "B"},
-    "rabbit": {"row": 3, "column": "A"},
-    "fox": {"row": 3, "column": "C"}
-  }
+    "The sum of C + D is a multiple of 4",
+    "The code contains at least one 5",
+    "C is less than 3",
+    "The sum of B + C is less than 7",
+    "D is NOT 3",
+    "The code contains exactly 4 - 2's",
+    "The code contains at least one 3"
+  ]
 }
-

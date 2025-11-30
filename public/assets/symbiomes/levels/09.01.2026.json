@@ -1,82 +1,15 @@
 {
-  "difficulty": "hard",
-  "grid": [
-    [
-      {"terrain": "mud", "object": "ruin"},
-      {"terrain": "mud", "object": "ruin"},
-      {"terrain": "grass", "object": "none"}
-    ],
-    [
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "water", "object": "none"},
-      {"terrain": "grass", "object": "none"}
-    ],
-    [
-      {"terrain": "mud", "object": "none"},
-      {"terrain": "grass", "object": "none"},
-      {"terrain": "grass", "object": "none"}
-    ]
-  ],
-  "animals": [
-    "fox",
-    "monkey",
-    "frog",
-    "rabbit",
-    "elephant"
-  ],
+  "solution": [5, 4, 2, 3],
+  "codeLength": 4,
+  "mode": "glitched",
   "clues": [
-    {
-      "id": 1,
-      "description": "Elephant is in Row 1",
-      "complexity": 2
-    },
-    {
-      "id": 2,
-      "description": "Rabbit is in Row 1",
-      "complexity": 2
-    },
-    {
-      "id": 3,
-      "description": "Monkey is in Row 3",
-      "complexity": 2
-    },
-    {
-      "id": 4,
-      "description": "Elephant is in Column C",
-      "complexity": 2
-    },
-    {
-      "id": 5,
-      "description": "Monkey is in Column C",
-      "complexity": 2
-    },
-    {
-      "id": 6,
-      "description": "There is exactly 1 animal(s) on SAND",
-      "complexity": 5
-    },
-    {
-      "id": 7,
-      "description": "Frog is in the same column as Fox",
-      "complexity": 3
-    },
-    {
-      "id": 8,
-      "description": "Frog is in Row 3",
-      "complexity": 2
-    },
-    {
-      "id": 9,
-      "description": "Rabbit is in the same column as Fox",
-      "complexity": 3
-    }
-  ],
-  "solution": {
-    "frog": {"row": 3, "column": "A"},
-    "monkey": {"row": 3, "column": "C"},
-    "elephant": {"row": 1, "column": "C"},
-    "rabbit": {"row": 1, "column": "A"},
-    "fox": {"row": 2, "column": "A"}
-  }
+    "The sum of C + D is less than 6",
+    "C is NOT equal to D",
+    "D is greater than 1",
+    "B and C are both Even",
+    "The range (Max - Min) is exactly 1",
+    "A is greater than 1",
+    "B is greater than 3",
+    "The range (Max - Min) is exactly 3"
+  ]
 }
-

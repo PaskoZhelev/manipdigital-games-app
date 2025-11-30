@@ -1,77 +1,14 @@
 {
-  "difficulty": "hard",
-  "grid": [
-    [
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "mud", "object": "none"},
-      {"terrain": "mud", "object": "none"}
-    ],
-    [
-      {"terrain": "water", "object": "none"},
-      {"terrain": "water", "object": "none"},
-      {"terrain": "sand", "object": "ruin"}
-    ],
-    [
-      {"terrain": "grass", "object": "none"},
-      {"terrain": "water", "object": "none"},
-      {"terrain": "mud", "object": "ruin"}
-    ]
-  ],
-  "animals": [
-    "fox",
-    "monkey",
-    "frog",
-    "rabbit",
-    "elephant"
-  ],
+  "solution": [3, 1, 4, 4],
+  "codeLength": 4,
+  "mode": "standard",
   "clues": [
-    {
-      "id": 1,
-      "description": "Elephant is adjacent to Rabbit",
-      "complexity": 4
-    },
-    {
-      "id": 2,
-      "description": "Frog is in the same row as Monkey",
-      "complexity": 3
-    },
-    {
-      "id": 3,
-      "description": "There are exactly 1 animal(s) on spaces with Objects",
-      "complexity": 5
-    },
-    {
-      "id": 4,
-      "description": "Elephant is NOT adjacent to any animal on WATER",
-      "complexity": 5
-    },
-    {
-      "id": 5,
-      "description": "Elephant is in Column A",
-      "complexity": 2
-    },
-    {
-      "id": 6,
-      "description": "Monkey is in the same column as Fox",
-      "complexity": 3
-    },
-    {
-      "id": 7,
-      "description": "Rabbit is on MUD",
-      "complexity": 1
-    },
-    {
-      "id": 8,
-      "description": "Monkey is on SAND",
-      "complexity": 1
-    }
-  ],
-  "solution": {
-    "frog": {"row": 2, "column": "B"},
-    "monkey": {"row": 2, "column": "C"},
-    "elephant": {"row": 1, "column": "A"},
-    "rabbit": {"row": 1, "column": "B"},
-    "fox": {"row": 1, "column": "C"}
-  }
+    "The sum of C + D is greater than 7",
+    "A and B are both Odd",
+    "C is less than 5",
+    "A is NOT 1",
+    "The sum A + C + D is Odd",
+    "B is less than 3",
+    "A is less than C"
+  ]
 }
-

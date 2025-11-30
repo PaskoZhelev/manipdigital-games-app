@@ -1,82 +1,13 @@
 {
-  "difficulty": "hard",
-  "grid": [
-    [
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "water", "object": "none"},
-      {"terrain": "grass", "object": "none"}
-    ],
-    [
-      {"terrain": "water", "object": "none"},
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "water", "object": "none"}
-    ],
-    [
-      {"terrain": "grass", "object": "none"},
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "mud", "object": "tree"}
-    ]
-  ],
-  "animals": [
-    "fox",
-    "monkey",
-    "frog",
-    "rabbit",
-    "elephant"
-  ],
+  "solution": [2, 1, 5, 1],
+  "codeLength": 4,
+  "mode": "standard",
   "clues": [
-    {
-      "id": 1,
-      "description": "Elephant is in Column A",
-      "complexity": 2
-    },
-    {
-      "id": 2,
-      "description": "Fox is in Column C",
-      "complexity": 2
-    },
-    {
-      "id": 3,
-      "description": "Frog is adjacent to Rabbit",
-      "complexity": 4
-    },
-    {
-      "id": 4,
-      "description": "Rabbit is in Column B",
-      "complexity": 2
-    },
-    {
-      "id": 5,
-      "description": "Monkey is in Column B",
-      "complexity": 2
-    },
-    {
-      "id": 6,
-      "description": "Elephant is in Row 1",
-      "complexity": 2
-    },
-    {
-      "id": 7,
-      "description": "Monkey is in Row 1",
-      "complexity": 2
-    },
-    {
-      "id": 8,
-      "description": "Frog is on MUD",
-      "complexity": 1
-    },
-    {
-      "id": 9,
-      "description": "Monkey is adjacent to Fox",
-      "complexity": 4
-    }
-  ],
-  "solution": {
-    "frog": {"row": 3, "column": "C"},
-    "monkey": {"row": 1, "column": "B"},
-    "elephant": {"row": 1, "column": "A"},
-    "rabbit": {"row": 3, "column": "B"},
-    "fox": {"row": 1, "column": "C"}
-  }
+    "C and D are both Odd",
+    "C is NOT 1",
+    "B equals D",
+    "The code contains at least one 2",
+    "D is less than 3",
+    "The code does NOT contain the number 3"
+  ]
 }
-

@@ -1,82 +1,14 @@
 {
-  "difficulty": "hard",
-  "grid": [
-    [
-      {"terrain": "grass", "object": "none"},
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "grass", "object": "none"}
-    ],
-    [
-      {"terrain": "water", "object": "none"},
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "sand", "object": "none"}
-    ],
-    [
-      {"terrain": "sand", "object": "ruin"},
-      {"terrain": "water", "object": "none"},
-      {"terrain": "sand", "object": "none"}
-    ]
-  ],
-  "animals": [
-    "fox",
-    "monkey",
-    "frog",
-    "rabbit",
-    "elephant"
-  ],
+  "solution": [2, 2, 4, 5],
+  "codeLength": 4,
+  "mode": "standard",
   "clues": [
-    {
-      "id": 1,
-      "description": "Elephant is NOT adjacent to Rabbit",
-      "complexity": 3
-    },
-    {
-      "id": 2,
-      "description": "Frog is in the same row as Fox",
-      "complexity": 3
-    },
-    {
-      "id": 3,
-      "description": "Elephant is on SAND",
-      "complexity": 1
-    },
-    {
-      "id": 4,
-      "description": "Monkey is adjacent to Fox",
-      "complexity": 4
-    },
-    {
-      "id": 5,
-      "description": "Frog is adjacent to Rabbit",
-      "complexity": 4
-    },
-    {
-      "id": 6,
-      "description": "Monkey is in Column B",
-      "complexity": 2
-    },
-    {
-      "id": 7,
-      "description": "Frog is on a space with a RUIN",
-      "complexity": 2
-    },
-    {
-      "id": 8,
-      "description": "Frog is in the same row as Elephant",
-      "complexity": 3
-    },
-    {
-      "id": 9,
-      "description": "Monkey is adjacent to Rabbit",
-      "complexity": 4
-    }
-  ],
-  "solution": {
-    "frog": {"row": 3, "column": "A"},
-    "monkey": {"row": 2, "column": "B"},
-    "elephant": {"row": 3, "column": "C"},
-    "rabbit": {"row": 2, "column": "A"},
-    "fox": {"row": 3, "column": "B"}
-  }
+    "A is less than 3",
+    "The sum of B + C is 6",
+    "D is greater than 1",
+    "D is NOT 4",
+    "The sum of A + B is Even",
+    "B is less than 4",
+    "The range (Max - Min) is exactly 3"
+  ]
 }
-

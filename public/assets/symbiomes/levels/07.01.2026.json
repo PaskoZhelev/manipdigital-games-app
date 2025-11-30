@@ -1,87 +1,17 @@
 {
-  "difficulty": "hard",
-  "grid": [
-    [
-      {"terrain": "grass", "object": "none"},
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "grass", "object": "none"}
-    ],
-    [
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "mud", "object": "none"},
-      {"terrain": "sand", "object": "none"}
-    ],
-    [
-      {"terrain": "water", "object": "none"},
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "water", "object": "none"}
-    ]
-  ],
-  "animals": [
-    "fox",
-    "monkey",
-    "frog",
-    "rabbit",
-    "elephant"
-  ],
+  "solution": [2, 1, 4, 1],
+  "codeLength": 4,
+  "mode": "glitched",
   "clues": [
-    {
-      "id": 1,
-      "description": "Rabbit is in Column A",
-      "complexity": 2
-    },
-    {
-      "id": 2,
-      "description": "Monkey is in Row 3",
-      "complexity": 2
-    },
-    {
-      "id": 3,
-      "description": "Elephant is in the same column as Fox",
-      "complexity": 3
-    },
-    {
-      "id": 4,
-      "description": "Monkey is in Column C",
-      "complexity": 2
-    },
-    {
-      "id": 5,
-      "description": "Monkey is in the same row as Fox",
-      "complexity": 3
-    },
-    {
-      "id": 6,
-      "description": "There is exactly 1 animal(s) on SAND",
-      "complexity": 5
-    },
-    {
-      "id": 7,
-      "description": "Rabbit is adjacent to Fox",
-      "complexity": 4
-    },
-    {
-      "id": 8,
-      "description": "Fox is on SAND",
-      "complexity": 1
-    },
-    {
-      "id": 9,
-      "description": "Frog is in the same column as Monkey",
-      "complexity": 3
-    },
-    {
-      "id": 10,
-      "description": "Frog is on GRASS",
-      "complexity": 1
-    }
-  ],
-  "solution": {
-    "frog": {"row": 1, "column": "C"},
-    "monkey": {"row": 3, "column": "C"},
-    "elephant": {"row": 2, "column": "B"},
-    "rabbit": {"row": 3, "column": "A"},
-    "fox": {"row": 3, "column": "B"}
-  }
+    "D is NOT 2",
+    "A is greater than B",
+    "The largest number in the code is 4",
+    "D is NOT 4",
+    "A is less than C",
+    "The sum of A + B is a multiple of 3",
+    "The range (Max - Min) is exactly 3",
+    "The sum B + C + D is Odd",
+    "B is NOT equal to C",
+    "The sum of A + D is 3"
+  ]
 }
-

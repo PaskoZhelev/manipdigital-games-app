@@ -1,87 +1,14 @@
 {
-  "difficulty": "hard",
-  "grid": [
-    [
-      {"terrain": "mud", "object": "none"},
-      {"terrain": "water", "object": "none"},
-      {"terrain": "sand", "object": "none"}
-    ],
-    [
-      {"terrain": "water", "object": "none"},
-      {"terrain": "mud", "object": "none"},
-      {"terrain": "mud", "object": "none"}
-    ],
-    [
-      {"terrain": "mud", "object": "none"},
-      {"terrain": "grass", "object": "none"},
-      {"terrain": "water", "object": "none"}
-    ]
-  ],
-  "animals": [
-    "fox",
-    "monkey",
-    "frog",
-    "rabbit",
-    "elephant"
-  ],
+  "solution": [4, 3, 3, 2],
+  "codeLength": 4,
+  "mode": "glitched",
   "clues": [
-    {
-      "id": 1,
-      "description": "Rabbit is NOT adjacent to Fox",
-      "complexity": 3
-    },
-    {
-      "id": 2,
-      "description": "Frog is in Row 2",
-      "complexity": 2
-    },
-    {
-      "id": 3,
-      "description": "Monkey is in Row 3",
-      "complexity": 2
-    },
-    {
-      "id": 4,
-      "description": "Frog is adjacent to Fox",
-      "complexity": 4
-    },
-    {
-      "id": 5,
-      "description": "Elephant is adjacent to Fox",
-      "complexity": 4
-    },
-    {
-      "id": 6,
-      "description": "Elephant is in Row 1 OR Row 2",
-      "complexity": 4
-    },
-    {
-      "id": 7,
-      "description": "Frog is in the same column as Monkey",
-      "complexity": 3
-    },
-    {
-      "id": 8,
-      "description": "There is exactly 1 animal(s) on WATER",
-      "complexity": 5
-    },
-    {
-      "id": 9,
-      "description": "Elephant is in the same column as Fox",
-      "complexity": 3
-    },
-    {
-      "id": 10,
-      "description": "Elephant is NOT adjacent to any animal on WATER",
-      "complexity": 5
-    }
-  ],
-  "solution": {
-    "frog": {"row": 2, "column": "B"},
-    "monkey": {"row": 3, "column": "B"},
-    "elephant": {"row": 1, "column": "C"},
-    "rabbit": {"row": 2, "column": "A"},
-    "fox": {"row": 2, "column": "C"}
-  }
+    "A is greater than D",
+    "A is greater than C",
+    "C is greater than D",
+    "The sum of all numbers is 12",
+    "A is less than 3",
+    "The code does NOT contain the number 5",
+    "The sum of A + B is less than 8"
+  ]
 }
-

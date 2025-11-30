@@ -1,87 +1,14 @@
 {
-  "difficulty": "hard",
-  "grid": [
-    [
-      {"terrain": "mud", "object": "ruin"},
-      {"terrain": "grass", "object": "tree"},
-      {"terrain": "water", "object": "none"}
-    ],
-    [
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "water", "object": "none"},
-      {"terrain": "grass", "object": "none"}
-    ],
-    [
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "mud", "object": "none"},
-      {"terrain": "water", "object": "none"}
-    ]
-  ],
-  "animals": [
-    "fox",
-    "monkey",
-    "frog",
-    "rabbit",
-    "elephant"
-  ],
+  "solution": [1, 4, 5, 3],
+  "codeLength": 4,
+  "mode": "glitched",
   "clues": [
-    {
-      "id": 1,
-      "description": "Monkey is in Column A",
-      "complexity": 2
-    },
-    {
-      "id": 2,
-      "description": "Frog is adjacent to Elephant",
-      "complexity": 4
-    },
-    {
-      "id": 3,
-      "description": "There are exactly 2 animal(s) on WATER",
-      "complexity": 5
-    },
-    {
-      "id": 4,
-      "description": "Rabbit is on WATER OR GRASS",
-      "complexity": 4
-    },
-    {
-      "id": 5,
-      "description": "Rabbit is NOT adjacent to Fox",
-      "complexity": 3
-    },
-    {
-      "id": 6,
-      "description": "Fox is adjacent to a TREE",
-      "complexity": 3
-    },
-    {
-      "id": 7,
-      "description": "Frog is in the same column as Fox",
-      "complexity": 3
-    },
-    {
-      "id": 8,
-      "description": "Monkey is in the same row as Fox",
-      "complexity": 3
-    },
-    {
-      "id": 9,
-      "description": "Frog is NOT adjacent to Rabbit",
-      "complexity": 3
-    },
-    {
-      "id": 10,
-      "description": "Elephant is in Row 3",
-      "complexity": 2
-    }
-  ],
-  "solution": {
-    "frog": {"row": 3, "column": "B"},
-    "monkey": {"row": 2, "column": "A"},
-    "elephant": {"row": 3, "column": "A"},
-    "rabbit": {"row": 1, "column": "C"},
-    "fox": {"row": 2, "column": "B"}
-  }
+    "The sum of A + B is 5",
+    "A is NOT 2",
+    "All numbers are different",
+    "B is greater than 2",
+    "The sum of C + D is greater than 7",
+    "The code does NOT contain the number 4",
+    "C is greater than 3"
+  ]
 }
-

@@ -1,77 +1,13 @@
 {
-  "difficulty": "hard",
-  "grid": [
-    [
-      {"terrain": "water", "object": "none"},
-      {"terrain": "mud", "object": "ruin"},
-      {"terrain": "sand", "object": "none"}
-    ],
-    [
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "grass", "object": "none"},
-      {"terrain": "grass", "object": "none"}
-    ],
-    [
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "mud", "object": "tree"},
-      {"terrain": "mud", "object": "none"}
-    ]
-  ],
-  "animals": [
-    "fox",
-    "monkey",
-    "frog",
-    "rabbit",
-    "elephant"
-  ],
+  "solution": [2, 3, 3, 3],
+  "codeLength": 4,
+  "mode": "standard",
   "clues": [
-    {
-      "id": 1,
-      "description": "Elephant is on MUD",
-      "complexity": 1
-    },
-    {
-      "id": 2,
-      "description": "There are exactly 2 animal(s) on SAND",
-      "complexity": 5
-    },
-    {
-      "id": 3,
-      "description": "Fox is on a space with a TREE",
-      "complexity": 2
-    },
-    {
-      "id": 4,
-      "description": "Frog is in Row 2",
-      "complexity": 2
-    },
-    {
-      "id": 5,
-      "description": "Monkey is NOT adjacent to Rabbit",
-      "complexity": 3
-    },
-    {
-      "id": 6,
-      "description": "Elephant is adjacent to Fox",
-      "complexity": 4
-    },
-    {
-      "id": 7,
-      "description": "Rabbit is on GRASS",
-      "complexity": 1
-    },
-    {
-      "id": 8,
-      "description": "Monkey is in Column C",
-      "complexity": 2
-    }
-  ],
-  "solution": {
-    "frog": {"row": 2, "column": "A"},
-    "monkey": {"row": 1, "column": "C"},
-    "elephant": {"row": 3, "column": "C"},
-    "rabbit": {"row": 2, "column": "B"},
-    "fox": {"row": 3, "column": "B"}
-  }
+    "C is NOT 2",
+    "The sum A + B + D is Even",
+    "The sum of B + D is a multiple of 3",
+    "B equals D",
+    "A is less than 4",
+    "The range (Max - Min) is exactly 1"
+  ]
 }
-

@@ -1,82 +1,13 @@
 {
-  "difficulty": "hard",
-  "grid": [
-    [
-      {"terrain": "grass", "object": "none"},
-      {"terrain": "water", "object": "none"},
-      {"terrain": "sand", "object": "none"}
-    ],
-    [
-      {"terrain": "mud", "object": "none"},
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "mud", "object": "none"}
-    ],
-    [
-      {"terrain": "sand", "object": "ruin"},
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "sand", "object": "none"}
-    ]
-  ],
-  "animals": [
-    "fox",
-    "monkey",
-    "frog",
-    "rabbit",
-    "elephant"
-  ],
+  "solution": [5, 3, 2, 3],
+  "codeLength": 4,
+  "mode": "standard",
   "clues": [
-    {
-      "id": 1,
-      "description": "Fox is in Column A",
-      "complexity": 2
-    },
-    {
-      "id": 2,
-      "description": "Frog is in the same column as Rabbit",
-      "complexity": 3
-    },
-    {
-      "id": 3,
-      "description": "Elephant is on WATER OR GRASS",
-      "complexity": 4
-    },
-    {
-      "id": 4,
-      "description": "There are exactly 2 animal(s) on MUD",
-      "complexity": 5
-    },
-    {
-      "id": 5,
-      "description": "Rabbit is in the same row as Fox",
-      "complexity": 3
-    },
-    {
-      "id": 6,
-      "description": "Frog is in the same column as Elephant",
-      "complexity": 3
-    },
-    {
-      "id": 7,
-      "description": "Frog is in Row 3 OR Row 1",
-      "complexity": 4
-    },
-    {
-      "id": 8,
-      "description": "Monkey is in Column C",
-      "complexity": 2
-    },
-    {
-      "id": 9,
-      "description": "There is exactly 1 animal(s) on WATER",
-      "complexity": 5
-    }
-  ],
-  "solution": {
-    "frog": {"row": 3, "column": "B"},
-    "monkey": {"row": 2, "column": "C"},
-    "elephant": {"row": 1, "column": "B"},
-    "rabbit": {"row": 2, "column": "B"},
-    "fox": {"row": 2, "column": "A"}
-  }
+    "D is NOT 5",
+    "A is greater than C",
+    "The sum of B + C is less than 7",
+    "The range (Max - Min) is exactly 3",
+    "The sum of A + B is a multiple of 4",
+    "B and D are both Odd"
+  ]
 }
-

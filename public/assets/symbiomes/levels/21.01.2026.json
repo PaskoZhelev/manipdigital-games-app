@@ -1,87 +1,13 @@
 {
-  "difficulty": "hard",
-  "grid": [
-    [
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "sand", "object": "rock"},
-      {"terrain": "grass", "object": "none"}
-    ],
-    [
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "water", "object": "none"},
-      {"terrain": "water", "object": "none"}
-    ],
-    [
-      {"terrain": "mud", "object": "none"},
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "sand", "object": "none"}
-    ]
-  ],
-  "animals": [
-    "fox",
-    "monkey",
-    "frog",
-    "rabbit",
-    "elephant"
-  ],
+  "solution": [2, 4, 4, 1],
+  "codeLength": 4,
+  "mode": "standard",
   "clues": [
-    {
-      "id": 1,
-      "description": "Monkey is on WATER",
-      "complexity": 1
-    },
-    {
-      "id": 2,
-      "description": "Frog is in the same row as Fox",
-      "complexity": 3
-    },
-    {
-      "id": 3,
-      "description": "Monkey is in Column C",
-      "complexity": 2
-    },
-    {
-      "id": 4,
-      "description": "Elephant is in Column C",
-      "complexity": 2
-    },
-    {
-      "id": 5,
-      "description": "Frog is in Column C",
-      "complexity": 2
-    },
-    {
-      "id": 6,
-      "description": "Monkey is NOT adjacent to Fox",
-      "complexity": 3
-    },
-    {
-      "id": 7,
-      "description": "Rabbit is in Column B",
-      "complexity": 2
-    },
-    {
-      "id": 8,
-      "description": "Rabbit is in Row 1 OR Row 2",
-      "complexity": 4
-    },
-    {
-      "id": 9,
-      "description": "There are exactly 3 animal(s) on SAND",
-      "complexity": 5
-    },
-    {
-      "id": 10,
-      "description": "Elephant is adjacent to Rabbit",
-      "complexity": 4
-    }
-  ],
-  "solution": {
-    "frog": {"row": 3, "column": "C"},
-    "monkey": {"row": 2, "column": "C"},
-    "elephant": {"row": 1, "column": "C"},
-    "rabbit": {"row": 1, "column": "B"},
-    "fox": {"row": 3, "column": "B"}
-  }
+    "The code does NOT contain the number 5",
+    "The sum of B + C is 8",
+    "The code contains exactly 2 - 4's",
+    "The sum of A + C is 6",
+    "The code contains exactly 1 - 2",
+    "D is NOT 3"
+  ]
 }
-

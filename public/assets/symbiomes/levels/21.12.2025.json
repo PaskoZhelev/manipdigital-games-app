@@ -1,87 +1,13 @@
 {
-  "difficulty": "hard",
-  "grid": [
-    [
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "mud", "object": "rock"},
-      {"terrain": "mud", "object": "none"}
-    ],
-    [
-      {"terrain": "mud", "object": "none"},
-      {"terrain": "water", "object": "none"},
-      {"terrain": "grass", "object": "rock"}
-    ],
-    [
-      {"terrain": "mud", "object": "none"},
-      {"terrain": "grass", "object": "none"},
-      {"terrain": "grass", "object": "none"}
-    ]
-  ],
-  "animals": [
-    "fox",
-    "monkey",
-    "frog",
-    "rabbit",
-    "elephant"
-  ],
+  "solution": [1, 5, 1, 4],
+  "codeLength": 4,
+  "mode": "standard",
   "clues": [
-    {
-      "id": 1,
-      "description": "There is exactly 1 animal(s) on MUD",
-      "complexity": 5
-    },
-    {
-      "id": 2,
-      "description": "Rabbit is in Column B",
-      "complexity": 2
-    },
-    {
-      "id": 3,
-      "description": "Rabbit is in Row 2",
-      "complexity": 2
-    },
-    {
-      "id": 4,
-      "description": "Frog is on MUD",
-      "complexity": 1
-    },
-    {
-      "id": 5,
-      "description": "Fox is in Row 3",
-      "complexity": 2
-    },
-    {
-      "id": 6,
-      "description": "Monkey is adjacent to Rabbit",
-      "complexity": 4
-    },
-    {
-      "id": 7,
-      "description": "There is exactly 1 animal(s) on SAND",
-      "complexity": 5
-    },
-    {
-      "id": 8,
-      "description": "Monkey is in Row 3 OR Row 1",
-      "complexity": 4
-    },
-    {
-      "id": 9,
-      "description": "Fox is NOT adjacent to any animal on WATER",
-      "complexity": 5
-    },
-    {
-      "id": 10,
-      "description": "Frog is in the same column as Monkey",
-      "complexity": 3
-    }
-  ],
-  "solution": {
-    "frog": {"row": 1, "column": "B"},
-    "monkey": {"row": 3, "column": "B"},
-    "elephant": {"row": 1, "column": "A"},
-    "rabbit": {"row": 2, "column": "B"},
-    "fox": {"row": 3, "column": "C"}
-  }
+    "A is NOT equal to B",
+    "The sum of B + C is less than 7",
+    "The code does NOT contain the number 2",
+    "B is greater than 1",
+    "The code contains exactly 1 - 4",
+    "The sum of A + B is 6"
+  ]
 }
-

@@ -1,87 +1,16 @@
 {
-  "difficulty": "hard",
-  "grid": [
-    [
-      {"terrain": "mud", "object": "none"},
-      {"terrain": "water", "object": "none"},
-      {"terrain": "grass", "object": "none"}
-    ],
-    [
-      {"terrain": "sand", "object": "tree"},
-      {"terrain": "mud", "object": "none"},
-      {"terrain": "sand", "object": "none"}
-    ],
-    [
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "water", "object": "none"},
-      {"terrain": "grass", "object": "none"}
-    ]
-  ],
-  "animals": [
-    "fox",
-    "monkey",
-    "frog",
-    "rabbit",
-    "elephant"
-  ],
+  "solution": [3, 4, 4, 1],
+  "codeLength": 4,
+  "mode": "glitched",
   "clues": [
-    {
-      "id": 1,
-      "description": "Monkey is in Row 3",
-      "complexity": 2
-    },
-    {
-      "id": 2,
-      "description": "Elephant is in Row 1",
-      "complexity": 2
-    },
-    {
-      "id": 3,
-      "description": "There are exactly 1 animal(s) on spaces with Objects",
-      "complexity": 5
-    },
-    {
-      "id": 4,
-      "description": "Fox is in Column B",
-      "complexity": 2
-    },
-    {
-      "id": 5,
-      "description": "Monkey is in the same column as Elephant",
-      "complexity": 3
-    },
-    {
-      "id": 6,
-      "description": "There is exactly 1 animal(s) on SAND",
-      "complexity": 5
-    },
-    {
-      "id": 7,
-      "description": "Frog is in the same column as Rabbit",
-      "complexity": 3
-    },
-    {
-      "id": 8,
-      "description": "Rabbit is NOT adjacent to Fox",
-      "complexity": 3
-    },
-    {
-      "id": 9,
-      "description": "Fox is in the same row as a TREE",
-      "complexity": 3
-    },
-    {
-      "id": 10,
-      "description": "Elephant is NOT adjacent to Rabbit",
-      "complexity": 3
-    }
-  ],
-  "solution": {
-    "frog": {"row": 2, "column": "A"},
-    "monkey": {"row": 3, "column": "C"},
-    "elephant": {"row": 1, "column": "C"},
-    "rabbit": {"row": 1, "column": "A"},
-    "fox": {"row": 2, "column": "B"}
-  }
+    "B is greater than C",
+    "The code contains NO 2's",
+    "A is NOT 1",
+    "The sum of A + C is less than 8",
+    "The sum of A + B is less than 9",
+    "The range (Max - Min) is exactly 3",
+    "B is greater than D",
+    "The sum of C + D is greater than 4",
+    "B and C are both Even"
+  ]
 }
-

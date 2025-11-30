@@ -1,87 +1,15 @@
 {
-  "difficulty": "hard",
-  "grid": [
-    [
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "grass", "object": "rock"},
-      {"terrain": "mud", "object": "tree"}
-    ],
-    [
-      {"terrain": "mud", "object": "none"},
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "grass", "object": "none"}
-    ],
-    [
-      {"terrain": "grass", "object": "none"},
-      {"terrain": "grass", "object": "none"},
-      {"terrain": "sand", "object": "none"}
-    ]
-  ],
-  "animals": [
-    "fox",
-    "monkey",
-    "frog",
-    "rabbit",
-    "elephant"
-  ],
+  "solution": [4, 3, 5, 4],
+  "codeLength": 4,
+  "mode": "glitched",
   "clues": [
-    {
-      "id": 1,
-      "description": "Frog is on MUD",
-      "complexity": 1
-    },
-    {
-      "id": 2,
-      "description": "Fox is on GRASS",
-      "complexity": 1
-    },
-    {
-      "id": 3,
-      "description": "Monkey is in Row 3",
-      "complexity": 2
-    },
-    {
-      "id": 4,
-      "description": "Elephant is on GRASS",
-      "complexity": 1
-    },
-    {
-      "id": 5,
-      "description": "Fox is in Row 2",
-      "complexity": 2
-    },
-    {
-      "id": 6,
-      "description": "There are exactly 1 animal(s) on spaces with Objects",
-      "complexity": 5
-    },
-    {
-      "id": 7,
-      "description": "Rabbit is in a corner",
-      "complexity": 2
-    },
-    {
-      "id": 8,
-      "description": "Monkey is in Column B",
-      "complexity": 2
-    },
-    {
-      "id": 9,
-      "description": "Frog is in Row 2",
-      "complexity": 2
-    },
-    {
-      "id": 10,
-      "description": "Rabbit is on GRASS",
-      "complexity": 1
-    }
-  ],
-  "solution": {
-    "frog": {"row": 2, "column": "A"},
-    "monkey": {"row": 3, "column": "B"},
-    "elephant": {"row": 1, "column": "B"},
-    "rabbit": {"row": 3, "column": "A"},
-    "fox": {"row": 2, "column": "C"}
-  }
+    "The sum of A + B is 7",
+    "C is greater than D",
+    "B is NOT equal to D",
+    "D is greater than 3",
+    "A is NOT equal to C",
+    "A equals C",
+    "A is less than 5",
+    "B is NOT 5"
+  ]
 }
-

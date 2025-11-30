@@ -1,82 +1,15 @@
 {
-  "difficulty": "hard",
-  "grid": [
-    [
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "sand", "object": "rock"}
-    ],
-    [
-      {"terrain": "water", "object": "none"},
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "mud", "object": "none"}
-    ],
-    [
-      {"terrain": "water", "object": "none"},
-      {"terrain": "water", "object": "none"},
-      {"terrain": "sand", "object": "none"}
-    ]
-  ],
-  "animals": [
-    "fox",
-    "monkey",
-    "frog",
-    "rabbit",
-    "elephant"
-  ],
+  "solution": [1, 2, 1, 3],
+  "codeLength": 4,
+  "mode": "glitched",
   "clues": [
-    {
-      "id": 1,
-      "description": "There are exactly 1 animal(s) on spaces with Objects",
-      "complexity": 5
-    },
-    {
-      "id": 2,
-      "description": "Elephant is adjacent to Rabbit",
-      "complexity": 4
-    },
-    {
-      "id": 3,
-      "description": "Monkey is NOT adjacent to Fox",
-      "complexity": 3
-    },
-    {
-      "id": 4,
-      "description": "Rabbit is in Row 1",
-      "complexity": 2
-    },
-    {
-      "id": 5,
-      "description": "Frog is in the same column as Elephant",
-      "complexity": 3
-    },
-    {
-      "id": 6,
-      "description": "Monkey is in the same row as Elephant",
-      "complexity": 3
-    },
-    {
-      "id": 7,
-      "description": "Monkey is on a space with a ROCK",
-      "complexity": 2
-    },
-    {
-      "id": 8,
-      "description": "Frog is adjacent to Fox",
-      "complexity": 4
-    },
-    {
-      "id": 9,
-      "description": "Fox is in Column C",
-      "complexity": 2
-    }
-  ],
-  "solution": {
-    "frog": {"row": 3, "column": "B"},
-    "monkey": {"row": 1, "column": "C"},
-    "elephant": {"row": 1, "column": "B"},
-    "rabbit": {"row": 1, "column": "A"},
-    "fox": {"row": 3, "column": "C"}
-  }
+    "The sum of A + D is a multiple of 4",
+    "D is NOT 1",
+    "B is greater than C",
+    "C equals D",
+    "A is less than B",
+    "The code contains at least one 2",
+    "A and D are both Odd",
+    "The code contains exactly 2 - 1's"
+  ]
 }
-

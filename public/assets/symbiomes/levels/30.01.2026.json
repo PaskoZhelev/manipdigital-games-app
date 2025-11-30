@@ -1,82 +1,14 @@
 {
-  "difficulty": "hard",
-  "grid": [
-    [
-      {"terrain": "grass", "object": "none"},
-      {"terrain": "grass", "object": "none"},
-      {"terrain": "mud", "object": "ruin"}
-    ],
-    [
-      {"terrain": "grass", "object": "none"},
-      {"terrain": "grass", "object": "tree"},
-      {"terrain": "sand", "object": "none"}
-    ],
-    [
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "mud", "object": "none"}
-    ]
-  ],
-  "animals": [
-    "fox",
-    "monkey",
-    "frog",
-    "rabbit",
-    "elephant"
-  ],
+  "solution": [1, 2, 2, 4],
+  "codeLength": 4,
+  "mode": "glitched",
   "clues": [
-    {
-      "id": 1,
-      "description": "Rabbit is in Row 3",
-      "complexity": 2
-    },
-    {
-      "id": 2,
-      "description": "Fox is in a corner",
-      "complexity": 2
-    },
-    {
-      "id": 3,
-      "description": "Frog is in the same row as Monkey",
-      "complexity": 3
-    },
-    {
-      "id": 4,
-      "description": "Elephant is in the same column as Rabbit",
-      "complexity": 3
-    },
-    {
-      "id": 5,
-      "description": "There are exactly 2 animal(s) on MUD",
-      "complexity": 5
-    },
-    {
-      "id": 6,
-      "description": "Frog is in Column C",
-      "complexity": 2
-    },
-    {
-      "id": 7,
-      "description": "Elephant is on a space with a RUIN",
-      "complexity": 2
-    },
-    {
-      "id": 8,
-      "description": "Monkey is in Column A",
-      "complexity": 2
-    },
-    {
-      "id": 9,
-      "description": "There are exactly 2 animal(s) on GRASS",
-      "complexity": 5
-    }
-  ],
-  "solution": {
-    "frog": {"row": 2, "column": "C"},
-    "monkey": {"row": 2, "column": "A"},
-    "elephant": {"row": 1, "column": "C"},
-    "rabbit": {"row": 3, "column": "C"},
-    "fox": {"row": 1, "column": "A"}
-  }
+    "The sum of C + D is Even",
+    "C is less than D",
+    "The smallest number in the code is 1",
+    "B equals C",
+    "A and D are both Even",
+    "The sum of B + D is a multiple of 3",
+    "There is exactly 1 Odd number"
+  ]
 }
-

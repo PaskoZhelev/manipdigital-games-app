@@ -1,82 +1,14 @@
 {
-  "difficulty": "hard",
-  "grid": [
-    [
-      {"terrain": "mud", "object": "none"},
-      {"terrain": "grass", "object": "none"},
-      {"terrain": "sand", "object": "none"}
-    ],
-    [
-      {"terrain": "grass", "object": "none"},
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "mud", "object": "none"}
-    ],
-    [
-      {"terrain": "grass", "object": "none"},
-      {"terrain": "water", "object": "none"},
-      {"terrain": "grass", "object": "none"}
-    ]
-  ],
-  "animals": [
-    "fox",
-    "monkey",
-    "frog",
-    "rabbit",
-    "elephant"
-  ],
+  "solution": [3, 4, 3, 2],
+  "codeLength": 4,
+  "mode": "standard",
   "clues": [
-    {
-      "id": 1,
-      "description": "There is exactly 1 animal(s) on WATER",
-      "complexity": 5
-    },
-    {
-      "id": 2,
-      "description": "There is exactly 1 animal(s) on GRASS",
-      "complexity": 5
-    },
-    {
-      "id": 3,
-      "description": "Monkey is on GRASS OR WATER",
-      "complexity": 4
-    },
-    {
-      "id": 4,
-      "description": "Frog is in the same column as Rabbit",
-      "complexity": 3
-    },
-    {
-      "id": 5,
-      "description": "Monkey is in the same column as Fox",
-      "complexity": 3
-    },
-    {
-      "id": 6,
-      "description": "Fox is on MUD OR GRASS",
-      "complexity": 4
-    },
-    {
-      "id": 7,
-      "description": "Elephant is NOT adjacent to Fox",
-      "complexity": 3
-    },
-    {
-      "id": 8,
-      "description": "Rabbit is adjacent to Fox",
-      "complexity": 4
-    },
-    {
-      "id": 9,
-      "description": "Elephant is in a corner",
-      "complexity": 2
-    }
-  ],
-  "solution": {
-    "frog": {"row": 3, "column": "B"},
-    "monkey": {"row": 3, "column": "C"},
-    "elephant": {"row": 1, "column": "A"},
-    "rabbit": {"row": 2, "column": "B"},
-    "fox": {"row": 2, "column": "C"}
-  }
+    "The sum of A + D is less than 8",
+    "D is NOT 1",
+    "B is NOT 1",
+    "The sum of B + D is a multiple of 3",
+    "D is NOT 4",
+    "The code contains exactly 2 - 3's",
+    "B is NOT 3"
+  ]
 }
-

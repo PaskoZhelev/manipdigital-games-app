@@ -1,82 +1,17 @@
 {
-  "difficulty": "hard",
-  "grid": [
-    [
-      {"terrain": "mud", "object": "none"},
-      {"terrain": "sand", "object": "ruin"},
-      {"terrain": "mud", "object": "none"}
-    ],
-    [
-      {"terrain": "sand", "object": "none"},
-      {"terrain": "grass", "object": "none"},
-      {"terrain": "grass", "object": "none"}
-    ],
-    [
-      {"terrain": "grass", "object": "none"},
-      {"terrain": "mud", "object": "none"},
-      {"terrain": "sand", "object": "none"}
-    ]
-  ],
-  "animals": [
-    "fox",
-    "monkey",
-    "frog",
-    "rabbit",
-    "elephant"
-  ],
+  "solution": [3, 4, 3, 2],
+  "codeLength": 4,
+  "mode": "glitched",
   "clues": [
-    {
-      "id": 1,
-      "description": "Monkey is in the same row as Rabbit",
-      "complexity": 3
-    },
-    {
-      "id": 2,
-      "description": "Monkey is adjacent to Rabbit",
-      "complexity": 4
-    },
-    {
-      "id": 3,
-      "description": "Frog is in the same column as Monkey",
-      "complexity": 3
-    },
-    {
-      "id": 4,
-      "description": "Elephant is in Column C",
-      "complexity": 2
-    },
-    {
-      "id": 5,
-      "description": "Frog is in Row 1",
-      "complexity": 2
-    },
-    {
-      "id": 6,
-      "description": "Rabbit is in Row 3",
-      "complexity": 2
-    },
-    {
-      "id": 7,
-      "description": "Frog is in Column A",
-      "complexity": 2
-    },
-    {
-      "id": 8,
-      "description": "Fox is on a space with a RUIN",
-      "complexity": 2
-    },
-    {
-      "id": 9,
-      "description": "Elephant is in Row 3",
-      "complexity": 2
-    }
-  ],
-  "solution": {
-    "frog": {"row": 1, "column": "A"},
-    "monkey": {"row": 3, "column": "A"},
-    "elephant": {"row": 3, "column": "C"},
-    "rabbit": {"row": 3, "column": "B"},
-    "fox": {"row": 1, "column": "B"}
-  }
+    "B is NOT 4",
+    "The sum of B + C is greater than 6",
+    "D is less than 4",
+    "A and C are both Odd",
+    "The sum of B + D is Even",
+    "The code contains NO 1's",
+    "There are exactly 2 Even numbers",
+    "The sum of A + C is 6",
+    "D is NOT 3",
+    "The code contains exactly 1 - 2"
+  ]
 }
-

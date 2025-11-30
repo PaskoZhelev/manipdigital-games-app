@@ -1,87 +1,17 @@
 {
-  "difficulty": "hard",
-  "grid": [
-    [
-      {"terrain": "grass", "object": "none"},
-      {"terrain": "mud", "object": "tree"},
-      {"terrain": "sand", "object": "tree"}
-    ],
-    [
-      {"terrain": "grass", "object": "none"},
-      {"terrain": "water", "object": "none"},
-      {"terrain": "grass", "object": "none"}
-    ],
-    [
-      {"terrain": "grass", "object": "none"},
-      {"terrain": "grass", "object": "none"},
-      {"terrain": "water", "object": "none"}
-    ]
-  ],
-  "animals": [
-    "fox",
-    "monkey",
-    "frog",
-    "rabbit",
-    "elephant"
-  ],
+  "solution": [4, 1, 5, 3],
+  "codeLength": 4,
+  "mode": "glitched",
   "clues": [
-    {
-      "id": 1,
-      "description": "Frog is in the same column as Rabbit",
-      "complexity": 3
-    },
-    {
-      "id": 2,
-      "description": "Elephant is on a space with a TREE",
-      "complexity": 2
-    },
-    {
-      "id": 3,
-      "description": "Monkey is in Column B",
-      "complexity": 2
-    },
-    {
-      "id": 4,
-      "description": "Fox is on WATER",
-      "complexity": 1
-    },
-    {
-      "id": 5,
-      "description": "Frog is in Row 2",
-      "complexity": 2
-    },
-    {
-      "id": 6,
-      "description": "There are exactly 1 animal(s) on spaces with Objects",
-      "complexity": 5
-    },
-    {
-      "id": 7,
-      "description": "Elephant is adjacent to Rabbit",
-      "complexity": 4
-    },
-    {
-      "id": 8,
-      "description": "Elephant is in the same column as Fox",
-      "complexity": 3
-    },
-    {
-      "id": 9,
-      "description": "Elephant is in Column B",
-      "complexity": 2
-    },
-    {
-      "id": 10,
-      "description": "There is exactly 1 animal(s) on WATER",
-      "complexity": 5
-    }
-  ],
-  "solution": {
-    "frog": {"row": 2, "column": "A"},
-    "monkey": {"row": 3, "column": "B"},
-    "elephant": {"row": 1, "column": "B"},
-    "rabbit": {"row": 1, "column": "A"},
-    "fox": {"row": 2, "column": "B"}
-  }
+    "The code does NOT contain the number 2",
+    "D is NOT 5",
+    "B is NOT equal to D",
+    "C is greater than 3",
+    "B is NOT 3",
+    "A is NOT equal to B",
+    "The sum of A + B is less than 9",
+    "The sum of A + C is Odd",
+    "C and D are both Odd",
+    "The sum of A + C is 3"
+  ]
 }
-
