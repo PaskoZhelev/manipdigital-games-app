@@ -1,16 +1,104 @@
 {
-  "solution": [3, 4, 4, 1],
-  "codeLength": 4,
-  "mode": "glitched",
+  "difficulty": "expert",
+  "grid": [
+    [
+      {"terrain": "mud", "object": "tree"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "grass", "object": "none"}
+    ],
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "sand", "object": "none"}
+    ],
+    [
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "mud", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant",
+    "panda"
+  ],
   "clues": [
-    "B is greater than C",
-    "The code contains NO 2's",
-    "A is NOT 1",
-    "The sum of A + C is less than 8",
-    "The sum of A + B is less than 9",
-    "The range (Max - Min) is exactly 3",
-    "B is greater than D",
-    "The sum of C + D is greater than 4",
-    "B and C are both Even"
-  ]
+    {
+      "id": 1,
+      "description": "Elephant is in the same column as Fox",
+      "complexity": 3
+    },
+    {
+      "id": 2,
+      "description": "Panda is in Column A",
+      "complexity": 2
+    },
+    {
+      "id": 3,
+      "description": "Rabbit is NOT adjacent to Panda",
+      "complexity": 3
+    },
+    {
+      "id": 4,
+      "description": "Frog is in the same row as Panda",
+      "complexity": 3
+    },
+    {
+      "id": 5,
+      "description": "Monkey is in the same row as a TREE",
+      "complexity": 3
+    },
+    {
+      "id": 6,
+      "description": "Elephant is in Column C",
+      "complexity": 2
+    },
+    {
+      "id": 7,
+      "description": "Fox is on MUD",
+      "complexity": 1
+    },
+    {
+      "id": 8,
+      "description": "Frog is in Row 3",
+      "complexity": 2
+    },
+    {
+      "id": 9,
+      "description": "Rabbit is in Column B",
+      "complexity": 2
+    },
+    {
+      "id": 10,
+      "description": "Frog is in Column B",
+      "complexity": 2
+    },
+    {
+      "id": 11,
+      "description": "Rabbit is in Row 2 OR Row 3",
+      "complexity": 4
+    },
+    {
+      "id": 12,
+      "description": "Monkey is in Column B",
+      "complexity": 2
+    },
+    {
+      "id": 13,
+      "description": "Elephant is in Row 1",
+      "complexity": 2
+    }
+  ],
+  "solution": {
+    "frog": {"row": 3, "column": "B"},
+    "monkey": {"row": 1, "column": "B"},
+    "elephant": {"row": 1, "column": "C"},
+    "rabbit": {"row": 2, "column": "B"},
+    "fox": {"row": 3, "column": "C"},
+    "panda": {"row": 3, "column": "A"}
+  }
 }
+

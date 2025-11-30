@@ -1,13 +1,99 @@
 {
-  "solution": [1, 5, 2, 2],
-  "codeLength": 4,
-  "mode": "glitched",
+  "difficulty": "expert",
+  "grid": [
+    [
+      {"terrain": "sand", "object": "rock"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "mud", "object": "none"}
+    ],
+    [
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ],
+    [
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "mud", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant",
+    "panda"
+  ],
   "clues": [
-    "The largest number in the code is 4",
-    "There are exactly 2 Odd numbers",
-    "A is NOT 2",
-    "The sum of A + B is 6",
-    "The sum of A + D is 3",
-    "The code contains exactly 2 - 2's"
-  ]
+    {
+      "id": 1,
+      "description": "Monkey is adjacent to Rabbit",
+      "complexity": 4
+    },
+    {
+      "id": 2,
+      "description": "Frog is adjacent to Panda",
+      "complexity": 4
+    },
+    {
+      "id": 3,
+      "description": "Panda is on GRASS",
+      "complexity": 1
+    },
+    {
+      "id": 4,
+      "description": "Elephant is in Column C",
+      "complexity": 2
+    },
+    {
+      "id": 5,
+      "description": "Monkey is in the same column as Fox",
+      "complexity": 3
+    },
+    {
+      "id": 6,
+      "description": "Rabbit is NOT adjacent to Fox",
+      "complexity": 3
+    },
+    {
+      "id": 7,
+      "description": "Monkey is NOT adjacent to Panda",
+      "complexity": 3
+    },
+    {
+      "id": 8,
+      "description": "Fox is on MUD",
+      "complexity": 1
+    },
+    {
+      "id": 9,
+      "description": "Monkey is in the same row as Rabbit",
+      "complexity": 3
+    },
+    {
+      "id": 10,
+      "description": "Elephant is in the same row as Panda",
+      "complexity": 3
+    },
+    {
+      "id": 11,
+      "description": "Frog is on SAND OR GRASS",
+      "complexity": 4
+    },
+    {
+      "id": 12,
+      "description": "Rabbit is on MUD",
+      "complexity": 1
+    }
+  ],
+  "solution": {
+    "frog": {"row": 2, "column": "A"},
+    "monkey": {"row": 1, "column": "C"},
+    "elephant": {"row": 2, "column": "C"},
+    "rabbit": {"row": 1, "column": "B"},
+    "fox": {"row": 3, "column": "C"},
+    "panda": {"row": 2, "column": "B"}
+  }
 }
+

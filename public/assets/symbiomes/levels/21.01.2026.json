@@ -1,13 +1,99 @@
 {
-  "solution": [2, 4, 4, 1],
-  "codeLength": 4,
-  "mode": "standard",
+  "difficulty": "expert",
+  "grid": [
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "mud", "object": "ruin"},
+      {"terrain": "mud", "object": "none"}
+    ],
+    [
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ],
+    [
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "grass", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant",
+    "panda"
+  ],
   "clues": [
-    "The code does NOT contain the number 5",
-    "The sum of B + C is 8",
-    "The code contains exactly 2 - 4's",
-    "The sum of A + C is 6",
-    "The code contains exactly 1 - 2",
-    "D is NOT 3"
-  ]
+    {
+      "id": 1,
+      "description": "Rabbit is in the same column as Panda",
+      "complexity": 3
+    },
+    {
+      "id": 2,
+      "description": "There are exactly 1 animal(s) on spaces with Objects",
+      "complexity": 5
+    },
+    {
+      "id": 3,
+      "description": "Rabbit is on WATER",
+      "complexity": 1
+    },
+    {
+      "id": 4,
+      "description": "Elephant is in the same column as Fox",
+      "complexity": 3
+    },
+    {
+      "id": 5,
+      "description": "Frog is NOT adjacent to Fox",
+      "complexity": 3
+    },
+    {
+      "id": 6,
+      "description": "Panda is in a corner",
+      "complexity": 2
+    },
+    {
+      "id": 7,
+      "description": "Frog is adjacent to Monkey",
+      "complexity": 4
+    },
+    {
+      "id": 8,
+      "description": "Frog is on WATER",
+      "complexity": 1
+    },
+    {
+      "id": 9,
+      "description": "Elephant is NOT adjacent to Rabbit",
+      "complexity": 3
+    },
+    {
+      "id": 10,
+      "description": "Elephant is in Row 1",
+      "complexity": 2
+    },
+    {
+      "id": 11,
+      "description": "Fox is in the same row as Panda",
+      "complexity": 3
+    },
+    {
+      "id": 12,
+      "description": "Frog is adjacent to Elephant",
+      "complexity": 4
+    }
+  ],
+  "solution": {
+    "frog": {"row": 1, "column": "A"},
+    "monkey": {"row": 2, "column": "A"},
+    "elephant": {"row": 1, "column": "B"},
+    "rabbit": {"row": 2, "column": "C"},
+    "fox": {"row": 3, "column": "B"},
+    "panda": {"row": 3, "column": "C"}
+  }
 }
+

@@ -1,14 +1,104 @@
 {
-  "solution": [1, 5, 5, 3],
-  "codeLength": 4,
-  "mode": "glitched",
+  "difficulty": "expert",
+  "grid": [
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "mud", "object": "none"}
+    ],
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "grass", "object": "none"}
+    ],
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "grass", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant",
+    "panda"
+  ],
   "clues": [
-    "The code contains exactly 2 - 3's",
-    "The sum of B + D is greater than 7",
-    "A and D are both Odd",
-    "The sum of A + C is 6",
-    "A is less than D",
-    "B equals C",
-    "C is greater than D"
-  ]
+    {
+      "id": 1,
+      "description": "Frog is in Column C",
+      "complexity": 2
+    },
+    {
+      "id": 2,
+      "description": "There is exactly 1 animal(s) on MUD",
+      "complexity": 5
+    },
+    {
+      "id": 3,
+      "description": "Rabbit is in the same column as Panda",
+      "complexity": 3
+    },
+    {
+      "id": 4,
+      "description": "There are exactly 2 animal(s) on WATER",
+      "complexity": 5
+    },
+    {
+      "id": 5,
+      "description": "Monkey is NOT adjacent to Elephant",
+      "complexity": 3
+    },
+    {
+      "id": 6,
+      "description": "Elephant is in Row 1",
+      "complexity": 2
+    },
+    {
+      "id": 7,
+      "description": "Elephant is NOT adjacent to Fox",
+      "complexity": 3
+    },
+    {
+      "id": 8,
+      "description": "Monkey is in the same column as Panda",
+      "complexity": 3
+    },
+    {
+      "id": 9,
+      "description": "Elephant is NOT adjacent to Panda",
+      "complexity": 3
+    },
+    {
+      "id": 10,
+      "description": "Frog is adjacent to Fox",
+      "complexity": 4
+    },
+    {
+      "id": 11,
+      "description": "Fox is in Row 2",
+      "complexity": 2
+    },
+    {
+      "id": 12,
+      "description": "Monkey is NOT adjacent to any animal on WATER",
+      "complexity": 5
+    },
+    {
+      "id": 13,
+      "description": "Elephant is adjacent to Rabbit",
+      "complexity": 4
+    }
+  ],
+  "solution": {
+    "frog": {"row": 1, "column": "C"},
+    "monkey": {"row": 3, "column": "A"},
+    "elephant": {"row": 1, "column": "B"},
+    "rabbit": {"row": 1, "column": "A"},
+    "fox": {"row": 2, "column": "C"},
+    "panda": {"row": 2, "column": "A"}
+  }
 }
+

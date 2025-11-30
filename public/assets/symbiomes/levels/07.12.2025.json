@@ -1,13 +1,72 @@
 {
-  "solution": [4, 2, 2, 4],
-  "codeLength": 4,
-  "mode": "standard",
+  "difficulty": "hard",
+  "grid": [
+    [
+      {"terrain": "sand", "object": "rock"},
+      {"terrain": "sand", "object": "rock"},
+      {"terrain": "grass", "object": "none"}
+    ],
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "sand", "object": "none"}
+    ],
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "mud", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant"
+  ],
   "clues": [
-    "C is less than D",
-    "D is NOT 5",
-    "A is greater than C",
-    "A and B are both Even",
-    "The sum of C + D is a multiple of 3",
-    "The sum of all numbers is 12"
-  ]
+    {
+      "id": 1,
+      "description": "Fox is in Column A",
+      "complexity": 2
+    },
+    {
+      "id": 2,
+      "description": "Monkey is on GRASS",
+      "complexity": 1
+    },
+    {
+      "id": 3,
+      "description": "Monkey is in the same row as Rabbit",
+      "complexity": 3
+    },
+    {
+      "id": 4,
+      "description": "There are exactly 2 animal(s) on SAND",
+      "complexity": 5
+    },
+    {
+      "id": 5,
+      "description": "Frog is adjacent to Rabbit",
+      "complexity": 4
+    },
+    {
+      "id": 6,
+      "description": "Elephant is on WATER",
+      "complexity": 1
+    },
+    {
+      "id": 7,
+      "description": "Rabbit is on MUD",
+      "complexity": 1
+    }
+  ],
+  "solution": {
+    "frog": {"row": 2, "column": "C"},
+    "monkey": {"row": 3, "column": "B"},
+    "elephant": {"row": 3, "column": "A"},
+    "rabbit": {"row": 3, "column": "C"},
+    "fox": {"row": 1, "column": "A"}
+  }
 }
+

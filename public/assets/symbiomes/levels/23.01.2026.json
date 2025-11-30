@@ -1,17 +1,82 @@
 {
-  "solution": [3, 4, 3, 2],
-  "codeLength": 4,
-  "mode": "glitched",
+  "difficulty": "hard",
+  "grid": [
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "mud", "object": "none"}
+    ],
+    [
+      {"terrain": "grass", "object": "tree"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "grass", "object": "none"}
+    ],
+    [
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "sand", "object": "tree"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant"
+  ],
   "clues": [
-    "B is NOT 4",
-    "The sum of B + C is greater than 6",
-    "D is less than 4",
-    "A and C are both Odd",
-    "The sum of B + D is Even",
-    "The code contains NO 1's",
-    "There are exactly 2 Even numbers",
-    "The sum of A + C is 6",
-    "D is NOT 3",
-    "The code contains exactly 1 - 2"
-  ]
+    {
+      "id": 1,
+      "description": "Monkey is in the same row as Fox",
+      "complexity": 3
+    },
+    {
+      "id": 2,
+      "description": "Fox is on MUD",
+      "complexity": 1
+    },
+    {
+      "id": 3,
+      "description": "Frog is adjacent to Monkey",
+      "complexity": 4
+    },
+    {
+      "id": 4,
+      "description": "Elephant is on MUD",
+      "complexity": 1
+    },
+    {
+      "id": 5,
+      "description": "There are exactly 2 animal(s) on MUD",
+      "complexity": 5
+    },
+    {
+      "id": 6,
+      "description": "Rabbit is in a corner",
+      "complexity": 2
+    },
+    {
+      "id": 7,
+      "description": "Frog is in the same row as Elephant",
+      "complexity": 3
+    },
+    {
+      "id": 8,
+      "description": "Monkey is in Row 2",
+      "complexity": 2
+    },
+    {
+      "id": 9,
+      "description": "Monkey is NOT adjacent to Rabbit",
+      "complexity": 3
+    }
+  ],
+  "solution": {
+    "frog": {"row": 1, "column": "A"},
+    "monkey": {"row": 2, "column": "A"},
+    "elephant": {"row": 1, "column": "C"},
+    "rabbit": {"row": 3, "column": "C"},
+    "fox": {"row": 2, "column": "B"}
+  }
 }
+

@@ -1,15 +1,99 @@
 {
-  "solution": [5, 3, 3, 3],
-  "codeLength": 4,
-  "mode": "standard",
+  "difficulty": "expert",
+  "grid": [
+    [
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ],
+    [
+      {"terrain": "grass", "object": "ruin"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "mud", "object": "none"}
+    ],
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant",
+    "panda"
+  ],
   "clues": [
-    "The sum of A + C is greater than 6",
-    "C is NOT 5",
-    "B is less than 4",
-    "A is NOT 4",
-    "B and D are both Odd",
-    "The range (Max - Min) is exactly 2",
-    "The sum of A + C is a multiple of 4",
-    "A is NOT equal to D"
-  ]
+    {
+      "id": 1,
+      "description": "Monkey is in Column B",
+      "complexity": 2
+    },
+    {
+      "id": 2,
+      "description": "Rabbit is in Column A",
+      "complexity": 2
+    },
+    {
+      "id": 3,
+      "description": "Monkey is NOT adjacent to Fox",
+      "complexity": 3
+    },
+    {
+      "id": 4,
+      "description": "Monkey is in Row 1 OR Row 2",
+      "complexity": 4
+    },
+    {
+      "id": 5,
+      "description": "Rabbit is on GRASS OR WATER",
+      "complexity": 4
+    },
+    {
+      "id": 6,
+      "description": "There are exactly 2 animal(s) on SAND",
+      "complexity": 5
+    },
+    {
+      "id": 7,
+      "description": "Panda is on a space with a RUIN",
+      "complexity": 2
+    },
+    {
+      "id": 8,
+      "description": "Frog is on WATER",
+      "complexity": 1
+    },
+    {
+      "id": 9,
+      "description": "Frog is in the same row as Fox",
+      "complexity": 3
+    },
+    {
+      "id": 10,
+      "description": "Elephant is NOT adjacent to Rabbit",
+      "complexity": 3
+    },
+    {
+      "id": 11,
+      "description": "Elephant is in a corner",
+      "complexity": 2
+    },
+    {
+      "id": 12,
+      "description": "Panda is NOT adjacent to any animal on WATER",
+      "complexity": 5
+    }
+  ],
+  "solution": {
+    "frog": {"row": 3, "column": "C"},
+    "monkey": {"row": 1, "column": "B"},
+    "elephant": {"row": 1, "column": "A"},
+    "rabbit": {"row": 3, "column": "A"},
+    "fox": {"row": 3, "column": "B"},
+    "panda": {"row": 2, "column": "A"}
+  }
 }
+
