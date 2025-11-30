@@ -28,12 +28,13 @@ on:
         description: '[Symbiomes Only] Difficulty'
         type: choice
         required: false
-        default: 'hard'
+        default: 'random'
         options:
           - easy
           - medium
           - hard
           - expert
+          - random
 
       # Neon Protocol Specific
       neon_mode:
