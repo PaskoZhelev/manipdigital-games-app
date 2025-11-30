@@ -130,6 +130,7 @@ jobs:
 
       - name: Commit and Push
         run: |
+          GAME="${{ inputs.game }}"
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           
@@ -140,6 +141,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Generate $GAME levels ($JAR_ARGS): ${{ inputs.from_date }} to ${{ inputs.to_date }}"
+            git commit -m "Generate $GAME levels: ${{ inputs.from_date }} to ${{ inputs.to_date }}"
             git push
           fi
