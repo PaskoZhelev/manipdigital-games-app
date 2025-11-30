@@ -1,15 +1,17 @@
 {
-  "solution": [4, 2, 4, 2, 1],
+  "solution": [3, 4, 1, 1, 4],
   "codeLength": 5,
-  "mode": "standard",
+  "mode": "glitched",
   "clues": [
-    "The sum A + B + E is Odd",
+    "The sum of A + D is less than 6",
     "The sum B + C + D is Even",
-    "The sum of C + D is 6",
-    "The sum of A + B is a multiple of 3",
-    "The sum B + C + E is Odd",
-    "The sum of B + E is less than 6",
-    "The code contains exactly 1 - 1",
-    "The sum of A + C is greater than 7"
+    "B is NOT 5",
+    "The smallest number in the code is 1",
+    "The sum of A + B is greater than 6",
+    "A is NOT equal to B",
+    "C equals D",
+    "A is greater than 3",
+    "A is less than B",
+    "The code contains exactly 2 - 4's"
   ]
 }

@@ -1,11 +1,14 @@
 {
-  "solution": [1, 4, 5, 3],
+  "solution": [2, 1, 1, 5],
   "codeLength": 4,
   "mode": "standard",
   "clues": [
-    "The sum of A + B is 5",
-    "The sum of A + D is 4",
-    "B is greater than 3",
-    "The sum of A + C is 6"
+    "A is less than 4",
+    "C and D are both Odd",
+    "C is less than D",
+    "The sum of B + C is Even",
+    "B is NOT equal to D",
+    "A is greater than C",
+    "The code does NOT contain the number 3"
   ]
 }

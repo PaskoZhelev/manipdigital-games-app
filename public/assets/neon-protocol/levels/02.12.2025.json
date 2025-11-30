@@ -1,13 +1,15 @@
 {
-  "solution": [2, 3, 3, 5],
+  "solution": [4, 4, 5, 2],
   "codeLength": 4,
-  "mode": "standard",
+  "mode": "glitched",
   "clues": [
-    "D is greater than 3",
-    "The sum of C + D is 8",
-    "The code contains exactly 1 - 5",
-    "B is greater than 2",
-    "The code contains exactly 1 - 2",
-    "The sum A + B + C is Even"
+    "The smallest number in the code is 2",
+    "The sum of A + B is Even",
+    "B is greater than D",
+    "A is less than 5",
+    "A is greater than 3",
+    "The largest number in the code is 5",
+    "There are exactly 2 Even numbers",
+    "There are exactly 3 Even numbers"
   ]
 }

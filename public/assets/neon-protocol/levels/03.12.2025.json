@@ -1,13 +1,16 @@
 {
-  "solution": [1, 5, 4, 5, 4],
+  "solution": [3, 1, 5, 4, 5],
   "codeLength": 5,
-  "mode": "standard",
+  "mode": "glitched",
   "clues": [
-    "A is less than 3",
-    "There are exactly 3 Odd numbers",
-    "The code contains at least one 5",
-    "A and D are both Odd",
-    "B equals D",
-    "The sum of C + E is greater than 6"
+    "The largest number in the code is 3",
+    "C and E are both Odd",
+    "A is greater than B",
+    "The code contains at least one 3",
+    "The sum of C + D is greater than 7",
+    "E is greater than 3",
+    "The smallest number in the code is 1",
+    "The sum A + C + D is Even",
+    "The sum of A + E is Even"
   ]
 }

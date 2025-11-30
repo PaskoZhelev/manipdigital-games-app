@@ -1,10 +1,15 @@
 {
-  "solution": [4, 1, 1, 5],
-  "codeLength": 4,
+  "solution": [1, 4, 4, 2, 1],
+  "codeLength": 5,
   "mode": "standard",
   "clues": [
-    "The code contains exactly 1 - 5",
-    "The sum of A + B is 5",
-    "The sum of B + C is 2"
+    "B is greater than 2",
+    "The range (Max - Min) is exactly 3",
+    "The sum B + C + E is Odd",
+    "The code contains exactly 2 - 4's",
+    "The sum of A + C is less than 6",
+    "C is greater than 2",
+    "The code does NOT contain the number 3",
+    "A is NOT equal to D"
   ]
 }

@@ -1,14 +1,16 @@
 {
-  "solution": [3, 4, 3, 4],
-  "codeLength": 4,
-  "mode": "standard",
+  "solution": [3, 3, 3, 5, 3],
+  "codeLength": 5,
+  "mode": "glitched",
   "clues": [
-    "The sum of all numbers is less than 16",
-    "The sum of B + D is 8",
-    "D is NOT 3",
-    "B is greater than 3",
-    "The sum A + C + D is Even",
-    "The sum of C + D is 7",
-    "The sum of A + B is greater than 5"
+    "The sum of C + D is greater than 7",
+    "The sum of A + E is less than 7",
+    "C is greater than 2",
+    "There are exactly 2 Odd numbers",
+    "E is greater than 2",
+    "A equals C",
+    "B and D are both Odd",
+    "The sum of B + D is a multiple of 4",
+    "C is NOT 4"
   ]
 }

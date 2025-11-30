@@ -1,15 +1,16 @@
 {
-  "solution": [3, 2, 4, 3, 2],
+  "solution": [5, 3, 3, 1, 2],
   "codeLength": 5,
-  "mode": "standard",
+  "mode": "glitched",
   "clues": [
-    "The sum of B + D is less than 6",
-    "The sum A + B + C is Odd",
-    "The sum of B + C is a multiple of 3",
-    "D is NOT equal to E",
-    "The code does NOT contain the number 5",
-    "The sum of A + C is 7",
-    "The sum of A + D is greater than 4",
-    "The sum of C + E is a multiple of 3"
+    "B is NOT 5",
+    "The sum of A + E is 7",
+    "A is greater than D",
+    "A is less than B",
+    "A and B are both Odd",
+    "The sum of C + D is a multiple of 4",
+    "C is greater than E",
+    "B is NOT 1",
+    "The sum of C + E is less than 6"
   ]
 }

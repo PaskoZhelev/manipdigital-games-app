@@ -1,16 +1,17 @@
 {
-  "solution": [4, 2, 1, 4],
-  "codeLength": 4,
-  "mode": "standard",
+  "solution": [5, 4, 3, 1, 5],
+  "codeLength": 5,
+  "mode": "glitched",
   "clues": [
-    "The sum of A + C is less than 9",
-    "B is less than 4",
+    "B is greater than 3",
+    "C is NOT 5",
+    "D is less than 3",
+    "A is greater than 3",
+    "There is exactly 1 Even number",
+    "A and D are both Odd",
     "A is NOT equal to B",
-    "The sum of A + D is less than 9",
-    "A is greater than 1",
-    "The range (Max - Min) is exactly 3",
-    "The code contains NO 3's",
-    "B is NOT equal to D",
-    "The sum of B + D is Even"
+    "D is greater than E",
+    "C is NOT equal to D",
+    "A equals E"
   ]
 }

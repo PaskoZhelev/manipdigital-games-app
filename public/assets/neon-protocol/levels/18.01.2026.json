@@ -1,14 +1,15 @@
 {
-  "solution": [3, 3, 3, 3, 3],
-  "codeLength": 5,
-  "mode": "standard",
+  "solution": [1, 5, 4, 4],
+  "codeLength": 4,
+  "mode": "glitched",
   "clues": [
-    "The sum of B + C is less than 7",
-    "The sum of D + E is less than 7",
-    "There are exactly 5 Odd numbers",
-    "C is NOT 1",
-    "The sum of B + D is a multiple of 3",
-    "A is less than 5",
-    "The sum of A + E is greater than 4"
+    "C is NOT 3",
+    "A and B are both Odd",
+    "C is greater than 2",
+    "C is less than 5",
+    "B is greater than 3",
+    "The code contains exactly 4 - 3's",
+    "The sum of A + D is 5",
+    "The sum of A + C is less than 7"
   ]
 }

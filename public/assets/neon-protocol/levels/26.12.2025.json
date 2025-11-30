@@ -1,11 +1,16 @@
 {
-  "solution": [1, 2, 1, 2, 1],
-  "codeLength": 5,
+  "solution": [1, 2, 5, 4],
+  "codeLength": 4,
   "mode": "standard",
   "clues": [
-    "D is NOT equal to E",
-    "The sum of A + D is 3",
-    "B equals D",
-    "The sum of C + E is 2"
+    "There are exactly 2 Even numbers",
+    "D is less than 5",
+    "D is NOT 3",
+    "B is less than 4",
+    "The code contains exactly 1 - 4",
+    "A is NOT 2",
+    "The sum of C + D is greater than 6",
+    "A is less than B",
+    "The sum of B + C is greater than 5"
   ]
 }

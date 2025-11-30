@@ -1,12 +1,13 @@
 {
-  "solution": [4, 1, 4, 1],
+  "solution": [4, 2, 2, 1],
   "codeLength": 4,
   "mode": "standard",
   "clues": [
-    "B is less than 3",
-    "The code contains NO 3's",
-    "The sum of A + C is 8",
-    "There are exactly 2 Odd numbers",
-    "The sum of C + D is less than 6"
+    "The code contains at least one 1",
+    "The code contains exactly 2 - 2's",
+    "The sum of A + C is greater than 5",
+    "The sum of A + B is Even",
+    "C is NOT equal to D",
+    "A is greater than 3"
   ]
 }

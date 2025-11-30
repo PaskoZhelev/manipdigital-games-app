@@ -1,11 +1,15 @@
 {
-  "solution": [2, 4, 1, 4],
+  "solution": [5, 4, 2, 2],
   "codeLength": 4,
-  "mode": "standard",
+  "mode": "glitched",
   "clues": [
-    "The sum of A + D is 6",
-    "A is less than 3",
-    "The sum of C + D is 5",
-    "The sum of B + C is 5"
+    "C equals D",
+    "A is NOT 4",
+    "The code contains exactly 1 - 4",
+    "B is greater than C",
+    "There are exactly 3 Even numbers",
+    "The sum of B + C is less than 6",
+    "The code contains at least one 5",
+    "The sum A + B + C is Odd"
   ]
 }

@@ -1,12 +1,14 @@
 {
-  "solution": [3, 5, 3, 4],
+  "solution": [3, 5, 4, 5],
   "codeLength": 4,
-  "mode": "standard",
+  "mode": "glitched",
   "clues": [
-    "D is greater than 2",
-    "A equals C",
-    "A and C are both Odd",
-    "The sum of A + D is 7",
-    "The sum of all numbers is 15"
+    "The code contains NO 3's",
+    "B and D are both Odd",
+    "The sum of all numbers is 17",
+    "A and B are both Odd",
+    "A is greater than 1",
+    "The code contains NO 2's",
+    "A is less than 5"
   ]
 }

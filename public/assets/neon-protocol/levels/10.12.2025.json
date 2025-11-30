@@ -1,14 +1,16 @@
 {
-  "solution": [4, 1, 1, 1, 5],
-  "codeLength": 5,
-  "mode": "standard",
+  "solution": [3, 3, 3, 1],
+  "codeLength": 4,
+  "mode": "glitched",
   "clues": [
-    "The sum of D + E is less than 7",
-    "A is greater than 3",
-    "The sum of A + E is greater than 7",
-    "The sum C + D + E is Odd",
-    "The sum of A + B is 5",
-    "The sum A + B + E is Even",
-    "The sum of C + E is less than 8"
+    "A equals C",
+    "A is NOT 1",
+    "The sum of A + B is greater than 5",
+    "The code contains NO 2's",
+    "The sum of A + D is less than 6",
+    "B is NOT 1",
+    "The sum of A + B is less than 6",
+    "B is less than 4",
+    "The code does NOT contain the number 4"
   ]
 }

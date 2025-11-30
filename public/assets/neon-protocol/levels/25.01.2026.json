@@ -1,12 +1,17 @@
 {
-  "solution": [1, 2, 5, 4, 5],
+  "solution": [3, 5, 1, 4, 1],
   "codeLength": 5,
-  "mode": "standard",
+  "mode": "glitched",
   "clues": [
-    "The code contains exactly 1 - 2",
-    "The sum of B + C is Odd",
-    "The sum of C + E is 10",
-    "The sum of A + B is 3",
-    "The sum A + D + E is Even"
+    "B is greater than E",
+    "A and E are both Odd",
+    "C is less than 3",
+    "The code does NOT contain the number 1",
+    "The sum of B + E is less than 7",
+    "D is NOT 5",
+    "The sum of A + C is Even",
+    "A is less than 4",
+    "The code contains at least one 5",
+    "The sum of A + D is greater than 6"
   ]
 }

@@ -1,15 +1,15 @@
 {
-  "solution": [5, 1, 4, 4, 3],
+  "solution": [4, 3, 5, 3, 2],
   "codeLength": 5,
   "mode": "standard",
   "clues": [
-    "The sum C + D + E is Odd",
-    "The sum of B + E is a multiple of 4",
-    "The sum of D + E is 7",
-    "C is NOT 2",
-    "There are exactly 2 Even numbers",
-    "A is greater than B",
-    "D is greater than E",
-    "A is greater than C"
+    "C and D are both Odd",
+    "D is NOT 5",
+    "The sum of A + B is greater than 5",
+    "The code contains at least one 4",
+    "The largest number in the code is 5",
+    "B is NOT 2",
+    "B is less than 4",
+    "The smallest number in the code is 2"
   ]
 }

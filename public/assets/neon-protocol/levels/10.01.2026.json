@@ -1,12 +1,13 @@
 {
-  "solution": [3, 2, 4, 2, 4],
-  "codeLength": 5,
-  "mode": "standard",
+  "solution": [5, 3, 3, 2],
+  "codeLength": 4,
+  "mode": "glitched",
   "clues": [
-    "The sum of D + E is a multiple of 3",
-    "The code contains NO 5's",
-    "The sum of A + B is 5",
-    "The sum of C + E is 8",
-    "The sum of B + E is 6"
+    "The sum of B + D is less than 6",
+    "The sum of C + D is less than 6",
+    "The code contains exactly 4 - 2's",
+    "There are exactly 3 Odd numbers",
+    "A is greater than 3",
+    "The code contains NO 1's"
   ]
 }

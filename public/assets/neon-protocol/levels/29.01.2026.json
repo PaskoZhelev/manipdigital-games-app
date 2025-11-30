@@ -1,15 +1,14 @@
 {
-  "solution": [5, 2, 3, 1, 5],
+  "solution": [2, 4, 5, 3, 5],
   "codeLength": 5,
   "mode": "standard",
   "clues": [
-    "B is less than C",
-    "B is greater than 1",
-    "The sum of A + D is Even",
-    "D is less than 2",
-    "C is less than 4",
-    "A is NOT 1",
-    "A is NOT 3",
-    "The sum of D + E is 6"
+    "The sum of B + C is greater than 7",
+    "D is less than 4",
+    "C and D are both Odd",
+    "B is NOT equal to E",
+    "The smallest number in the code is 2",
+    "B is NOT 3",
+    "The sum of D + E is a multiple of 4"
   ]
 }
