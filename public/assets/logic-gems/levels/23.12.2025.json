@@ -1,0 +1,19 @@
+{
+  "difficulty": "CUSTOM",
+  "negative_only": false,
+  "grid_size": 3,
+  "clue_count": 6,
+  "solution": [
+    [{"color": "GREEN", "shape": "CIRCLE"}, {"color": "GREEN", "shape": "SQUARE"}, {"color": "RED", "shape": "SQUARE"}],
+    [{"color": "RED", "shape": "CIRCLE"}, {"color": "BLUE", "shape": "TRIANGLE"}, {"color": "GREEN", "shape": "TRIANGLE"}],
+    [{"color": "RED", "shape": "TRIANGLE"}, {"color": "BLUE", "shape": "CIRCLE"}, {"color": "BLUE", "shape": "SQUARE"}]
+  ],
+  "clues": [
+    {"type": "FLOATING_LINE", "negative": false, "is_row": true, "patterns": [{"color": null, "shape": "TRIANGLE"}, {"color": null, "shape": "CIRCLE"}, {"color": "BLUE", "shape": null}]},
+    {"type": "SINGLE_POINT", "negative": false, "row": 0, "col": 1, "pattern": {"color": "GREEN", "shape": null}},
+    {"type": "SINGLE_POINT", "negative": true, "row": 1, "col": 1, "pattern": {"color": null, "shape": "CIRCLE"}},
+    {"type": "DIAGONAL_PAIR", "negative": false, "direction": "MAIN_AXIS", "top": {"color": null, "shape": "CIRCLE"}, "bottom": {"color": "BLUE", "shape": "CIRCLE"}},
+    {"type": "DIAGONAL_PAIR", "negative": false, "direction": "MAIN_AXIS", "top": {"color": null, "shape": "SQUARE"}, "bottom": {"color": "GREEN", "shape": null}},
+    {"type": "DIAGONAL_FULL", "negative": false, "direction": "MAIN", "patterns": [{"color": "GREEN", "shape": "CIRCLE"}, {"color": "BLUE", "shape": null}, {"color": null, "shape": "SQUARE"}]}
+  ]
+}
