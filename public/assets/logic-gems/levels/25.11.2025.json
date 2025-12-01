@@ -1,0 +1,23 @@
+{
+  "difficulty": "CUSTOM",
+  "negative_only": false,
+  "grid_size": 3,
+  "clue_count": 10,
+  "solution": [
+    [{"color": "GREEN", "shape": "CIRCLE"}, {"color": "RED", "shape": "TRIANGLE"}, {"color": "BLUE", "shape": "SQUARE"}],
+    [{"color": "GREEN", "shape": "TRIANGLE"}, {"color": "RED", "shape": "SQUARE"}, {"color": "BLUE", "shape": "TRIANGLE"}],
+    [{"color": "BLUE", "shape": "CIRCLE"}, {"color": "GREEN", "shape": "SQUARE"}, {"color": "RED", "shape": "CIRCLE"}]
+  ],
+  "clues": [
+    {"type": "DIAGONAL_FULL", "negative": false, "direction": "ANTI", "patterns": [{"color": null, "shape": "SQUARE"}, {"color": "RED", "shape": null}, {"color": "BLUE", "shape": null}]},
+    {"type": "SINGLE_POINT", "negative": false, "row": 0, "col": 0, "pattern": {"color": null, "shape": "CIRCLE"}},
+    {"type": "SINGLE_POINT", "negative": false, "row": 1, "col": 0, "pattern": {"color": null, "shape": "TRIANGLE"}},
+    {"type": "ORTHOGONAL_PAIR", "negative": true, "orientation": "HORIZONTAL", "first": {"color": "GREEN", "shape": "TRIANGLE"}, "second": {"color": null, "shape": "TRIANGLE"}},
+    {"type": "DIAGONAL_PAIR", "negative": false, "direction": "MAIN_AXIS", "top": {"color": "RED", "shape": null}, "bottom": {"color": null, "shape": "TRIANGLE"}},
+    {"type": "ORTHOGONAL_PAIR", "negative": false, "orientation": "HORIZONTAL", "first": {"color": "GREEN", "shape": null}, "second": {"color": null, "shape": "TRIANGLE"}},
+    {"type": "ORTHOGONAL_PAIR", "negative": false, "orientation": "VERTICAL", "first": {"color": "BLUE", "shape": null}, "second": {"color": null, "shape": "CIRCLE"}},
+    {"type": "RELATIVE_SHAPE", "negative": false, "shape_name": "S_SHAPE", "parts": [{"dr": 1, "dc": 0, "pattern": {"color": null, "shape": null}}, {"dr": 1, "dc": 1, "pattern": {"color": null, "shape": "SQUARE"}}, {"dr": 0, "dc": 1, "pattern": {"color": null, "shape": "TRIANGLE"}}, {"dr": 0, "dc": 2, "pattern": {"color": "BLUE", "shape": null}}]},
+    {"type": "RELATIVE_SHAPE", "negative": true, "shape_name": "L_SHAPE", "parts": [{"dr": 0, "dc": 0, "pattern": {"color": null, "shape": "SQUARE"}}, {"dr": 1, "dc": 0, "pattern": {"color": null, "shape": "SQUARE"}}, {"dr": 1, "dc": 1, "pattern": {"color": null, "shape": "TRIANGLE"}}]},
+    {"type": "SINGLE_POINT", "negative": false, "row": 1, "col": 0, "pattern": {"color": "GREEN", "shape": null}}
+  ]
+}
