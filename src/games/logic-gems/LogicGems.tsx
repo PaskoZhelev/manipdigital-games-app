@@ -66,7 +66,7 @@ interface DragItem {
 
 // --- CONSTANTS ---
 const STORAGE_KEY = 'logic_gems_daily';
-const EARLIEST_ARCHIVE_DATE = '2025-01-01';
+const EARLIEST_ARCHIVE_DATE = '2025-11-01';
 const SHAPE_MAP: Record<string, number> = { 'TRIANGLE': 1, 'CIRCLE': 2, 'SQUARE': 3 };
 const COLORS: Color[] = ['RED', 'GREEN', 'BLUE'];
 const SHAPES: Shape[] = ['SQUARE', 'TRIANGLE', 'CIRCLE'];
