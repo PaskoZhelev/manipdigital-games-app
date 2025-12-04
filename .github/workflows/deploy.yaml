@@ -30,8 +30,11 @@ jobs:
 
             # 2. Pull the latest changes (including new levels)
             echo "Pulling latest code..."
-            GIT_SSH_COMMAND="ssh -i ~/.ssh/vps_github_pull_key -o IdentitiesOnly=yes" git pull origin master
+            GIT_SSH_COMMAND="ssh -i ~/.ssh/vps_github_pull_key -o IdentitiesOnly=yes" git fetch origin
 
+            echo "Resetting local branch to match origin/master..."
+            git reset --hard origin/master
+            
             # 3. Run your app script with SUDO
             # We pipe the secret password into sudo -S so it runs non-interactively
             #echo "Running deployment script with sudo..."
