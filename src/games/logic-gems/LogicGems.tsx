@@ -736,7 +736,7 @@ export const LogicGems: React.FC = () => {
                 <li><strong>Pairs:</strong> Show two gems that are diagonally adjacent.</li>
                 <li><strong>Shapes (L, T, etc):</strong> Show a geometric arrangement of gems. Rotations are NOT allowed.</li>
                 <li><strong>Lines:</strong> Shows a row or column of gems (order matters).</li>
-                <li><strong style={{color: '#ff5f5f'}}>Red Background:</strong> Means the clue is <strong>NEGATIVE</strong> (This pattern does NOT exist).</li>
+                <li><strong style={{color: '#ff5f5f'}}>Red Background:</strong> Means the clue is <strong>NEGATIVE</strong> (This EXACT pattern does NOT exist).</li>
             </ul>
         </div>
       </div>
