@@ -17,4 +17,4 @@
     {"type": "FLOATING_LINE", "negative": false, "is_row": true, "patterns": [{"color": null, "shape": "SQUARE"}, {"color": null, "shape": null}, {"color": "GREEN", "shape": null}]},
     {"type": "SINGLE_POINT", "negative": true, "row": 0, "col": 0, "pattern": {"color": null, "shape": "SQUARE"}}
   ]
-}
+}git pu
