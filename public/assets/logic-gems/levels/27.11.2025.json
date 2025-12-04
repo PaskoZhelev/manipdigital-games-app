@@ -2,19 +2,20 @@
   "difficulty": "CUSTOM",
   "negative_only": false,
   "grid_size": 3,
-  "clue_count": 7,
+  "clue_count": 8,
   "solution": [
-    [{"color": "BLUE", "shape": "CIRCLE"}, {"color": "RED", "shape": "CIRCLE"}, {"color": "GREEN", "shape": "CIRCLE"}],
-    [{"color": "RED", "shape": "SQUARE"}, {"color": "RED", "shape": "TRIANGLE"}, {"color": "BLUE", "shape": "TRIANGLE"}],
-    [{"color": "BLUE", "shape": "SQUARE"}, {"color": "GREEN", "shape": "SQUARE"}, {"color": "GREEN", "shape": "TRIANGLE"}]
+    [{"color": "GREEN", "shape": "CIRCLE"}, {"color": "RED", "shape": "SQUARE"}, {"color": "RED", "shape": "CIRCLE"}],
+    [{"color": "RED", "shape": "TRIANGLE"}, {"color": "BLUE", "shape": "SQUARE"}, {"color": "BLUE", "shape": "CIRCLE"}],
+    [{"color": "GREEN", "shape": "TRIANGLE"}, {"color": "GREEN", "shape": "SQUARE"}, {"color": "BLUE", "shape": "TRIANGLE"}]
   ],
   "clues": [
-    {"type": "SINGLE_POINT", "negative": true, "row": 2, "col": 2, "pattern": {"color": "RED", "shape": null}},
-    {"type": "DIAGONAL_PAIR", "negative": false, "direction": "MAIN_AXIS", "top": {"color": "BLUE", "shape": "CIRCLE"}, "bottom": {"color": "RED", "shape": null}},
-    {"type": "DIAGONAL_PAIR", "negative": false, "direction": "ANTI_AXIS", "top": {"color": null, "shape": "TRIANGLE"}, "bottom": {"color": "BLUE", "shape": null}},
-    {"type": "MULTI_POINT", "negative": false, "constraints": [{"type": "SINGLE_POINT", "negative": false, "row": 2, "col": 1, "pattern": {"color": "GREEN", "shape": null}}, {"type": "SINGLE_POINT", "negative": false, "row": 0, "col": 1, "pattern": {"color": null, "shape": "CIRCLE"}}]},
-    {"type": "ORTHOGONAL_PAIR", "negative": false, "orientation": "HORIZONTAL", "first": {"color": "RED", "shape": "TRIANGLE"}, "second": {"color": "BLUE", "shape": null}},
-    {"type": "FLOATING_LINE", "negative": true, "is_row": false, "patterns": [{"color": "BLUE", "shape": "CIRCLE"}, {"color": null, "shape": "SQUARE"}, {"color": null, "shape": "TRIANGLE"}]},
-    {"type": "FLOATING_LINE", "negative": false, "is_row": false, "patterns": [{"color": "GREEN", "shape": "CIRCLE"}, {"color": "BLUE", "shape": null}, {"color": null, "shape": "TRIANGLE"}]}
+    {"type": "RELATIVE_SHAPE", "negative": false, "shape_name": "T_SHAPE", "parts": [{"dr": 0, "dc": 0, "pattern": {"color": null, "shape": null}}, {"dr": 0, "dc": 1, "pattern": {"color": null, "shape": "SQUARE"}}, {"dr": 0, "dc": 2, "pattern": {"color": "BLUE", "shape": null}}, {"dr": 1, "dc": 1, "pattern": {"color": "GREEN", "shape": "SQUARE"}}]},
+    {"type": "ORTHOGONAL_PAIR", "negative": false, "orientation": "VERTICAL", "first": {"color": "BLUE", "shape": null}, "second": {"color": null, "shape": "TRIANGLE"}},
+    {"type": "SINGLE_POINT", "negative": false, "row": 1, "col": 2, "pattern": {"color": null, "shape": "CIRCLE"}},
+    {"type": "MULTI_POINT", "negative": false, "constraints": [{"type": "SINGLE_POINT", "negative": false, "row": 2, "col": 0, "pattern": {"color": "GREEN", "shape": null}}, {"type": "SINGLE_POINT", "negative": false, "row": 1, "col": 2, "pattern": {"color": "BLUE", "shape": null}}]},
+    {"type": "DIAGONAL_PAIR", "negative": true, "direction": "ANTI_AXIS", "top": {"color": null, "shape": "SQUARE"}, "bottom": {"color": null, "shape": "SQUARE"}},
+    {"type": "SINGLE_POINT", "negative": true, "row": 0, "col": 1, "pattern": {"color": null, "shape": "CIRCLE"}},
+    {"type": "DIAGONAL_PAIR", "negative": false, "direction": "MAIN_AXIS", "top": {"color": "GREEN", "shape": null}, "bottom": {"color": "BLUE", "shape": null}},
+    {"type": "ORTHOGONAL_PAIR", "negative": false, "orientation": "VERTICAL", "first": {"color": "RED", "shape": "TRIANGLE"}, "second": {"color": null, "shape": "TRIANGLE"}}
   ]
 }
