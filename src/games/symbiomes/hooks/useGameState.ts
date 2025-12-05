@@ -172,9 +172,6 @@ export const useGameState = (
       setPlacements(initialPlacements);
       
       // Reset Stats
-      setStats({ timeSpent: 0, errors: 0, hintsUsed: 0 });
-      setStartTime(Date.now()); 
-      setPausedTime(0);
       setIsPaused(false);
       setGameStarted(true); 
     }
