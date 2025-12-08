@@ -1,5 +1,5 @@
 name: Generate Game Levels
-run-name: Generate ${{ inputs.game }} levels (${{ inputs.from_date }} to ${{ inputs.to_date }})
+run-name: Generate ${{ inputs.game }} levels (${{ inputs.month }} ${{ inputs.year }})
 
 on:
   workflow_dispatch:
@@ -8,57 +8,36 @@ on:
         description: 'Select Game'
         required: true
         type: choice
-        default: 'all'
+        default: 'symbiomes'
         options:
-          - all
           - symbiomes
           - neon-protocol
           - logic-gems
       
-      from_date:
-        description: 'Start date (YYYY-MM-DD)'
+      month:
+        description: 'Month'
         required: true
-        default: '2025-11-01'
+        type: choice
+        default: 'january'
+        options:
+          - january
+          - february
+          - march
+          - april
+          - may
+          - june
+          - july
+          - august
+          - september
+          - october
+          - november
+          - december
       
-      to_date:
-        description: 'End date (YYYY-MM-DD)'
+      year:
+        description: 'Year'
         required: true
-        default: '2025-11-01'
-
-      # Symbiomes Specific
-      difficulty:
-        description: '[Symbiomes Only] Difficulty'
-        type: choice
-        required: false
-        default: 'random'
-        options:
-          - easy
-          - medium
-          - hard
-          - expert
-          - random
-
-      # Neon Protocol Specific
-      neon_mode:
-        description: '[Neon Protocol Only] Mode'
-        type: choice
-        required: false
-        default: 'random'
-        options:
-          - standard
-          - glitched
-          - random
-
-      neon_digits:
-        description: '[Neon Protocol Only] Digits'
-        type: choice
-        required: false
-        default: 'random'
-        options:
-          - "3"
-          - "4"
-          - "5"    
-          - random  
+        default: '2026'
+        type: string
 
 permissions:
   contents: write
@@ -79,85 +58,67 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      - name: Generate Level JSONs
+      - name: Generate Level JSON
         run: |
           # --- INPUTS ---
-          SELECTED_GAME="${{ inputs.game }}"
-          START_DATE="${{ inputs.from_date }}"
-          END_DATE="${{ inputs.to_date }}"
+          GAME="${{ inputs.game }}"
+          MONTH_NAME="${{ inputs.month }}"
+          YEAR="${{ inputs.year }}"
           
-          # Define which games to run based on input
-          if [[ "$SELECTED_GAME" == "all" ]]; then
-            GAMES_TO_RUN="symbiomes neon-protocol logic-gems"
-          else
-            GAMES_TO_RUN="$SELECTED_GAME"
-          fi
+          # Convert Month Name to Number for Filename
+          case "$MONTH_NAME" in
+            "january")   MONTH_NUM="1" ;;
+            "february")  MONTH_NUM="2" ;;
+            "march")     MONTH_NUM="3" ;;
+            "april")     MONTH_NUM="4" ;;
+            "may")       MONTH_NUM="5" ;;
+            "june")      MONTH_NUM="6" ;;
+            "july")      MONTH_NUM="7" ;;
+            "august")    MONTH_NUM="8" ;;
+            "september") MONTH_NUM="9" ;;
+            "october")   MONTH_NUM="10" ;;
+            "november")  MONTH_NUM="11" ;;
+            "december")  MONTH_NUM="12" ;;
+          esac
+
+          # Define Output Directory
+          OUTPUT_DIR="public/assets/${GAME}/levels"
           
-          # Initialize Date Iterator
-          CURRENT="$START_DATE"
+          # Define Output Filename as MM.YYYY.json
+          TARGET_FILE="${OUTPUT_DIR}/${MONTH_NUM}.${YEAR}.json"
+          
+          JAR_FILE="tools/manip-games-level-generator.jar"
 
-          # --- MAIN LOOP (Date -> Game) ---
-          while [[ "$CURRENT" < "$END_DATE" ]] || [[ "$CURRENT" == "$END_DATE" ]]; do
-            
-            # Format filename as DD.MM.YYYY.json
-            FILENAME_DATE=$(date -d "$CURRENT" +'%d.%m.%Y')
-            
-            # Loop through selected games for this specific date
-            for GAME in $GAMES_TO_RUN; do
-            
-              # Reset variables
-              OUTPUT_DIR=""
-              JAR_FILE=""
-              JAR_ARGS=""
+          echo "Generating levels..."
+          echo "Game: $GAME"
+          echo "Args: $MONTH_NAME $YEAR"
+          echo "File: $TARGET_FILE"
 
-              # Configure Game Specifics
-              if [[ "$GAME" == "symbiomes" ]]; then
-                OUTPUT_DIR="public/assets/symbiomes/levels"
-                JAR_FILE="tools/symbiomes-level-generator.jar"
-                JAR_ARGS="${{ inputs.difficulty }}" 
-                
-              elif [[ "$GAME" == "neon-protocol" ]]; then
-                OUTPUT_DIR="public/assets/neon-protocol/levels"
-                JAR_FILE="tools/neon-protocol-level-generator.jar"
-                JAR_ARGS="${{ inputs.neon_mode }} ${{ inputs.neon_digits }}"
-                
-              elif [[ "$GAME" == "logic-gems" ]]; then
-                OUTPUT_DIR="public/assets/logic-gems/levels"
-                JAR_FILE="tools/logic-gems-level-generator.jar"
-                JAR_ARGS="" # No options for Logic Gems yet
-              fi
-
-              # Ensure directory exists
-              mkdir -p "$OUTPUT_DIR"
-              
-              TARGET_FILE="${OUTPUT_DIR}/${FILENAME_DATE}.json"
-              
-              echo "Generating [$GAME] for $FILENAME_DATE..."
-              # echo "Debug: java -jar $JAR_FILE $JAR_ARGS > $TARGET_FILE"
-
-              # Execute Generator
-              java -jar "$JAR_FILE" $JAR_ARGS > "$TARGET_FILE"
-              
-            done
-            
-            # Increment date
-            CURRENT=$(date -I -d "$CURRENT + 1 day")
-          done
+          mkdir -p "$OUTPUT_DIR"
+          
+          # Execute Generator
+          # Arguments passed to JAR: Game Name, Month Name, Year
+          # Output redirected to file: MM.YYYY.json
+          java -Xmx2G -jar "$JAR_FILE" "$GAME" "$MONTH_NAME" "$YEAR" > "$TARGET_FILE"
+          
+          # Export variables for the next step to use
+          echo "GENERATED_FILE=$TARGET_FILE" >> $GITHUB_ENV
 
       - name: Commit and Push
         run: |
-          GAME_INPUT="${{ inputs.game }}"
+          GAME="${{ inputs.game }}"
+          MONTH="${{ inputs.month }}"
+          YEAR="${{ inputs.year }}"
+          
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           
-          # Add generated files for all potential games
-          git add public/assets/symbiomes/levels/*.json || true
-          git add public/assets/neon-protocol/levels/*.json || true
-          git add public/assets/logic-gems/levels/*.json || true
+          # Add the specific generated file (using the env var from previous step)
+          git add "$GENERATED_FILE"
           
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Generate levels ($GAME_INPUT): ${{ inputs.from_date }} to ${{ inputs.to_date }}"
+            git commit -m "Generate levels ($GAME): $MONTH $YEAR"
             git push
           fi
