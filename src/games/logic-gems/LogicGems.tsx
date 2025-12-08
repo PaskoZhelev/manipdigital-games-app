@@ -167,7 +167,7 @@ const GemView: React.FC<{ piece: Piece | CluePattern, small?: boolean }> = ({ pi
   }
   if (piece.color && !piece.shape) {
     const colorMap: Record<string, string> = { 'RED': '#ff2d2d', 'GREEN': '#00e676', 'BLUE': '#2979ff', 'YELLOW': '#ffea00' };
-    return <div className={`gem-color-only ${small ? 'mini' : ''}`} style={{ backgroundColor: colorMap[piece.color] }} />;
+    return <div className={`gem-color-only ${small ? 'mini' : ''}`} style={{ backgroundColor: colorMap[piece.color] }}>?</div>;
   }
   if (!piece.color && piece.shape) {
     return <div className={`gem-shape-outline shape-${piece.shape} ${small ? 'mini' : ''}`} />;
