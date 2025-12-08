@@ -38,6 +38,10 @@ interface VisualClue {
   parts?: {dr:number, dc:number, pattern: CluePattern}[]; 
 }
 
+type LogicGemsMonthlyLevels = {
+  [day: string]: LogicGemsLevel;
+};
+
 interface LogicGemsLevel {
   grid_size: number;
   solution: Piece[][]; 
@@ -73,10 +77,9 @@ const SHAPES: Shape[] = ['SQUARE', 'TRIANGLE', 'CIRCLE'];
 
 // --- HELPERS ---
 const getFilenameFromDate = (date: Date) => {
-  const dd = String(date.getDate()).padStart(2, '0');
   const mm = String(date.getMonth() + 1).padStart(2, '0');
   const yyyy = date.getFullYear();
-  return `${import.meta.env.BASE_URL}assets/logic-gems/levels/${dd}.${mm}.${yyyy}.json`;
+  return `${import.meta.env.BASE_URL}assets/logic-gems/levels/${mm}.${yyyy}.json`;
 };
 
 const formatDateForInput = (date: Date) => {
@@ -364,13 +367,16 @@ export const LogicGems: React.FC = () => {
       setIsLoading(true);
       
       const filename = getFilenameFromDate(targetDate);
-      const saved = getAllProgress()[dateKey];
+      const dayKey = String(targetDate.getDate());
+
       try {
         const res = await fetch(filename).catch(() => fetch(`${import.meta.env.BASE_URL}assets/logic-gems/levels/default.json`));
         if (!res.ok) throw new Error("Load failed");
-        const data: LogicGemsLevel = await res.json();
+        const monthlyLevels: LogicGemsMonthlyLevels = await res.json();
+        const data: LogicGemsLevel = monthlyLevels[dayKey];
         setLevel(data);
-        
+
+        const saved = getAllProgress()[dateKey];
         if (saved) {
            setBoard(saved.boardState);
            setHints(saved.hintsState || Array(data.grid_size || 3).fill(null).map(() => Array(data.grid_size || 3).fill(null)));

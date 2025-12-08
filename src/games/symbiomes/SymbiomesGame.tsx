@@ -27,10 +27,9 @@ const EARLIEST_ARCHIVE_DATE = '2025-11-01';
 
 // --- HELPERS ---
 const getFilenameFromDate = (date: Date) => {
-  const dd = String(date.getDate()).padStart(2, '0');
   const mm = String(date.getMonth() + 1).padStart(2, '0');
   const yyyy = date.getFullYear();
-  return `${import.meta.env.BASE_URL}assets/symbiomes/levels/${dd}.${mm}.${yyyy}.json`;
+  return `${import.meta.env.BASE_URL}assets/symbiomes/levels/${mm}.${yyyy}.json`;
 };
 
 const formatDateForInput = (date: Date) => {
@@ -166,47 +165,30 @@ export const SymbiomesGame: React.FC = () => {
       setLoadError(null);
       setShowResult(false);
       setValidationResult(null);
-      
-      const allProgress = getAllProgress();
-      const currentProgress = allProgress[dateKey];
-
-      if (currentProgress) {
-        setSavedProgress(currentProgress);
-        setIsLevelCompleted(currentProgress.isCompleted);
-        setUsedClues(new Set(currentProgress.usedClues));
-      } else {
-        setSavedProgress(null);
-        setIsLevelCompleted(false);
-        setUsedClues(new Set());
-      }
 
       try {
-        const targetFilename = getFilenameFromDate(targetDate);
-        const defaultFile = import.meta.env.BASE_URL + '/assets/symbiomes/levels/default-level.json';
-        
-        const safeFetch = async (url: string) => {
-          const res = await fetch(url);
-          const contentType = res.headers.get("content-type");
-          if (res.ok && contentType && contentType.includes("application/json")) {
-            return await res.json();
-          }
-          throw new Error(`Invalid or missing file at ${url}`);
-        };
+        const filename = getFilenameFromDate(targetDate);
+        const dayKey = String(targetDate.getDate());
 
-        let data;
-        try {
-          data = await safeFetch(targetFilename);
-          setUsingDefaultLevel(false);
-        } catch (e) {
-          console.warn(`Level for ${targetFilename} not found, trying default.`);
-          try {
-            data = await safeFetch(defaultFile);
-            setUsingDefaultLevel(true);
-          } catch (defaultError) {
-             throw new Error("Could not load selected level OR default level.");
-          }
-        }
+        const res = await fetch(filename).catch(() => fetch(`${import.meta.env.BASE_URL}assets/symbiomes/levels/default.json`));
+        if (!res.ok) throw new Error("Load failed");
+        const monthlyLevels = await res.json();
+        const data = monthlyLevels[dayKey];
+        
         setLevel(data);
+
+        const allProgress = getAllProgress();
+        const currentProgress = allProgress[dateKey];
+
+        if (currentProgress) {
+          setSavedProgress(currentProgress);
+          setIsLevelCompleted(currentProgress.isCompleted);
+          setUsedClues(new Set(currentProgress.usedClues));
+        } else {
+          setSavedProgress(null);
+          setIsLevelCompleted(false);
+          setUsedClues(new Set());
+        }
       } catch (err) {
         setLoadError(err instanceof Error ? err.message : 'Failed to load level');
       } finally {

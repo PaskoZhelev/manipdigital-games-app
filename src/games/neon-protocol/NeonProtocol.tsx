@@ -5,7 +5,7 @@ import './NeonProtocol.css';
 
 // --- CONSTANTS ---
 const STORAGE_KEY = 'neon_protocol_daily';
-const EARLIEST_ARCHIVE_DATE = '2025-01-01';
+const EARLIEST_ARCHIVE_DATE = '2025-11-01';
 
 // UPDATED: Added color for E
 const LETTER_COLORS: Record<string, string> = {
@@ -18,10 +18,9 @@ const LETTER_COLORS: Record<string, string> = {
 
 // --- HELPERS ---
 const getFilenameFromDate = (date: Date) => {
-  const dd = String(date.getDate()).padStart(2, '0');
   const mm = String(date.getMonth() + 1).padStart(2, '0');
   const yyyy = date.getFullYear();
-  return `${import.meta.env.BASE_URL}assets/neon-protocol/levels/${dd}.${mm}.${yyyy}.json`;
+  return `${import.meta.env.BASE_URL}assets/neon-protocol/levels/${mm}.${yyyy}.json`;
 };
 
 const formatDateForInput = (date: Date) => {
@@ -173,32 +172,15 @@ export const NeonProtocol: React.FC = () => {
     const fetchLevel = async () => {
       setIsLoading(true);
       setLoadError(null);
-      
-      const allProgress = getAllProgress();
-      const saved = allProgress[dateKey];
 
       const filename = getFilenameFromDate(targetDate);
-      const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
-        ? import.meta.env.BASE_URL 
-        : `${import.meta.env.BASE_URL}/`;
-      const defaultFile = `${baseUrl}assets/neon-protocol/levels/default.json`;
+      const dayKey = String(targetDate.getDate());
 
       try {
-        let rawData;
-        const loadJson = async (url: string) => {
-          const res = await fetch(url);
-          if (!res.ok) throw new Error(`Status ${res.status}`);
-          const text = await res.text();
-          if (text.trim().startsWith("<")) throw new Error("Received HTML instead of JSON");
-          return JSON.parse(text);
-        };
-
-        try {
-          rawData = await loadJson(filename);
-        } catch (dateError) {
-          console.warn(`Fallback to default for date ${targetDate.toLocaleDateString()}`);
-          rawData = await loadJson(defaultFile);
-        }
+        const res = await fetch(filename).catch(() => fetch(`${import.meta.env.BASE_URL}assets/neon-protocol/levels/default.json`));
+        if (!res.ok) throw new Error("Load failed");
+        const monthlyLevels = await res.json();
+        const rawData = monthlyLevels[dayKey];
 
         const normalizedClues = rawData.clues.map((clue: string | NeonClue, index: number) => {
             if (typeof clue === 'string') {
@@ -218,6 +200,9 @@ export const NeonProtocol: React.FC = () => {
         };
 
         setLevel(data);
+
+        const allProgress = getAllProgress();
+        const saved = allProgress[dateKey];
 
         if (saved) {
           setEliminations(saved.eliminations);
