@@ -320,7 +320,9 @@ export const LogicGems: React.FC = () => {
   const [gameStarted, setGameStarted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   
+  // FIXED: Removed the extra semicolon inside the generic type
   const [board, setBoard] = useState<(Piece | null)[][]>([]);
+  
   const [hints, setHints] = useState<(Piece | null)[][]>([]); 
   const [usedClues, setUsedClues] = useState<Set<number>>(new Set());
   
@@ -390,8 +392,6 @@ export const LogicGems: React.FC = () => {
               setShowResult(true);
               setTimerActive(false);
            } else {
-              // FIX: If saved but NOT completed, force user to "Play Puzzle" to resume timer.
-              // Previously this set gameStarted(true) skipping the start logic.
               setGameStarted(false); 
               setTimerActive(false);
            }
@@ -493,6 +493,20 @@ export const LogicGems: React.FC = () => {
     }
   };
 
+  // NEW: Handler for dropping outside the grid (Removing gems)
+  const handleRemoveDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    if (isLevelCompleted) return;
+    
+    // Only handle removal if it comes from the board
+    if (dragItem && dragItem.type === 'BOARD' && dragItem.r !== undefined && dragItem.c !== undefined) {
+        const newBoard = board.map(row => [...row]);
+        newBoard[dragItem.r][dragItem.c] = null;
+        setBoard(newBoard);
+        setDragItem(null);
+    }
+  };
+
   const handleDragStart = (e: React.DragEvent, item: DragItem) => {
     if (isLevelCompleted) { e.preventDefault(); return; }
     setDragItem(item);
@@ -506,6 +520,7 @@ export const LogicGems: React.FC = () => {
   };
   const handleDrop = (e: React.DragEvent, r: number, c: number) => {
     e.preventDefault();
+    e.stopPropagation(); // Stop event bubbling so it doesn't trigger the "remove" listener on background
     setDragOverCell(null);
     if (!dragItem || isLevelCompleted) return;
     executeMove(dragItem, r, c);
@@ -534,10 +549,17 @@ export const LogicGems: React.FC = () => {
 
   const handleTouchEnd = (e: React.TouchEvent) => {
      if (!dragItem || isLevelCompleted) return;
+     
      if (dragOverCell) {
         const [r, c] = dragOverCell.split('-').map(Number);
         executeMove(dragItem, r, c);
+     } else if (dragItem.type === 'BOARD' && dragItem.r !== undefined && dragItem.c !== undefined) {
+        // NEW: If dragged from board and dropped outside (no dragOverCell), remove it
+        const newBoard = board.map(row => [...row]);
+        newBoard[dragItem.r][dragItem.c] = null;
+        setBoard(newBoard);
      }
+
      setDragOverCell(null);
      setDragItem(null);
   };
@@ -627,7 +649,11 @@ export const LogicGems: React.FC = () => {
          <span className="level-date-display">Puzzle: 📅 {targetDate.toLocaleDateString()}</span>
       </div>
 
-      <div className={`gems-game-layout ${!gameStarted ? 'blurred-content' : ''}`}>
+      <div 
+        className={`gems-game-layout ${!gameStarted ? 'blurred-content' : ''}`}
+        onDragOver={(e) => e.preventDefault()} // Allow dropping on the background
+        onDrop={handleRemoveDrop} // Handle dropping on background (removal)
+      >
          <div style={{display:'flex', flexDirection:'column', gap: '20px', alignItems:'center'}}>
             
             {/* PALETTE */}
@@ -738,11 +764,9 @@ export const LogicGems: React.FC = () => {
         <div className="rules-box">
             <h3>🧩 Understanding Clues</h3>
             <ul>
-                <li><strong>3x3 Grids:</strong> Show the exact position of a gem or pattern.</li>
-                <li><strong>Pairs:</strong> Show two gems that are diagonally adjacent.</li>
-                <li><strong>Shapes (L, T, etc):</strong> Show a geometric arrangement of gems. Rotations are NOT allowed.</li>
-                <li><strong>Lines:</strong> Shows a row or column of gems (order matters).</li>
-                <li><strong style={{color: '#ff5f5f'}}>Red Background:</strong> Means the clue is <strong>NEGATIVE</strong> (This EXACT pattern does NOT exist).</li>
+                <li><strong>Exact Arrangement:</strong> Clues represent the <strong>exact</strong> position and arrangement of gems as they appear on the board. They are never rotated or mirrored.</li>
+                <li><strong>Partial Information:</strong> Clues may specify only a <strong>Color</strong>, only a <strong>Shape</strong>, or both. The gems you place must match whatever properties are shown.</li>
+                <li><strong style={{color: '#ff5f5f'}}>Red Background:</strong> Means the clue is <strong>NEGATIVE</strong> (This EXACT pattern does NOT exist anywhere on the board).</li>
             </ul>
         </div>
       </div>
