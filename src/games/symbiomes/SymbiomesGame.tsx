@@ -629,7 +629,7 @@ export const SymbiomesGame: React.FC = () => {
                             className={`btn-primary btn-share-completed ${copyFeedback ? 'copied' : ''}`} 
                             onClick={handleShare} 
                         >
-                            {copyFeedback ? '✅ Copied!' : '📋 Copy Summary'}
+                            {copyFeedback ? '✅ Copied!' : 'Share Result'}
                         </button>
                     </>
                 ) : (

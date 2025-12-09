@@ -160,14 +160,12 @@
 }
 
 /* --- CLUE LAYOUTS --- */
-/* Add this to LogicGems.css under the "--- CLUE LAYOUTS ---" section */
-
 .wildcard-marker {
   color: #e0e0e0;
   font-weight: bold;
   font-size: 14px;
   opacity: 0.4;
-  user-select: none; /* Prevents text selection while dragging/clicking */
+  user-select: none;
 }
 
 .clue-ortho-container {
@@ -177,7 +175,7 @@
   justify-content: center;
   padding: 4px;
   border-radius: 4px;
-  background: rgba(0,0,0,0.2); /* Matches existing strip style */
+  background: rgba(0,0,0,0.2); 
 }
 
 .clue-ortho-container.horizontal {
@@ -390,6 +388,101 @@
 @media (max-width: 768px) {
   .rules-container { grid-template-columns: 1fr; }
 }
+
+/* --- COMPLETION BANNER & MODAL (MATCHING SYMBIOMES) --- */
+.completion-banner {
+  background: rgba(76, 175, 80, 0.15);
+  border: 1px solid #4caf50;
+  border-radius: 8px;
+  padding: 10px 25px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in;
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.completion-banner h3 {
+  color: #4caf50;
+  margin: 0 0 5px 0;
+  font-size: 1.1rem;
+}
+
+.completion-stats {
+  display: flex;
+  gap: 15px;
+  color: #e0e0e0;
+  font-weight: 600;
+  font-size: 0.95rem;
+  justify-content: center;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Modal Content matching Symbiomes */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.modal-content {
+  background: #1a1a1a;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 450px;
+  width: 100%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
+  border: 1px solid #444;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #e0e0e0;
+}
+
+.stats-display {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  padding: 1.2rem;
+  background: #2a2a2a;
+  border-radius: 8px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-size: 1.6rem;
+  color: #4caf50;
+  font-weight: bold;
+}
+
 
 /* --- MOBILE & CALENDAR (Existing) --- */
 @media (max-width: 600px) {

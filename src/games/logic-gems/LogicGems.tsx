@@ -389,7 +389,7 @@ export const LogicGems: React.FC = () => {
            
            if(saved.isCompleted) {
               setGameStarted(true);
-              setShowResult(true);
+              setShowResult(false); // FIXED: Do not show modal on refresh/load
               setTimerActive(false);
            } else {
               setGameStarted(false); 
@@ -459,7 +459,7 @@ export const LogicGems: React.FC = () => {
 
   const handleStart = () => {
      if(isLevelCompleted) {
-        setShowResult(true);
+        setShowResult(false); // Only show result if they just finished, not on "play again" (though usually blocked)
         setTimerActive(false);
      }
      else {
@@ -721,6 +721,17 @@ export const LogicGems: React.FC = () => {
                 </div>
             )}
 
+            {/* COMPLETION BANNER (Moved above buttons) */}
+            {isLevelCompleted && (
+                <div className="completion-banner">
+                    <h3>🏆 Level Completed!</h3>
+                    <div className="completion-stats">
+                        <span>⏱️ {Math.floor(timeSpent / 60)}:{(timeSpent % 60).toString().padStart(2, '0')}</span>
+                        <span>🚫 {errors} Errors</span>
+                    </div>
+                </div>
+            )}
+
             <div className="game-actions">
                {isLevelCompleted ? (
                    <>
@@ -773,10 +784,23 @@ export const LogicGems: React.FC = () => {
 
       {showResult && isLevelCompleted && (
          <div className="modal-overlay">
-            <div className="modal-content" style={{textAlign:'center', border: '1px solid #4caf50'}}>
-               <h2 style={{color: '#4caf50'}}>SOLVED!</h2>
-               <div className="completion-stats"><p>⏱️ {Math.floor(timeSpent/60)}:{(timeSpent%60).toString().padStart(2,'0')}</p><p>🚫 {errors} Errors</p></div>
-               <button className="btn-secondary" onClick={() => setShowResult(false)}>Close</button>
+            <div className="modal-content">
+               <h2 style={{color: '#4caf50', marginBottom: '1.5rem'}}>🎉 Correct!</h2>
+               <div className="stats-display">
+                  <div className="stat-item">
+                    <span className="stat-label">Time</span>
+                    <span className="stat-value">
+                        {Math.floor(timeSpent/60)}:{(timeSpent%60).toString().padStart(2,'0')}
+                    </span>
+                  </div>
+                  <div className="stat-item">
+                    <span className="stat-label">Errors</span>
+                    <span className="stat-value">{errors}</span>
+                  </div>
+               </div>
+               <div className="modal-actions" style={{justifyContent: 'center', display: 'flex'}}>
+                  <button className="btn-primary" onClick={() => setShowResult(false)}>Okay</button>
+               </div>
             </div>
          </div>
       )}
