@@ -13,6 +13,7 @@ on:
           - symbiomes
           - neon-protocol
           - logic-gems
+          - all # Added "all" option
       
       month:
         description: 'Month'
@@ -61,7 +62,7 @@ jobs:
       - name: Generate Level JSON
         run: |
           # --- INPUTS ---
-          GAME="${{ inputs.game }}"
+          INPUT_GAME="${{ inputs.game }}"
           MONTH_NAME="${{ inputs.month }}"
           YEAR="${{ inputs.year }}"
           
@@ -81,28 +82,37 @@ jobs:
             "december")  MONTH_NUM="12" ;;
           esac
 
-          # Define Output Directory
-          OUTPUT_DIR="public/assets/${GAME}/levels"
-          
-          # Define Output Filename as MM.YYYY.json
-          TARGET_FILE="${OUTPUT_DIR}/${MONTH_NUM}.${YEAR}.json"
+          # Export MONTH_NUM for the next step to use
+          echo "MONTH_NUM=$MONTH_NUM" >> $GITHUB_ENV
+
+          # Determine which games to run
+          if [ "$INPUT_GAME" == "all" ]; then
+            GAMES_LIST="symbiomes neon-protocol logic-gems"
+          else
+            GAMES_LIST="$INPUT_GAME"
+          fi
           
           JAR_FILE="tools/manip-games-level-generator.jar"
 
-          echo "Generating levels..."
-          echo "Game: $GAME"
-          echo "Args: $MONTH_NAME $YEAR"
-          echo "File: $TARGET_FILE"
+          # Loop through selected games
+          for GAME in $GAMES_LIST; do
+            echo "----------------------------------------"
+            echo "Generating levels for: $GAME"
+            
+            # Define Output Directory
+            OUTPUT_DIR="public/assets/${GAME}/levels"
+            
+            # Define Output Filename as MM.YYYY.json
+            TARGET_FILE="${OUTPUT_DIR}/${MONTH_NUM}.${YEAR}.json"
+            
+            echo "Args: $MONTH_NAME $YEAR"
+            echo "File: $TARGET_FILE"
 
-          mkdir -p "$OUTPUT_DIR"
-          
-          # Execute Generator
-          # Arguments passed to JAR: Game Name, Month Name, Year
-          # Output redirected to file: MM.YYYY.json
-          java -Xmx2G -jar "$JAR_FILE" "$GAME" "$MONTH_NAME" "$YEAR" > "$TARGET_FILE"
-          
-          # Export variables for the next step to use
-          echo "GENERATED_FILE=$TARGET_FILE" >> $GITHUB_ENV
+            mkdir -p "$OUTPUT_DIR"
+            
+            # Execute Generator
+            java -Xmx2G -jar "$JAR_FILE" "$GAME" "$MONTH_NAME" "$YEAR" > "$TARGET_FILE"
+          done
 
       - name: Commit and Push
         run: |
@@ -113,8 +123,9 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           
-          # Add the specific generated file (using the env var from previous step)
-          git add "$GENERATED_FILE"
+          # Add generated files using wildcard to catch all games (MM.YYYY.json)
+          # We use the MONTH_NUM env var exported from the previous step
+          git add public/assets/*/levels/${MONTH_NUM}.${YEAR}.json
           
           if git diff --staged --quiet; then
             echo "No changes to commit."

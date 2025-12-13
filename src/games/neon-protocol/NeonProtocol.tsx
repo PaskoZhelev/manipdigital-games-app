@@ -281,9 +281,45 @@ export const NeonProtocol: React.FC = () => {
 
   const toggleElimination = (colIndex: number, val: number) => {
     if (isLevelCompleted || !gameStarted) return;
+
     setEliminations(prev => {
+      // 1. Calculate the next elimination state
       const next = prev.map(col => [...col]);
       next[colIndex][val] = !next[colIndex][val];
+
+      // 2. Check the column to see how many numbers are left uncrossed
+      const colData = next[colIndex];
+      const uncrossed: number[] = [];
+      // Indices 1 to 5 represent numbers 1 to 5
+      for (let i = 1; i <= 5; i++) {
+        if (!colData[i]) {
+          uncrossed.push(i);
+        }
+      }
+
+      // 3. Auto-fill or Reset the guess for this column
+      if (uncrossed.length === 1) {
+         // EXACTLY ONE OPTION LEFT: Auto-fill
+         setCurrentGuess(prevGuess => {
+            const nextGuess = [...prevGuess];
+            // Only update if it's different to avoid redundant updates
+            if (nextGuess[colIndex] !== uncrossed[0]) {
+               nextGuess[colIndex] = uncrossed[0];
+            }
+            return nextGuess;
+         });
+      } else if (uncrossed.length > 1) {
+         // MORE THAN ONE OPTION: Reset to empty if currently filled
+         setCurrentGuess(prevGuess => {
+            if (prevGuess[colIndex] !== null) {
+               const nextGuess = [...prevGuess];
+               nextGuess[colIndex] = null;
+               return nextGuess;
+            }
+            return prevGuess;
+         });
+      }
+
       return next;
     });
   };
@@ -494,7 +530,7 @@ export const NeonProtocol: React.FC = () => {
         </div>
       </div>
 
-      {/* FOOTER & RULES (unchanged from previous step, but included for completeness) */}
+      {/* FOOTER & RULES */}
       {gameStarted && (
         <div className="game-controls-container">
            {isLevelCompleted && (
