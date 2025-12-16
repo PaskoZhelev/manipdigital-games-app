@@ -85,7 +85,7 @@
 /* Active State */
 .knot-wall-h.active, .knot-wall-v.active {
   background-color: #fff;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.8), 0 0 5px rgba(255, 255, 255, 0.4); 
   z-index: 2;
 }
 
@@ -100,7 +100,7 @@
 
 .knot-vertex.active {
   background-color: #fff;
-  box-shadow: 0 0 5px #fff;
+  box-shadow: 0 0 3px #fff;
 }
 
 /* Start/End Markers */
