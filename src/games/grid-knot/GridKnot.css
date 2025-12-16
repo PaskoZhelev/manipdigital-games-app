@@ -33,7 +33,7 @@
   justify-content: center;
   position: relative;
   transition: background-color 0.3s;
-  overflow: visible; /* Allow glows to bleed slightly if needed */
+  overflow: visible; 
 }
 
 .knot-cell.region-error {
@@ -45,68 +45,21 @@
   background-color: rgba(0, 255, 0, 0.05);
 }
 
-/* --- ITEMS (Shapes) --- */
+/* --- ITEMS (Images) --- */
 .knot-item {
-  width: 60%;
-  height: 60%;
+  width: 95%;
+  height: 95%;
   display: block;
   z-index: 5;
-  transition: all 0.2s;
+  object-fit: contain;
+  pointer-events: none; /* Let clicks pass through to cell if needed */
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.2));
+  transition: transform 0.2s;
 }
 
-/* 1. RED: Diamond */
-.item-color-R { 
-  background: #ff2d2d; 
-  border-radius: 4px;
-  transform: rotate(45deg) scale(0.9); /* Scale down slightly to fit cell after rotation */
-  box-shadow: 0 0 8px #ff2d2d;
-}
-
-/* 2. GREEN: Circle */
-.item-color-G { 
-  background: #00e676; 
-  border-radius: 50%;
-  box-shadow: 0 0 8px #00e676; 
-}
-
-/* 3. BLUE: Squircle (Rounded Square) */
-.item-color-B { 
-  background: #2979ff; 
-  border-radius: 25%; /* Soft square */
-  box-shadow: 0 0 8px #2979ff; 
-}
-
-/* 4. YELLOW: Star */
-.item-color-Y { 
-  background: #ffea00; 
-  /* Using drop-shadow filter so the glow follows the star shape */
-  filter: drop-shadow(0 0 5px #ffea00);
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-  transform: scale(1.1); /* Stars look visually smaller, scale up */
-}
-
-/* 5. PURPLE: Triangle */
-.item-color-P { 
-  background: #d500f9; 
-  filter: drop-shadow(0 0 4px #d500f9);
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  height: 55%; /* Visual balance */
-  transform: translateY(10%); /* Center visually */
-}
-
-/* 6. ORANGE: Hexagon */
-.item-color-O { 
-  background: #ffae00; 
-  filter: drop-shadow(0 0 4px #ffae00);
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-  transform: scale(1.05);
-}
-
-.item-color-W { 
-  background: #a1a1a1; 
-  filter: drop-shadow(0 0 4px #a1a1a1);
-  clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
-  transform: scale(1.15);
+/* Optional: Slight hover effect on items if desired, or per color tweaks */
+.knot-cell:hover .knot-item {
+  transform: scale(1.1);
 }
 
 /* --- INTERACTIVE WALLS --- */
@@ -165,8 +118,35 @@
 .marker-S { color: #00e676; text-shadow: 0 0 10px #00e676; font-size: 18px; }
 .marker-E { color: #ff2d2d; text-shadow: 0 0 10px #ff2d2d; font-size: 18px; }
 
+/* --- BUTTONS & MODALS --- */
+.completion-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #00e676;
+    margin-bottom: 10px;
+}
+
+.completion-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.btn-share {
+    background-color: #2979ff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.btn-share:hover { background-color: #2962ff; }
+
 /* --- RESPONSIVENESS --- */
 @media (max-width: 600px) {
   .knot-board-wrapper { padding: 10px; }
-  .knot-item { border-radius: 2px; }
+  .knot-item { width: 85%; height: 85%; }
 }

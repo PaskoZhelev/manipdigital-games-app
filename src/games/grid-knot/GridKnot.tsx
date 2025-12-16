@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import '../symbiomes/SymbiomesGame.css'; 
 import '../logic-gems/LogicGems.css'; 
 import './GridKnot.css';
@@ -64,6 +64,9 @@ export const GridKnot: React.FC = () => {
   const [showResult, setShowResult] = useState(false);
   
   const [regionStatus, setRegionStatus] = useState<number[][]>([]); 
+  
+  // Date Picker Ref
+  const dateInputRef = useRef<HTMLInputElement>(null);
 
   const dateKey = useMemo(() => formatDateForInput(targetDate), [targetDate]);
 
@@ -100,9 +103,6 @@ export const GridKnot: React.FC = () => {
         const emptyH = Array(levelData.height + 1).fill(false).map(() => Array(levelData.width).fill(false));
         const emptyV = Array(levelData.height).fill(false).map(() => Array(levelData.width + 1).fill(false));
 
-        // Validate that saved data matches current level dimensions
-        // hWalls should be (Height + 1) rows
-        // hWalls[0] should be (Width) length
         let loadSaved = false;
         if (saved && saved.hWalls && saved.hWalls.length === levelData.height + 1) {
             if (saved.hWalls[0] && saved.hWalls[0].length === levelData.width) {
@@ -166,7 +166,6 @@ export const GridKnot: React.FC = () => {
     });
   };
 
-  // 1. CLICK START
   const handleWallMouseDown = (e: React.MouseEvent, r: number, c: number, isHorizontal: boolean, isActive: boolean) => {
     if (isLevelCompleted) return;
     e.preventDefault();
@@ -180,23 +179,16 @@ export const GridKnot: React.FC = () => {
     else updateVWall(r, c, newMode);
   };
 
-  // 2. DRAGGING OVER (Center-Sensitive)
   const handleWallMouseMove = (e: React.MouseEvent, r: number, c: number, isHorizontal: boolean) => {
     if (!isDragging || isLevelCompleted) return;
-
-    // Get the geometry of the visible wall element (ignoring the large hit-area padding)
     const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-
-    // Define "Safe Zone": only activate if mouse is in the central spine (ignoring outer 3px edges)
     const THRESHOLD = 3; 
 
     if (isHorizontal) {
-        // Horizontal wall: Check Y (height is small)
         if (y < THRESHOLD || y > rect.height - THRESHOLD) return;
     } else {
-        // Vertical wall: Check X (width is small)
         if (x < THRESHOLD || x > rect.width - THRESHOLD) return;
     }
 
@@ -211,14 +203,32 @@ export const GridKnot: React.FC = () => {
   
   const handleReset = () => {
       if (!level) return;
-
       const emptyH = Array(level.height + 1).fill(false).map(() => Array(level.width).fill(false));
       const emptyV = Array(level.height).fill(false).map(() => Array(level.width + 1).fill(false));
-      
       setHWalls(emptyH);
       setVWalls(emptyV);
-      
       setRegionStatus(Array(level.height).fill(0).map(() => Array(level.width).fill(0)));
+  };
+
+  // --- DATE HANDLING ---
+  const handleDateClick = () => {
+    if (dateInputRef.current) dateInputRef.current.showPicker();
+  };
+
+  const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.value) {
+        const parts = e.target.value.split('-');
+        const newDate = new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2]));
+        setTargetDate(newDate);
+        setGameStarted(false); // Reset to start screen for new level
+        setShowResult(false);
+    }
+  };
+
+  // --- SHARE ---
+  const handleShare = () => {
+      const text = `Grid Knot - ${targetDate.toLocaleDateString()}\n⏱️ ${Math.floor(timeSpent/60)}:${(timeSpent%60).toString().padStart(2,'0')} \nErrors: ${errors}`;
+      navigator.clipboard.writeText(text).then(() => alert("Result copied to clipboard!"));
   };
 
   // --- VALIDATION ---
@@ -321,15 +331,29 @@ export const GridKnot: React.FC = () => {
   };
 
   const getItemAt = (x: number, y: number) => level?.items.find(i => i.x === x && i.y === y);
-  if (!level && !isLoading) return <div className="logic-gems-container">Failed to load level.</div>;
+  
+  // Hidden input for date picker
+  const renderDateInput = () => (
+      <input 
+        type="date" 
+        ref={dateInputRef}
+        style={{visibility:'hidden', position:'absolute', top: 0}}
+        onChange={handleDateChange}
+        value={formatDateForInput(targetDate)}
+      />
+  );
+
+  if (!level && !isLoading) return <div className="logic-gems-container">Failed to load level. {renderDateInput()}</div>;
 
   return (
     <div className="logic-gems-container">
+        {renderDateInput()}
+        
         {!gameStarted && (
             <div className="game-start-overlay">
                 <h1 className="game-title-neon" style={{color: '#2979ff', textShadow: '0 0 10px #2979ff'}}>GRID KNOT</h1>
                 <div className="date-selector-container">
-                    <button className="custom-date-trigger">📅 {targetDate.toLocaleDateString()}</button>
+                    <button className="custom-date-trigger" onClick={handleDateClick}>📅 {targetDate.toLocaleDateString()}</button>
                 </div>
                 {isLoading ? <p>Loading...</p> : (
                     <button className="btn-primary start-btn" onClick={handleStart}>
@@ -372,7 +396,7 @@ export const GridKnot: React.FC = () => {
                                  );
                              }
 
-                             // HORIZONTAL WALL
+                             // WALLS
                              if (isVertexRow && !isVertexCol) {
                                  const isActive = hWalls[mapY][mapX];
                                  return (
@@ -385,7 +409,6 @@ export const GridKnot: React.FC = () => {
                                  );
                              }
 
-                             // VERTICAL WALL
                              if (!isVertexRow && isVertexCol) {
                                  const isActive = vWalls[mapY][mapX];
                                  return (
@@ -398,14 +421,20 @@ export const GridKnot: React.FC = () => {
                                  );
                              }
 
-                             // CELL
+                             // CELL (IMAGE)
                              if (!isVertexRow && !isVertexCol) {
                                  const item = getItemAt(mapX, mapY);
                                  const status = regionStatus[mapY][mapX];
                                  const statusClass = status === 1 ? 'region-success' : status === -1 ? 'region-error' : '';
                                  return (
                                      <div key={`${gridRowIndex}-${gridColIndex}`} className={`knot-cell ${statusClass}`}>
-                                         {item && <div className={`knot-item item-color-${item.color}`} />}
+                                         {item && (
+                                            <img 
+                                                src={`${import.meta.env.BASE_URL}assets/grid-knot/images/${item.color}.png`}
+                                                alt={item.color}
+                                                className="knot-item"
+                                            />
+                                         )}
                                      </div>
                                  );
                              }
@@ -456,7 +485,11 @@ export const GridKnot: React.FC = () => {
                     <div className="stats-display">
                         <div className="stat-item"><span className="stat-label">Time</span><span className="stat-value">{Math.floor(timeSpent/60)}:{(timeSpent%60).toString().padStart(2,'0')}</span></div>
                     </div>
-                    <button className="btn-primary" onClick={() => setShowResult(false)}>Close</button>
+                    <div className="completion-actions">
+                        <button className="btn-share" onClick={handleShare}>Share Result</button>
+                        <button className="btn-primary" onClick={handleDateClick}>Select Date</button>
+                        <button className="btn-secondary" onClick={() => setShowResult(false)}>Close</button>
+                    </div>
                 </div>
             </div>
         )}
