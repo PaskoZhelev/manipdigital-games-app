@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import './TotemOrigins.css'; 
 
 // --- TYPES ---
@@ -15,10 +15,7 @@ interface Piece {
 
 interface LevelData {
   difficulty: number;
-  ui_config: {
-    dropdown_columns: string[][];
-    correct_solution: string[];
-  };
+  solution: string[]; 
   examples: {
     true_koan: { color: string, shape: string, pips: number }[];
     false_koan: { color: string, shape: string, pips: number }[];
@@ -26,6 +23,52 @@ interface LevelData {
 }
 
 type MonthlyLevels = Record<string, LevelData>;
+
+interface SavedTotemProgress {
+  history: { pieces: Piece[], result: boolean }[];
+  userGuess: string[];
+  isSolved: boolean;
+  currentBuild: Piece[];
+  timeSpent: number;
+  submissionCount: number;
+  lastPlayed: number;
+}
+
+// --- CONFIGURATION ---
+const STORAGE_KEY = 'totem_origins_progress';
+
+const DROPDOWN_OPTIONS = [
+  [
+    "At least one piece",
+    "All pieces",
+    "No pieces",
+    "The total count",
+    "The sum of pips",
+    "All RED pieces",
+    "All BLUE pieces",
+    "All GREEN pieces",
+    "All YELLOW pieces",
+    "All SQUARE pieces",
+    "All CIRCLE pieces",
+    "All TRIANGLE pieces",
+    "All STAR pieces"
+  ],
+  [
+    "is / are",
+    "contains",
+    "equals"
+  ],
+  [
+    "RED", "BLUE", "GREEN", "YELLOW",
+    "SQUARE", "CIRCLE", "TRIANGLE", "STAR",
+    "1", "2", "3", "4", "5",
+    "ODD", "EVEN",
+    "RED SQUARE", "RED CIRCLE", "RED TRIANGLE", "RED STAR",
+    "BLUE SQUARE", "BLUE CIRCLE", "BLUE TRIANGLE", "BLUE STAR",
+    "GREEN SQUARE", "GREEN CIRCLE", "GREEN TRIANGLE", "GREEN STAR",
+    "YELLOW SQUARE", "YELLOW CIRCLE", "YELLOW TRIANGLE", "YELLOW STAR"
+  ]
+];
 
 // --- HELPER: Rule Evaluation Engine ---
 const evaluateRule = (koan: Piece[], ruleParts: string[]): boolean => {
@@ -72,9 +115,12 @@ const evaluateRule = (koan: Piece[], ruleParts: string[]): boolean => {
   return false;
 };
 
+const getAllProgress = (): Record<string, SavedTotemProgress> => {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) { return {}; }
+};
+
 // --- VISUAL COMPONENTS ---
 
-// 1. Helper to render the shape path cleanly
 const ShapeIcon = ({ shape, color }: { shape: Shape, color: string }) => {
   switch (shape) {
     case 'SQUARE': return <rect x="15" y="15" width="70" height="70" rx="10" fill={color} />;
@@ -85,16 +131,12 @@ const ShapeIcon = ({ shape, color }: { shape: Shape, color: string }) => {
   }
 };
 
-// 2. Render Piece for Board (Updated)
-// 2. Render Piece for Board (Updated)
 const RenderPiece = React.memo(({ piece, size = 50 }: { piece: Piece, size?: number }) => {
   const colorMap: Record<string, string> = {
     RED: '#e53935', BLUE: '#1e88e5', GREEN: '#43a047', YELLOW: '#fdd835'
   };
 
-  // Helper to visually center pips based on shape
   const getShapeOffset = (s: Shape): React.CSSProperties => {
-    // Triangles and Stars have more mass at the bottom; push pips down to look centered
     if (s === 'TRIANGLE') return { paddingTop: '15%' };
     if (s === 'STAR') return { paddingTop: '10%' };
     return {};
@@ -102,7 +144,6 @@ const RenderPiece = React.memo(({ piece, size = 50 }: { piece: Piece, size?: num
 
   const pipsContent = useMemo(() => {
     const p = piece.pips;
-    // slightly larger pips for better visibility
     const pipSize = size * 0.14; 
     
     const dotStyle: React.CSSProperties = { 
@@ -114,17 +155,15 @@ const RenderPiece = React.memo(({ piece, size = 50 }: { piece: Piece, size?: num
     const containerStyle: React.CSSProperties = { 
         position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', 
         display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none',
-        ...getShapeOffset(piece.shape) // Apply visual correction
+        ...getShapeOffset(piece.shape)
     };
 
-    // 1 PIP: Center
     if(p===1) return (
         <div style={containerStyle}>
             <div style={dotStyle}/>
         </div>
     );
     
-    // 2 PIPS: Diagonal (Tightened to fit Star)
     if(p===2) return (
         <div style={containerStyle}>
             <div style={{
@@ -137,10 +176,8 @@ const RenderPiece = React.memo(({ piece, size = 50 }: { piece: Piece, size?: num
         </div>
     );
     
-    // 3 PIPS: Cluster Formation (Fixes Star Overflow)
     if(p===3) return (
         <div style={containerStyle}>
-            {/* Using a small grid/flex wrap to create a triangle cluster */}
             <div style={{
                 display: 'flex', flexWrap: 'wrap', justifyContent: 'center', 
                 width: size * 0.35, gap: '2px', transform: 'rotate(0deg)'
@@ -166,7 +203,15 @@ const RenderPiece = React.memo(({ piece, size = 50 }: { piece: Piece, size?: num
 
 // --- MAIN GAME COMPONENT ---
 export const TotemOrigins = () => {
-  const [selectedDate, setSelectedDate] = useState<string>(new Date().toISOString().split('T')[0]);
+  const getLocalToday = () => {
+    const d = new Date();
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${y}-${m}-${day}`;
+  };
+
+  const [selectedDate, setSelectedDate] = useState<string>(getLocalToday());
   const [showCalendar, setShowCalendar] = useState(false);
   const [monthlyLevels, setMonthlyLevels] = useState<MonthlyLevels | null>(null);
   
@@ -177,19 +222,28 @@ export const TotemOrigins = () => {
   const [isSolved, setIsSolved] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  
+  // New Stats State
+  const [timeSpent, setTimeSpent] = useState(0);
+  const [submissionCount, setSubmissionCount] = useState(0);
+  const [timerActive, setTimerActive] = useState(false);
+  const [copyFeedback, setCopyFeedback] = useState(false);
 
   // Builder UI State
   const [selColor, setSelColor] = useState<Color>('RED');
   const [selShape, setSelShape] = useState<Shape>('SQUARE');
   const [selPips, setSelPips] = useState<Pips>(1);
-  const [globalProgress, setGlobalProgress] = useState<Record<string, string>>({});
+  const [completedDates, setCompletedDates] = useState<Set<string>>(new Set());
 
-  // 1. Fetch
+  // 1. Fetch Data
   useEffect(() => {
     const fetchMonthData = async () => {
       setIsLoading(true);
       setError(null);
       const [yyyy, mm] = selectedDate.split('-');
+      
+      if(!yyyy || !mm) return;
+
       const url = `${import.meta.env.BASE_URL}assets/totem-origins/levels/${mm}.${yyyy}.json`;
 
       try {
@@ -207,8 +261,11 @@ export const TotemOrigins = () => {
     fetchMonthData();
   }, [selectedDate.substring(0, 7)]); 
 
-  // 2. Load
+  // 2. Load Level & Progress
   useEffect(() => {
+    // Reset timer when switching dates
+    setTimerActive(false);
+
     if (!monthlyLevels) return;
 
     const day = parseInt(selectedDate.split('-')[2], 10).toString(); 
@@ -216,44 +273,72 @@ export const TotemOrigins = () => {
 
     if (lvl) {
       setLevel(lvl);
-      const saved = localStorage.getItem(`totem_${selectedDate}`);
+      const allProgress = getAllProgress();
+      const saved = allProgress[selectedDate];
+
       if (saved) {
-        const parsed = JSON.parse(saved);
-        setHistory(parsed.history || []);
-        setIsSolved(parsed.isSolved || false);
-        setUserGuess(parsed.userGuess || [
-            lvl.ui_config.dropdown_columns[0][0],
-            lvl.ui_config.dropdown_columns[1][0],
-            lvl.ui_config.dropdown_columns[2][0]
-        ]);
+        setHistory(saved.history || []);
+        setIsSolved(saved.isSolved || false);
+        setUserGuess(saved.userGuess || [DROPDOWN_OPTIONS[0][0], DROPDOWN_OPTIONS[1][0], DROPDOWN_OPTIONS[2][0]]);
+        setCurrentBuild(saved.currentBuild || []);
+        setTimeSpent(saved.timeSpent || 0);
+        setSubmissionCount(saved.submissionCount || 0);
+        
+        // If not solved, continue timer
+        if (!saved.isSolved) setTimerActive(true);
       } else {
+        // Init New Level
         setHistory([]);
         setIsSolved(false);
-        setUserGuess([
-            lvl.ui_config.dropdown_columns[0][0],
-            lvl.ui_config.dropdown_columns[1][0],
-            lvl.ui_config.dropdown_columns[2][0]
-        ]);
+        setUserGuess([DROPDOWN_OPTIONS[0][0], DROPDOWN_OPTIONS[1][0], DROPDOWN_OPTIONS[2][0]]);
+        setCurrentBuild([]);
+        setTimeSpent(0);
+        setSubmissionCount(0);
+        setTimerActive(true);
       }
-      setCurrentBuild([]);
     } else {
       setLevel(null);
     }
-    const prog = JSON.parse(localStorage.getItem('totem_global_progress') || '{}');
-    setGlobalProgress(prog);
   }, [selectedDate, monthlyLevels]);
 
-  // 3. Save
+  // 3. Update Global Completion Set
+  useEffect(() => {
+     const all = getAllProgress();
+     const solvedSet = new Set<string>();
+     Object.keys(all).forEach(key => {
+         if (all[key].isSolved) solvedSet.add(key);
+     });
+     setCompletedDates(solvedSet);
+  }, [isSolved, selectedDate]);
+
+  // 4. Timer Tick
+  useEffect(() => {
+    let interval: number;
+    if (timerActive && !isSolved) {
+        interval = window.setInterval(() => {
+            setTimeSpent(t => t + 1);
+        }, 1000);
+    }
+    return () => clearInterval(interval);
+  }, [timerActive, isSolved]);
+
+  // 5. Save Progress
   useEffect(() => {
     if (!level) return;
-    const saveState = { history, isSolved, userGuess };
-    localStorage.setItem(`totem_${selectedDate}`, JSON.stringify(saveState));
-    if (isSolved) {
-      const prog = { ...globalProgress, [selectedDate]: 'SOLVED' };
-      localStorage.setItem('totem_global_progress', JSON.stringify(prog));
-      setGlobalProgress(prog);
-    }
-  }, [history, isSolved, userGuess, selectedDate]);
+    const all = getAllProgress();
+    all[selectedDate] = { 
+        history, 
+        isSolved, 
+        userGuess, 
+        currentBuild,
+        timeSpent,
+        submissionCount,
+        lastPlayed: Date.now() 
+    };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(all));
+  }, [history, isSolved, userGuess, currentBuild, timeSpent, submissionCount, selectedDate, level]);
+
+  // --- ACTIONS ---
 
   const handleAddPiece = () => {
     if (currentBuild.length >= 4) return;
@@ -270,26 +355,43 @@ export const TotemOrigins = () => {
     setCurrentBuild([]);
   };
 
-    const handleTestKoan = () => {
-        if (currentBuild.length === 0 || !level) return;
-        const result = evaluateRule(currentBuild, level.ui_config.correct_solution);
-        
-        // 1. Update History: Append to end ([...prev, new]) for chronological order
-        setHistory(prev => [...prev, { pieces: [...currentBuild], result }]);
-        
-        // 2. Clear Construction Site (New Request)
-        setCurrentBuild([]);
-    };
+  const handleTestKoan = () => {
+    if (currentBuild.length === 0 || !level) return;
+    const result = evaluateRule(currentBuild, level.solution);
+    setHistory(prev => [...prev, { pieces: [...currentBuild], result }]);
+    // Keep build to allow tweaking? No, previous behavior was clear.
+    setCurrentBuild([]);
+  };
 
   const handleGuessSubmit = () => {
     if (!level) return;
-    const solution = level.ui_config.correct_solution;
+    
+    setSubmissionCount(c => c + 1);
+
+    const solution = level.solution;
     const isCorrect = JSON.stringify(userGuess) === JSON.stringify(solution);
-    if (isCorrect) setIsSolved(true);
-    else alert("Hypothesis incorrect. Check your research log.");
+    
+    if (isCorrect) {
+        setIsSolved(true);
+        setTimerActive(false);
+    }
+    else {
+        alert("Hypothesis incorrect. Check your research log.");
+    }
   };
 
-  // Color Mapping Helper
+  const handleShare = async () => {
+    const minutes = Math.floor(timeSpent / 60);
+    const seconds = (timeSpent % 60).toString().padStart(2, '0');
+    const summary = `Totem Origins 🗿\n📅 ${selectedDate}\n✅ Solved in ${minutes}:${seconds}\n📝 Theories: ${submissionCount}`;
+    
+    try {
+      await navigator.clipboard.writeText(summary);
+      setCopyFeedback(true);
+      setTimeout(() => setCopyFeedback(false), 2000);
+    } catch (e) { console.error(e); }
+  };
+
   const getColorHex = (c: Color) => (c==='YELLOW'?'#fdd835':c==='RED'?'#e53935':c==='BLUE'?'#1e88e5':'#43a047');
 
   const renderCalendar = () => {
@@ -298,7 +400,7 @@ export const TotemOrigins = () => {
     const days = [];
     for(let d=1; d<=daysInMonth; d++) {
         const dStr = `${y}-${String(m).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-        const isDone = globalProgress[dStr] === 'SOLVED';
+        const isDone = completedDates.has(dStr);
         const isSel = dStr === selectedDate;
         days.push(
             <div key={d} className={`calendar-day ${isSel?'selected':''} ${isDone?'solved':''}`} onClick={() => { setSelectedDate(dStr); setShowCalendar(false); }}>
@@ -394,15 +496,14 @@ export const TotemOrigins = () => {
                                     <div className="palette-group">
                                         {(['RED','BLUE','GREEN','YELLOW'] as Color[]).map(c => (
                                             <button key={c} className={`p-btn ${selColor===c?'active':''}`} onClick={()=>setSelColor(c)}>
-                                                {/* Updated Swatch: Rounded Square, color persists, white border on select */}
                                                 <div style={{
                                                     width: '24px', 
                                                     height: '24px', 
-                                                    borderRadius: '6px', // Rounded corners for square
+                                                    borderRadius: '6px',
                                                     backgroundColor: getColorHex(c),
-                                                    border: selColor===c ? '2px solid #fff' : '2px solid transparent', // Border highlights only
+                                                    border: selColor===c ? '2px solid #fff' : '2px solid transparent',
                                                     boxSizing: 'border-box',
-                                                    flexShrink: 0 // Prevent collapsing
+                                                    flexShrink: 0
                                                 }} />
                                             </button>
                                         ))}
@@ -443,10 +544,8 @@ export const TotemOrigins = () => {
                     <div className="panel-header">RESEARCH LOG</div>
                     <div className="history-list">
                         {history.length === 0 && <div className="empty-log">No experiments yet.</div>}
-                        {/* Map in chronological order (0 is #1) */}
                         {history.map((entry, idx) => (
                             <div key={idx} className="log-entry">
-                                {/* Added: Log Number */}
                                 <div className="log-index">#{idx + 1}</div>
                                 <div className={`status-pill ${entry.result ? 'ok' : 'fail'}`}>
                                     {entry.result ? 'TRUE' : 'FALSE'}
@@ -467,11 +566,27 @@ export const TotemOrigins = () => {
                     <div className="victory-message">
                         <h2>🏅 DISCOVERY CONFIRMED</h2>
                         <p>The rule is indeed: <span className="highlight">{userGuess.join(' ')}</span></p>
+                        
+                        {/* New Stats Display */}
+                        <div className="victory-stats">
+                            <span>⏱️ {Math.floor(timeSpent / 60)}:{(timeSpent % 60).toString().padStart(2, '0')}</span>
+                            <span>📝 {submissionCount} Theories</span>
+                        </div>
+
+                        {/* New Victory Actions */}
+                        <div className="victory-actions">
+                             <button className="act-btn sec" onClick={() => setShowCalendar(true)}>
+                                Pick Another Date
+                             </button>
+                             <button className={`act-btn pri ${copyFeedback ? 'copied' : ''}`} onClick={handleShare}>
+                                {copyFeedback ? 'Copied!' : 'Share Result'}
+                             </button>
+                        </div>
                     </div>
                 ) : (
                     <div className="guess-form">
                         <div className="dropdowns">
-                            {level.ui_config.dropdown_columns.map((options, i) => (
+                            {DROPDOWN_OPTIONS.map((options, i) => (
                                 <select key={i} value={userGuess[i]} onChange={e => {
                                     const next = [...userGuess];
                                     next[i] = e.target.value;
@@ -486,7 +601,7 @@ export const TotemOrigins = () => {
                 )}
             </div>
             
-            {/* RULES PANEL (New Section) */}
+            {/* RULES PANEL */}
             <div className="rules-panel">
                 <div className="rules-header">HOW TO PLAY</div>
                 <div className="rules-content">
