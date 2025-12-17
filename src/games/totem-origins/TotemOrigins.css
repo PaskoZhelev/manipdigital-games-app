@@ -218,7 +218,7 @@
 }
 
 /* --- HISTORY (Right) --- */
-.history-list { overflow-y: auto; max-height: 400px; display: flex; flex-direction: column; gap: 8px; }
+.history-list { overflow-y: auto; max-height: 500px; display: flex; flex-direction: column; gap: 8px; }
 .log-entry {
   background: #000; padding: 6px; border-radius: 6px;
   display: flex; align-items: center; gap: 10px;
