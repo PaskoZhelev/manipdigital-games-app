@@ -211,6 +211,12 @@ export const TotemOrigins = () => {
     return `${y}-${m}-${day}`;
   };
 
+  const getFilenameFromDate = (date: Date) => {
+  const mm = String(date.getMonth() + 1);
+  const yyyy = date.getFullYear();
+  return `${import.meta.env.BASE_URL}assets/totem-origins/levels/${mm}.${yyyy}.json`;
+};
+
   const [selectedDate, setSelectedDate] = useState<string>(getLocalToday());
   const [showCalendar, setShowCalendar] = useState(false);
   const [monthlyLevels, setMonthlyLevels] = useState<MonthlyLevels | null>(null);
@@ -244,7 +250,7 @@ export const TotemOrigins = () => {
       
       if(!yyyy || !mm) return;
 
-      const url = `${import.meta.env.BASE_URL}assets/totem-origins/levels/${mm}.${yyyy}.json`;
+      const url = getFilenameFromDate(new Date(selectedDate));
 
       try {
         const res = await fetch(url);
