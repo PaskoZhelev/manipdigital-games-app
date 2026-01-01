@@ -27,7 +27,7 @@ const EARLIEST_ARCHIVE_DATE = '2025-11-01';
 
 // --- HELPERS ---
 const getFilenameFromDate = (date: Date) => {
-  const mm = String(date.getMonth() + 1).padStart(2, '0');
+  const mm = String(date.getMonth() + 1);
   const yyyy = date.getFullYear();
   return `${import.meta.env.BASE_URL}assets/symbiomes/levels/${mm}.${yyyy}.json`;
 };
