@@ -5,11 +5,11 @@ import './App.css';
 import { SymbiomesGame } from './games/symbiomes/SymbiomesGame';
 import { NeonProtocol } from './games/neon-protocol/NeonProtocol';
 import { LogicGems } from './games/logic-gems/LogicGems';
-import { GridKnot } from './games/grid-knot/GridKnot';
 
 // Import Home
 import { Home } from './Home';
-import { TotemOrigins } from "./games/totem-origins/TotemOrigins";
+import HorSudoku from "./games/hor-sudoku/HorSudoku";
+
 
 function App() {
   return (
@@ -21,8 +21,6 @@ function App() {
       <Route path="/symbiomes" element={<SymbiomesGame />} />
       <Route path="/neon-protocol" element={<NeonProtocol />} />
       <Route path="/logic-gems" element={<LogicGems />} />
-      <Route path="/grid-knot" element={<GridKnot />} />
-      <Route path="/totem-origins" element={<TotemOrigins />} />
     </Routes>
   );
 }

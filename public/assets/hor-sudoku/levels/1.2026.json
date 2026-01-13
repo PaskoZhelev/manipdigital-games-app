@@ -1,0 +1,14 @@
+{
+  "10" : {
+  "size": 6,
+  "grid": [
+    [{"number": null, "color": "E", "solutionNumber": 5, "solutionColor": "E"}, {"number": 6, "color": "E", "solutionNumber": 6, "solutionColor": "E"}, {"number": null, "color": null, "solutionNumber": 4, "solutionColor": "A"}, {"number": 1, "color": "A", "solutionNumber": 1, "solutionColor": "A"}, {"number": null, "color": "A", "solutionNumber": 2, "solutionColor": "A"}, {"number": null, "color": "A", "solutionNumber": 3, "solutionColor": "A"}],
+    [{"number": null, "color": null, "solutionNumber": 3, "solutionColor": "E"}, {"number": 2, "color": "C", "solutionNumber": 2, "solutionColor": "C"}, {"number": null, "color": null, "solutionNumber": 5, "solutionColor": "A"}, {"number": null, "color": "B", "solutionNumber": 4, "solutionColor": "B"}, {"number": null, "color": null, "solutionNumber": 6, "solutionColor": "A"}, {"number": null, "color": "B", "solutionNumber": 1, "solutionColor": "B"}],
+    [{"number": 4, "color": "E", "solutionNumber": 4, "solutionColor": "E"}, {"number": null, "color": "C", "solutionNumber": 1, "solutionColor": "C"}, {"number": null, "color": "B", "solutionNumber": 2, "solutionColor": "B"}, {"number": 6, "color": "B", "solutionNumber": 6, "solutionColor": "B"}, {"number": null, "color": "B", "solutionNumber": 3, "solutionColor": "B"}, {"number": null, "color": "B", "solutionNumber": 5, "solutionColor": "B"}],
+    [{"number": 1, "color": "E", "solutionNumber": 1, "solutionColor": "E"}, {"number": null, "color": "C", "solutionNumber": 3, "solutionColor": "C"}, {"number": null, "color": "D", "solutionNumber": 6, "solutionColor": "D"}, {"number": null, "color": "D", "solutionNumber": 5, "solutionColor": "D"}, {"number": 4, "color": "D", "solutionNumber": 4, "solutionColor": "D"}, {"number": null, "color": null, "solutionNumber": 2, "solutionColor": "D"}],
+    [{"number": null, "color": "E", "solutionNumber": 2, "solutionColor": "E"}, {"number": null, "color": "C", "solutionNumber": 4, "solutionColor": "C"}, {"number": 1, "color": "D", "solutionNumber": 1, "solutionColor": "D"}, {"number": null, "color": "F", "solutionNumber": 3, "solutionColor": "F"}, {"number": null, "color": "F", "solutionNumber": 5, "solutionColor": "F"}, {"number": 6, "color": "F", "solutionNumber": 6, "solutionColor": "F"}],
+    [{"number": null, "color": "C", "solutionNumber": 6, "solutionColor": "C"}, {"number": null, "color": "C", "solutionNumber": 5, "solutionColor": "C"}, {"number": 3, "color": "D", "solutionNumber": 3, "solutionColor": "D"}, {"number": null, "color": "F", "solutionNumber": 2, "solutionColor": "F"}, {"number": null, "color": null, "solutionNumber": 1, "solutionColor": "F"}, {"number": null, "color": "F", "solutionNumber": 4, "solutionColor": "F"}]
+  ]
+}
+
+}

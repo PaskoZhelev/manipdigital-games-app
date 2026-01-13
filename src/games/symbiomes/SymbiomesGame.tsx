@@ -414,6 +414,11 @@ export const SymbiomesGame: React.FC = () => {
     let processed = text.replace(/\bRow (\d+)\b/g, '<strong>Row $1</strong>');
     processed = processed.replace(/\bColumn ([A-C])\b/g, '<strong>Column $1</strong>');
     processed = processed.replace(/\bexactly (\d+)\b/gi, '<strong>exactly $1</strong>');
+    processed = processed.replace(/\babove\b/gi, '<strong>above</strong>');
+    processed = processed.replace(/\bbelow\b/gi, '<strong>below</strong>');
+    processed = processed.replace(/\bleft\b/gi, '<strong>left</strong>');
+    processed = processed.replace(/\bright\b/gi, '<strong>right</strong>');
+    processed = processed.replace(/\bdiagonally\b/gi, '<strong>diagonally</strong>');
     return processed;
   };
 
