@@ -1382,7 +1382,7 @@
     },
     {
       "id": 3,
-      "description": "Fox is to the left of Elephant",
+      "description": "Fox is directly to the left of Elephant",
       "complexity": 4
     },
     {
@@ -1392,7 +1392,7 @@
     },
     {
       "id": 5,
-      "description": "Monkey is above Rabbit",
+      "description": "Monkey is directly above Rabbit",
       "complexity": 4
     },
     {
@@ -1459,7 +1459,7 @@
     },
     {
       "id": 3,
-      "description": "Fox is to the right of Frog",
+      "description": "Fox is directly to the right of Frog",
       "complexity": 4
     },
     {
@@ -1602,7 +1602,7 @@
     },
     {
       "id": 3,
-      "description": "Fox is to the right of Monkey",
+      "description": "Fox is directly to the right of Monkey",
       "complexity": 4
     },
     {
@@ -1664,7 +1664,7 @@
   "clues": [
     {
       "id": 1,
-      "description": "Fox is above Rabbit",
+      "description": "Fox is directly above Rabbit",
       "complexity": 4
     },
     {
@@ -1731,7 +1731,7 @@
   "clues": [
     {
       "id": 1,
-      "description": "Frog is below Rabbit",
+      "description": "Frog is directly below Rabbit",
       "complexity": 4
     },
     {
@@ -1741,7 +1741,7 @@
     },
     {
       "id": 3,
-      "description": "Rabbit is below Elephant",
+      "description": "Rabbit is directly below Elephant",
       "complexity": 4
     },
     {
@@ -1834,7 +1834,7 @@
     },
     {
       "id": 7,
-      "description": "Fox is to the right of Panda",
+      "description": "Fox is directly to the right of Panda",
       "complexity": 4
     },
     {
@@ -1902,12 +1902,12 @@
     },
     {
       "id": 5,
-      "description": "Fox is to the right of Panda",
+      "description": "Fox is directly to the right of Panda",
       "complexity": 4
     },
     {
       "id": 6,
-      "description": "Fox is to the left of Monkey",
+      "description": "Fox is directly to the left of Monkey",
       "complexity": 4
     },
     {
@@ -1955,7 +1955,7 @@
   "clues": [
     {
       "id": 1,
-      "description": "Elephant is above Rabbit",
+      "description": "Elephant is directly above Rabbit",
       "complexity": 4
     },
     {
@@ -2057,7 +2057,7 @@
     },
     {
       "id": 6,
-      "description": "Monkey is to the right of Elephant",
+      "description": "Monkey is directly to the right of Elephant",
       "complexity": 4
     }
   ],
@@ -2184,7 +2184,7 @@
     },
     {
       "id": 2,
-      "description": "Monkey is to the left of Elephant",
+      "description": "Monkey is directly to the left of Elephant",
       "complexity": 4
     },
     {
@@ -2194,7 +2194,7 @@
     },
     {
       "id": 4,
-      "description": "Monkey is above Fox",
+      "description": "Monkey is directly above Fox",
       "complexity": 4
     },
     {
@@ -2331,7 +2331,7 @@
     },
     {
       "id": 3,
-      "description": "Rabbit is to the right of Fox",
+      "description": "Rabbit is directly to the right of Fox",
       "complexity": 4
     },
     {
@@ -2408,7 +2408,7 @@
     },
     {
       "id": 4,
-      "description": "Panda is below an animal on MUD",
+      "description": "Panda is directly below an animal on MUD",
       "complexity": 5
     },
     {
@@ -2465,7 +2465,7 @@
   "clues": [
     {
       "id": 1,
-      "description": "Elephant is above Fox",
+      "description": "Elephant is directly above Fox",
       "complexity": 4
     },
     {
@@ -2608,7 +2608,7 @@
   "clues": [
     {
       "id": 1,
-      "description": "Panda is above Rabbit",
+      "description": "Panda is directly above Rabbit",
       "complexity": 4
     },
     {
