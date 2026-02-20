@@ -1,0 +1,2337 @@
+{
+  "1": {
+  "difficulty": "hard",
+  "grid": [
+    [
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "mud", "object": "none"}
+    ],
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "sand", "object": "none"}
+    ],
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "mud", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Elephant is diagonally adjacent to Monkey",
+      "complexity": 4
+    },
+    {
+      "id": 2,
+      "description": "Frog is diagonally adjacent to Fox",
+      "complexity": 4
+    },
+    {
+      "id": 3,
+      "description": "Elephant is directly to the left of Fox",
+      "complexity": 4
+    },
+    {
+      "id": 4,
+      "description": "There is exactly 1 animal(s) on SAND",
+      "complexity": 5
+    },
+    {
+      "id": 5,
+      "description": "Monkey is NOT adjacent to Fox",
+      "complexity": 3
+    },
+    {
+      "id": 6,
+      "description": "Elephant is in Row 1",
+      "complexity": 2
+    }
+  ],
+  "solution": {
+    "frog": {"row": 2, "column": "B"},
+    "monkey": {"row": 2, "column": "A"},
+    "elephant": {"row": 1, "column": "B"},
+    "rabbit": {"row": 2, "column": "C"},
+    "fox": {"row": 1, "column": "C"}
+  }
+},
+  "2": {
+  "difficulty": "hard",
+  "grid": [
+    [
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "mud", "object": "tree"}
+    ],
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "grass", "object": "none"}
+    ],
+    [
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "grass", "object": "ruin"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Elephant is diagonally adjacent to Frog",
+      "complexity": 4
+    },
+    {
+      "id": 2,
+      "description": "Frog is exactly 3 steps away from Rabbit",
+      "complexity": 5
+    },
+    {
+      "id": 3,
+      "description": "Monkey is a Knight's move away from Fox",
+      "complexity": 4
+    },
+    {
+      "id": 4,
+      "description": "Rabbit is directly above Fox",
+      "complexity": 4
+    },
+    {
+      "id": 5,
+      "description": "Rabbit and Fox are on the same terrain type",
+      "complexity": 3
+    },
+    {
+      "id": 6,
+      "description": "Monkey and Frog are on the same terrain type",
+      "complexity": 3
+    }
+  ],
+  "solution": {
+    "frog": {"row": 1, "column": "A"},
+    "monkey": {"row": 1, "column": "B"},
+    "elephant": {"row": 2, "column": "B"},
+    "rabbit": {"row": 2, "column": "C"},
+    "fox": {"row": 3, "column": "C"}
+  }
+},
+  "3": {
+  "difficulty": "expert",
+  "grid": [
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ],
+    [
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "sand", "object": "none"}
+    ],
+    [
+      {"terrain": "grass", "object": "tree"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "mud", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant",
+    "panda"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Elephant is NOT adjacent to MUD",
+      "complexity": 4
+    },
+    {
+      "id": 2,
+      "description": "Elephant and Rabbit are on different terrain types",
+      "complexity": 2
+    },
+    {
+      "id": 3,
+      "description": "Monkey is exactly 2 steps away from Fox",
+      "complexity": 5
+    },
+    {
+      "id": 4,
+      "description": "Fox is adjacent to an empty GRASS space",
+      "complexity": 5
+    },
+    {
+      "id": 5,
+      "description": "Frog is exactly 2 steps away from Monkey",
+      "complexity": 5
+    },
+    {
+      "id": 6,
+      "description": "Fox is on GRASS",
+      "complexity": 1
+    },
+    {
+      "id": 7,
+      "description": "Frog is in the same row as Rabbit",
+      "complexity": 3
+    },
+    {
+      "id": 8,
+      "description": "Panda is exactly 3 steps away from Frog",
+      "complexity": 5
+    },
+    {
+      "id": 9,
+      "description": "Frog is in the same column as a TREE",
+      "complexity": 3
+    },
+    {
+      "id": 10,
+      "description": "Rabbit is exactly 3 steps away from Fox",
+      "complexity": 5
+    }
+  ],
+  "solution": {
+    "frog": {"row": 3, "column": "A"},
+    "monkey": {"row": 2, "column": "B"},
+    "elephant": {"row": 3, "column": "C"},
+    "rabbit": {"row": 3, "column": "B"},
+    "fox": {"row": 1, "column": "A"},
+    "panda": {"row": 2, "column": "C"}
+  }
+},
+  "4": {
+  "difficulty": "expert",
+  "grid": [
+    [
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "mud", "object": "none"}
+    ],
+    [
+      {"terrain": "sand", "object": "tree"},
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "mud", "object": "rock"}
+    ],
+    [
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "grass", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant",
+    "panda"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Monkey is below an animal on MUD",
+      "complexity": 5
+    },
+    {
+      "id": 2,
+      "description": "There are exactly 2 animal(s) on spaces with Objects",
+      "complexity": 5
+    },
+    {
+      "id": 3,
+      "description": "Monkey is diagonally adjacent to Rabbit",
+      "complexity": 4
+    },
+    {
+      "id": 4,
+      "description": "Monkey is NOT adjacent to Fox",
+      "complexity": 3
+    },
+    {
+      "id": 5,
+      "description": "Elephant is in the same column as Panda",
+      "complexity": 3
+    },
+    {
+      "id": 6,
+      "description": "Panda is in Row 1",
+      "complexity": 2
+    },
+    {
+      "id": 7,
+      "description": "Frog is in Row 3",
+      "complexity": 2
+    },
+    {
+      "id": 8,
+      "description": "Frog is exactly 3 steps away from Elephant",
+      "complexity": 5
+    }
+  ],
+  "solution": {
+    "frog": {"row": 3, "column": "A"},
+    "monkey": {"row": 3, "column": "C"},
+    "elephant": {"row": 2, "column": "C"},
+    "rabbit": {"row": 2, "column": "B"},
+    "fox": {"row": 2, "column": "A"},
+    "panda": {"row": 1, "column": "C"}
+  }
+},
+  "5": {
+  "difficulty": "hard",
+  "grid": [
+    [
+      {"terrain": "grass", "object": "ruin"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "mud", "object": "none"}
+    ],
+    [
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "grass", "object": "none"}
+    ],
+    [
+      {"terrain": "sand", "object": "ruin"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Rabbit is adjacent to an empty WATER space",
+      "complexity": 5
+    },
+    {
+      "id": 2,
+      "description": "Frog is on WATER",
+      "complexity": 1
+    },
+    {
+      "id": 3,
+      "description": "Monkey is on GRASS OR WATER",
+      "complexity": 4
+    },
+    {
+      "id": 4,
+      "description": "Elephant is NOT adjacent to GRASS",
+      "complexity": 4
+    },
+    {
+      "id": 5,
+      "description": "Rabbit is diagonally adjacent to Elephant",
+      "complexity": 4
+    },
+    {
+      "id": 6,
+      "description": "Elephant is in Row 3",
+      "complexity": 2
+    },
+    {
+      "id": 7,
+      "description": "Monkey is diagonally adjacent to Fox",
+      "complexity": 4
+    }
+  ],
+  "solution": {
+    "frog": {"row": 3, "column": "C"},
+    "monkey": {"row": 2, "column": "C"},
+    "elephant": {"row": 3, "column": "A"},
+    "rabbit": {"row": 2, "column": "B"},
+    "fox": {"row": 3, "column": "B"}
+  }
+},
+  "6": {
+  "difficulty": "expert",
+  "grid": [
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "sand", "object": "rock"}
+    ],
+    [
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "mud", "object": "none"}
+    ],
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "grass", "object": "ruin"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant",
+    "panda"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Frog is exactly 3 steps away from Elephant",
+      "complexity": 5
+    },
+    {
+      "id": 2,
+      "description": "Fox is adjacent to an empty GRASS space",
+      "complexity": 5
+    },
+    {
+      "id": 3,
+      "description": "There are exactly 2 animals in Row 2",
+      "complexity": 4
+    },
+    {
+      "id": 4,
+      "description": "There are exactly 2 animals in Row 1",
+      "complexity": 4
+    },
+    {
+      "id": 5,
+      "description": "Frog is on WATER",
+      "complexity": 1
+    },
+    {
+      "id": 6,
+      "description": "Fox is directly to the right of Monkey",
+      "complexity": 4
+    },
+    {
+      "id": 7,
+      "description": "Rabbit is exactly 4 steps away from Frog",
+      "complexity": 5
+    }
+  ],
+  "solution": {
+    "frog": {"row": 3, "column": "A"},
+    "monkey": {"row": 2, "column": "B"},
+    "elephant": {"row": 1, "column": "B"},
+    "rabbit": {"row": 1, "column": "C"},
+    "fox": {"row": 2, "column": "C"},
+    "panda": {"row": 3, "column": "B"}
+  }
+},
+  "7": {
+  "difficulty": "expert",
+  "grid": [
+    [
+      {"terrain": "grass", "object": "ruin"},
+      {"terrain": "sand", "object": "ruin"},
+      {"terrain": "mud", "object": "none"}
+    ],
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ],
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant",
+    "panda"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Rabbit is exactly 2 steps away from Fox",
+      "complexity": 5
+    },
+    {
+      "id": 2,
+      "description": "There is exactly 1 animals in Row 2",
+      "complexity": 4
+    },
+    {
+      "id": 3,
+      "description": "Monkey is NOT adjacent to WATER",
+      "complexity": 4
+    },
+    {
+      "id": 4,
+      "description": "Elephant is a Knight's move away from Fox",
+      "complexity": 4
+    },
+    {
+      "id": 5,
+      "description": "Frog is a Knight's move away from Rabbit",
+      "complexity": 4
+    },
+    {
+      "id": 6,
+      "description": "Monkey is exactly 4 steps away from Fox",
+      "complexity": 5
+    },
+    {
+      "id": 7,
+      "description": "Rabbit is directly below Panda",
+      "complexity": 4
+    }
+  ],
+  "solution": {
+    "frog": {"row": 1, "column": "B"},
+    "monkey": {"row": 3, "column": "A"},
+    "elephant": {"row": 3, "column": "B"},
+    "rabbit": {"row": 3, "column": "C"},
+    "fox": {"row": 1, "column": "C"},
+    "panda": {"row": 2, "column": "C"}
+  }
+},
+  "8": {
+  "difficulty": "hard",
+  "grid": [
+    [
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "mud", "object": "tree"},
+      {"terrain": "grass", "object": "none"}
+    ],
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "grass", "object": "none"}
+    ],
+    [
+      {"terrain": "sand", "object": "ruin"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "sand", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Rabbit is directly to the right of Elephant",
+      "complexity": 4
+    },
+    {
+      "id": 2,
+      "description": "Frog is on GRASS",
+      "complexity": 1
+    },
+    {
+      "id": 3,
+      "description": "Monkey is in the same column as Elephant",
+      "complexity": 3
+    },
+    {
+      "id": 4,
+      "description": "Monkey is adjacent to a TREE",
+      "complexity": 3
+    },
+    {
+      "id": 5,
+      "description": "There are exactly 2 animal(s) on SAND",
+      "complexity": 5
+    },
+    {
+      "id": 6,
+      "description": "Elephant is exactly 3 steps away from Frog",
+      "complexity": 5
+    },
+    {
+      "id": 7,
+      "description": "Elephant is NOT adjacent to MUD",
+      "complexity": 4
+    }
+  ],
+  "solution": {
+    "frog": {"row": 2, "column": "C"},
+    "monkey": {"row": 1, "column": "A"},
+    "elephant": {"row": 3, "column": "A"},
+    "rabbit": {"row": 3, "column": "B"},
+    "fox": {"row": 3, "column": "C"}
+  }
+},
+  "9": {
+  "difficulty": "expert",
+  "grid": [
+    [
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "grass", "object": "none"}
+    ],
+    [
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "grass", "object": "tree"}
+    ],
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant",
+    "panda"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Rabbit is exactly 3 steps away from Panda",
+      "complexity": 5
+    },
+    {
+      "id": 2,
+      "description": "Fox is in Row 1",
+      "complexity": 2
+    },
+    {
+      "id": 3,
+      "description": "Frog is on GRASS",
+      "complexity": 1
+    },
+    {
+      "id": 4,
+      "description": "Fox is in Column B",
+      "complexity": 2
+    },
+    {
+      "id": 5,
+      "description": "Rabbit is exactly 2 steps away from Frog",
+      "complexity": 5
+    },
+    {
+      "id": 6,
+      "description": "Panda and Frog are on different terrain types",
+      "complexity": 2
+    },
+    {
+      "id": 7,
+      "description": "Frog is exactly 3 steps away from Monkey",
+      "complexity": 5
+    },
+    {
+      "id": 8,
+      "description": "Elephant is directly below Rabbit",
+      "complexity": 4
+    }
+  ],
+  "solution": {
+    "frog": {"row": 2, "column": "C"},
+    "monkey": {"row": 1, "column": "A"},
+    "elephant": {"row": 3, "column": "A"},
+    "rabbit": {"row": 2, "column": "A"},
+    "fox": {"row": 1, "column": "B"},
+    "panda": {"row": 3, "column": "C"}
+  }
+},
+  "10": {
+  "difficulty": "expert",
+  "grid": [
+    [
+      {"terrain": "sand", "object": "tree"},
+      {"terrain": "sand", "object": "ruin"},
+      {"terrain": "grass", "object": "none"}
+    ],
+    [
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ],
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "grass", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant",
+    "panda"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Fox and Frog are on different terrain types",
+      "complexity": 2
+    },
+    {
+      "id": 2,
+      "description": "Elephant is in the same row as Rabbit",
+      "complexity": 3
+    },
+    {
+      "id": 3,
+      "description": "Fox is a Knight's move away from Monkey",
+      "complexity": 4
+    },
+    {
+      "id": 4,
+      "description": "Panda is below an animal on SAND",
+      "complexity": 5
+    },
+    {
+      "id": 5,
+      "description": "Fox is in the same column as Panda",
+      "complexity": 3
+    },
+    {
+      "id": 6,
+      "description": "Rabbit is NOT adjacent to MUD",
+      "complexity": 4
+    },
+    {
+      "id": 7,
+      "description": "Fox is adjacent to the animal on the RUIN",
+      "complexity": 5
+    },
+    {
+      "id": 8,
+      "description": "Frog is diagonally adjacent to Panda",
+      "complexity": 4
+    }
+  ],
+  "solution": {
+    "frog": {"row": 3, "column": "B"},
+    "monkey": {"row": 2, "column": "C"},
+    "elephant": {"row": 1, "column": "B"},
+    "rabbit": {"row": 1, "column": "C"},
+    "fox": {"row": 1, "column": "A"},
+    "panda": {"row": 2, "column": "A"}
+  }
+},
+  "11": {
+  "difficulty": "expert",
+  "grid": [
+    [
+      {"terrain": "grass", "object": "ruin"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "grass", "object": "tree"}
+    ],
+    [
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ],
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "mud", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant",
+    "panda"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Elephant is exactly 2 steps away from Panda",
+      "complexity": 5
+    },
+    {
+      "id": 2,
+      "description": "Monkey is on WATER",
+      "complexity": 1
+    },
+    {
+      "id": 3,
+      "description": "Fox is on GRASS",
+      "complexity": 1
+    },
+    {
+      "id": 4,
+      "description": "There is exactly 1 animal(s) on WATER",
+      "complexity": 5
+    },
+    {
+      "id": 5,
+      "description": "Frog is a Knight's move away from Rabbit",
+      "complexity": 4
+    },
+    {
+      "id": 6,
+      "description": "Elephant is NOT adjacent to Fox",
+      "complexity": 3
+    },
+    {
+      "id": 7,
+      "description": "Panda is diagonally adjacent to Elephant",
+      "complexity": 4
+    },
+    {
+      "id": 8,
+      "description": "Frog is NOT adjacent to Elephant",
+      "complexity": 3
+    },
+    {
+      "id": 9,
+      "description": "Rabbit is adjacent to an empty SAND space",
+      "complexity": 5
+    },
+    {
+      "id": 10,
+      "description": "Fox is in Row 1 OR Row 2",
+      "complexity": 4
+    },
+    {
+      "id": 11,
+      "description": "Rabbit is in the same column as a TREE",
+      "complexity": 3
+    }
+  ],
+  "solution": {
+    "frog": {"row": 2, "column": "A"},
+    "monkey": {"row": 2, "column": "C"},
+    "elephant": {"row": 3, "column": "C"},
+    "rabbit": {"row": 1, "column": "C"},
+    "fox": {"row": 1, "column": "A"},
+    "panda": {"row": 2, "column": "B"}
+  }
+},
+  "12": {
+  "difficulty": "hard",
+  "grid": [
+    [
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "mud", "object": "ruin"},
+      {"terrain": "grass", "object": "rock"}
+    ],
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "grass", "object": "none"}
+    ],
+    [
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "sand", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Rabbit is in Column A",
+      "complexity": 2
+    },
+    {
+      "id": 2,
+      "description": "Rabbit is on MUD OR GRASS",
+      "complexity": 4
+    },
+    {
+      "id": 3,
+      "description": "Frog and Rabbit are on different terrain types",
+      "complexity": 2
+    },
+    {
+      "id": 4,
+      "description": "Monkey is adjacent to Elephant",
+      "complexity": 4
+    },
+    {
+      "id": 5,
+      "description": "Rabbit and Elephant are on different terrain types",
+      "complexity": 2
+    },
+    {
+      "id": 6,
+      "description": "Fox is exactly 3 steps away from Monkey",
+      "complexity": 5
+    },
+    {
+      "id": 7,
+      "description": "Elephant is exactly 2 steps away from Frog",
+      "complexity": 5
+    },
+    {
+      "id": 8,
+      "description": "There are exactly 3 animal(s) on GRASS",
+      "complexity": 5
+    }
+  ],
+  "solution": {
+    "frog": {"row": 2, "column": "A"},
+    "monkey": {"row": 1, "column": "C"},
+    "elephant": {"row": 2, "column": "C"},
+    "rabbit": {"row": 3, "column": "A"},
+    "fox": {"row": 3, "column": "B"}
+  }
+},
+  "13": {
+  "difficulty": "expert",
+  "grid": [
+    [
+      {"terrain": "sand", "object": "rock"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "grass", "object": "rock"}
+    ],
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "mud", "object": "none"}
+    ],
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "sand", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant",
+    "panda"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Fox is directly to the left of Frog",
+      "complexity": 4
+    },
+    {
+      "id": 2,
+      "description": "Rabbit is in the same row as Panda",
+      "complexity": 3
+    },
+    {
+      "id": 3,
+      "description": "Monkey is exactly 2 steps away from Frog",
+      "complexity": 5
+    },
+    {
+      "id": 4,
+      "description": "Monkey is in Row 1 OR Row 2",
+      "complexity": 4
+    },
+    {
+      "id": 5,
+      "description": "Frog and Fox are on different terrain types",
+      "complexity": 2
+    },
+    {
+      "id": 6,
+      "description": "Rabbit is diagonally adjacent to Frog",
+      "complexity": 4
+    },
+    {
+      "id": 7,
+      "description": "Fox is in the same column as Panda",
+      "complexity": 3
+    },
+    {
+      "id": 8,
+      "description": "Monkey is exactly 3 steps away from Elephant",
+      "complexity": 5
+    }
+  ],
+  "solution": {
+    "frog": {"row": 3, "column": "B"},
+    "monkey": {"row": 1, "column": "B"},
+    "elephant": {"row": 3, "column": "C"},
+    "rabbit": {"row": 2, "column": "C"},
+    "fox": {"row": 3, "column": "A"},
+    "panda": {"row": 2, "column": "A"}
+  }
+},
+  "14": {
+  "difficulty": "hard",
+  "grid": [
+    [
+      {"terrain": "mud", "object": "rock"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "grass", "object": "none"}
+    ],
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "grass", "object": "tree"},
+      {"terrain": "water", "object": "none"}
+    ],
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "mud", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Elephant is exactly 3 steps away from Rabbit",
+      "complexity": 5
+    },
+    {
+      "id": 2,
+      "description": "Fox is directly to the right of Elephant",
+      "complexity": 4
+    },
+    {
+      "id": 3,
+      "description": "Monkey is directly above Fox",
+      "complexity": 4
+    },
+    {
+      "id": 4,
+      "description": "Rabbit and Fox are on different terrain types",
+      "complexity": 2
+    },
+    {
+      "id": 5,
+      "description": "Monkey and Elephant are on different terrain types",
+      "complexity": 2
+    },
+    {
+      "id": 6,
+      "description": "Rabbit is a Knight's move away from Frog",
+      "complexity": 4
+    }
+  ],
+  "solution": {
+    "frog": {"row": 3, "column": "C"},
+    "monkey": {"row": 2, "column": "B"},
+    "elephant": {"row": 3, "column": "A"},
+    "rabbit": {"row": 1, "column": "B"},
+    "fox": {"row": 3, "column": "B"}
+  }
+},
+  "15": {
+  "difficulty": "hard",
+  "grid": [
+    [
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "grass", "object": "tree"}
+    ],
+    [
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "mud", "object": "rock"},
+      {"terrain": "water", "object": "none"}
+    ],
+    [
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "grass", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Elephant is in the same row as Fox",
+      "complexity": 3
+    },
+    {
+      "id": 2,
+      "description": "Fox is in Row 3",
+      "complexity": 2
+    },
+    {
+      "id": 3,
+      "description": "Frog is on SAND OR GRASS",
+      "complexity": 4
+    },
+    {
+      "id": 4,
+      "description": "Frog is exactly 2 steps away from Fox",
+      "complexity": 5
+    },
+    {
+      "id": 5,
+      "description": "Monkey is adjacent to Fox",
+      "complexity": 4
+    },
+    {
+      "id": 6,
+      "description": "Monkey is in Column B",
+      "complexity": 2
+    },
+    {
+      "id": 7,
+      "description": "Rabbit is directly to the right of Fox",
+      "complexity": 4
+    }
+  ],
+  "solution": {
+    "frog": {"row": 2, "column": "A"},
+    "monkey": {"row": 2, "column": "B"},
+    "elephant": {"row": 3, "column": "A"},
+    "rabbit": {"row": 3, "column": "C"},
+    "fox": {"row": 3, "column": "B"}
+  }
+},
+  "16": {
+  "difficulty": "expert",
+  "grid": [
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "grass", "object": "rock"}
+    ],
+    [
+      {"terrain": "grass", "object": "rock"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ],
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "mud", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant",
+    "panda"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Frog is a Knight's move away from Monkey",
+      "complexity": 4
+    },
+    {
+      "id": 2,
+      "description": "Fox is in Row 3",
+      "complexity": 2
+    },
+    {
+      "id": 3,
+      "description": "Fox and Panda are on different terrain types",
+      "complexity": 2
+    },
+    {
+      "id": 4,
+      "description": "Rabbit is a Knight's move away from Elephant",
+      "complexity": 4
+    },
+    {
+      "id": 5,
+      "description": "Frog is adjacent to an empty WATER space",
+      "complexity": 5
+    },
+    {
+      "id": 6,
+      "description": "Elephant is NOT adjacent to Panda",
+      "complexity": 3
+    },
+    {
+      "id": 7,
+      "description": "Rabbit is diagonally adjacent to Panda",
+      "complexity": 4
+    },
+    {
+      "id": 8,
+      "description": "Elephant is directly above Frog",
+      "complexity": 4
+    }
+  ],
+  "solution": {
+    "frog": {"row": 2, "column": "A"},
+    "monkey": {"row": 1, "column": "C"},
+    "elephant": {"row": 1, "column": "A"},
+    "rabbit": {"row": 3, "column": "B"},
+    "fox": {"row": 3, "column": "C"},
+    "panda": {"row": 2, "column": "C"}
+  }
+},
+  "17": {
+  "difficulty": "hard",
+  "grid": [
+    [
+      {"terrain": "mud", "object": "tree"},
+      {"terrain": "sand", "object": "tree"},
+      {"terrain": "water", "object": "none"}
+    ],
+    [
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "grass", "object": "none"}
+    ],
+    [
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Fox is adjacent to an empty MUD space",
+      "complexity": 5
+    },
+    {
+      "id": 2,
+      "description": "Rabbit is diagonally adjacent to Frog",
+      "complexity": 4
+    },
+    {
+      "id": 3,
+      "description": "Elephant is a Knight's move away from Rabbit",
+      "complexity": 4
+    },
+    {
+      "id": 4,
+      "description": "There are exactly 2 animal(s) on spaces with Objects",
+      "complexity": 5
+    },
+    {
+      "id": 5,
+      "description": "Frog is in the same column as Elephant",
+      "complexity": 3
+    },
+    {
+      "id": 6,
+      "description": "Monkey is on SAND",
+      "complexity": 1
+    },
+    {
+      "id": 7,
+      "description": "Monkey is exactly 2 steps away from Frog",
+      "complexity": 5
+    }
+  ],
+  "solution": {
+    "frog": {"row": 2, "column": "C"},
+    "monkey": {"row": 1, "column": "B"},
+    "elephant": {"row": 1, "column": "C"},
+    "rabbit": {"row": 3, "column": "B"},
+    "fox": {"row": 1, "column": "A"}
+  }
+},
+  "18": {
+  "difficulty": "hard",
+  "grid": [
+    [
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "sand", "object": "none"}
+    ],
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ],
+    [
+      {"terrain": "mud", "object": "ruin"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "mud", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Elephant is NOT adjacent to MUD",
+      "complexity": 4
+    },
+    {
+      "id": 2,
+      "description": "Elephant is NOT adjacent to WATER",
+      "complexity": 4
+    },
+    {
+      "id": 3,
+      "description": "Monkey is a Knight's move away from Fox",
+      "complexity": 4
+    },
+    {
+      "id": 4,
+      "description": "Rabbit is in the same column as a RUIN",
+      "complexity": 3
+    },
+    {
+      "id": 5,
+      "description": "Frog is directly below Elephant",
+      "complexity": 4
+    },
+    {
+      "id": 6,
+      "description": "Monkey is adjacent to an empty WATER space",
+      "complexity": 5
+    },
+    {
+      "id": 7,
+      "description": "Rabbit is adjacent to an empty WATER space",
+      "complexity": 5
+    }
+  ],
+  "solution": {
+    "frog": {"row": 2, "column": "A"},
+    "monkey": {"row": 3, "column": "C"},
+    "elephant": {"row": 1, "column": "A"},
+    "rabbit": {"row": 3, "column": "A"},
+    "fox": {"row": 1, "column": "B"}
+  }
+},
+  "19": {
+  "difficulty": "expert",
+  "grid": [
+    [
+      {"terrain": "sand", "object": "ruin"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "grass", "object": "none"}
+    ],
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ],
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant",
+    "panda"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Fox is in Row 1 OR Row 2",
+      "complexity": 4
+    },
+    {
+      "id": 2,
+      "description": "Frog is directly to the right of Fox",
+      "complexity": 4
+    },
+    {
+      "id": 3,
+      "description": "Elephant is in Row 2",
+      "complexity": 2
+    },
+    {
+      "id": 4,
+      "description": "Rabbit is on GRASS",
+      "complexity": 1
+    },
+    {
+      "id": 5,
+      "description": "Monkey is exactly 2 steps away from Fox",
+      "complexity": 5
+    },
+    {
+      "id": 6,
+      "description": "Monkey is in Row 2",
+      "complexity": 2
+    },
+    {
+      "id": 7,
+      "description": "Panda is on a space with a RUIN",
+      "complexity": 2
+    }
+  ],
+  "solution": {
+    "frog": {"row": 1, "column": "C"},
+    "monkey": {"row": 2, "column": "C"},
+    "elephant": {"row": 2, "column": "B"},
+    "rabbit": {"row": 2, "column": "A"},
+    "fox": {"row": 1, "column": "B"},
+    "panda": {"row": 1, "column": "A"}
+  }
+},
+  "20": {
+  "difficulty": "hard",
+  "grid": [
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ],
+    [
+      {"terrain": "mud", "object": "tree"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "mud", "object": "none"}
+    ],
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "sand", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Frog is adjacent to Fox",
+      "complexity": 4
+    },
+    {
+      "id": 2,
+      "description": "Elephant and Frog are on the same terrain type",
+      "complexity": 3
+    },
+    {
+      "id": 3,
+      "description": "Frog is in the same row as Rabbit",
+      "complexity": 3
+    },
+    {
+      "id": 4,
+      "description": "Elephant is directly to the left of Monkey",
+      "complexity": 4
+    },
+    {
+      "id": 5,
+      "description": "Elephant is NOT adjacent to Rabbit",
+      "complexity": 3
+    },
+    {
+      "id": 6,
+      "description": "Frog is NOT adjacent to MUD",
+      "complexity": 4
+    },
+    {
+      "id": 7,
+      "description": "Elephant is in Column A",
+      "complexity": 2
+    }
+  ],
+  "solution": {
+    "frog": {"row": 1, "column": "B"},
+    "monkey": {"row": 2, "column": "B"},
+    "elephant": {"row": 2, "column": "A"},
+    "rabbit": {"row": 1, "column": "C"},
+    "fox": {"row": 1, "column": "A"}
+  }
+},
+  "21": {
+  "difficulty": "expert",
+  "grid": [
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "grass", "object": "tree"}
+    ],
+    [
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ],
+    [
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant",
+    "panda"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Panda is directly to the right of Elephant",
+      "complexity": 4
+    },
+    {
+      "id": 2,
+      "description": "Monkey is exactly 4 steps away from Rabbit",
+      "complexity": 5
+    },
+    {
+      "id": 3,
+      "description": "Rabbit is exactly 3 steps away from Panda",
+      "complexity": 5
+    },
+    {
+      "id": 4,
+      "description": "Fox is in the same row as Panda",
+      "complexity": 3
+    },
+    {
+      "id": 5,
+      "description": "Frog is below an animal on GRASS",
+      "complexity": 5
+    },
+    {
+      "id": 6,
+      "description": "Frog is adjacent to an empty WATER space",
+      "complexity": 5
+    }
+  ],
+  "solution": {
+    "frog": {"row": 3, "column": "B"},
+    "monkey": {"row": 1, "column": "C"},
+    "elephant": {"row": 2, "column": "B"},
+    "rabbit": {"row": 3, "column": "A"},
+    "fox": {"row": 2, "column": "A"},
+    "panda": {"row": 2, "column": "C"}
+  }
+},
+  "22": {
+  "difficulty": "hard",
+  "grid": [
+    [
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ],
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "mud", "object": "rock"},
+      {"terrain": "sand", "object": "none"}
+    ],
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "sand", "object": "ruin"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Frog is a Knight's move away from Elephant",
+      "complexity": 4
+    },
+    {
+      "id": 2,
+      "description": "Frog is in Row 3",
+      "complexity": 2
+    },
+    {
+      "id": 3,
+      "description": "Monkey is adjacent to Rabbit",
+      "complexity": 4
+    },
+    {
+      "id": 4,
+      "description": "Elephant is directly above Rabbit",
+      "complexity": 4
+    },
+    {
+      "id": 5,
+      "description": "Monkey is on a space with a ROCK",
+      "complexity": 2
+    },
+    {
+      "id": 6,
+      "description": "Frog and Elephant are on different terrain types",
+      "complexity": 2
+    },
+    {
+      "id": 7,
+      "description": "Rabbit is exactly 3 steps away from Fox",
+      "complexity": 5
+    },
+    {
+      "id": 8,
+      "description": "There are exactly 2 animal(s) on WATER",
+      "complexity": 5
+    }
+  ],
+  "solution": {
+    "frog": {"row": 3, "column": "B"},
+    "monkey": {"row": 2, "column": "B"},
+    "elephant": {"row": 1, "column": "C"},
+    "rabbit": {"row": 2, "column": "C"},
+    "fox": {"row": 3, "column": "A"}
+  }
+},
+  "23": {
+  "difficulty": "expert",
+  "grid": [
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ],
+    [
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "grass", "object": "ruin"}
+    ],
+    [
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "sand", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant",
+    "panda"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Panda is directly above Fox",
+      "complexity": 4
+    },
+    {
+      "id": 2,
+      "description": "Monkey is on SAND",
+      "complexity": 1
+    },
+    {
+      "id": 3,
+      "description": "Elephant is a Knight's move away from Panda",
+      "complexity": 4
+    },
+    {
+      "id": 4,
+      "description": "Rabbit is on SAND OR GRASS",
+      "complexity": 4
+    },
+    {
+      "id": 5,
+      "description": "Fox and Frog are on different terrain types",
+      "complexity": 2
+    },
+    {
+      "id": 6,
+      "description": "Elephant is directly below Frog",
+      "complexity": 4
+    },
+    {
+      "id": 7,
+      "description": "Rabbit is adjacent to Fox",
+      "complexity": 4
+    },
+    {
+      "id": 8,
+      "description": "Elephant is exactly 2 steps away from Monkey",
+      "complexity": 5
+    },
+    {
+      "id": 9,
+      "description": "Monkey and Elephant are on different terrain types",
+      "complexity": 2
+    }
+  ],
+  "solution": {
+    "frog": {"row": 1, "column": "C"},
+    "monkey": {"row": 3, "column": "B"},
+    "elephant": {"row": 2, "column": "C"},
+    "rabbit": {"row": 3, "column": "A"},
+    "fox": {"row": 2, "column": "A"},
+    "panda": {"row": 1, "column": "A"}
+  }
+},
+  "24": {
+  "difficulty": "expert",
+  "grid": [
+    [
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "grass", "object": "none"}
+    ],
+    [
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "mud", "object": "ruin"}
+    ],
+    [
+      {"terrain": "sand", "object": "tree"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "mud", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant",
+    "panda"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Panda is in Column C",
+      "complexity": 2
+    },
+    {
+      "id": 2,
+      "description": "Monkey is directly above Rabbit",
+      "complexity": 4
+    },
+    {
+      "id": 3,
+      "description": "Frog is NOT adjacent to MUD",
+      "complexity": 4
+    },
+    {
+      "id": 4,
+      "description": "Monkey is adjacent to the animal on the TREE",
+      "complexity": 5
+    },
+    {
+      "id": 5,
+      "description": "Frog is exactly 2 steps away from Elephant",
+      "complexity": 5
+    },
+    {
+      "id": 6,
+      "description": "Fox is directly below Elephant",
+      "complexity": 4
+    }
+  ],
+  "solution": {
+    "frog": {"row": 1, "column": "B"},
+    "monkey": {"row": 2, "column": "A"},
+    "elephant": {"row": 2, "column": "C"},
+    "rabbit": {"row": 3, "column": "A"},
+    "fox": {"row": 3, "column": "C"},
+    "panda": {"row": 1, "column": "C"}
+  }
+},
+  "25": {
+  "difficulty": "expert",
+  "grid": [
+    [
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "mud", "object": "none"}
+    ],
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "sand", "object": "none"}
+    ],
+    [
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "grass", "object": "rock"},
+      {"terrain": "grass", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant",
+    "panda"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Frog is directly to the right of Elephant",
+      "complexity": 4
+    },
+    {
+      "id": 2,
+      "description": "Panda is directly above Frog",
+      "complexity": 4
+    },
+    {
+      "id": 3,
+      "description": "Frog is adjacent to an empty GRASS space",
+      "complexity": 5
+    },
+    {
+      "id": 4,
+      "description": "Monkey is adjacent to the animal on the ROCK",
+      "complexity": 5
+    },
+    {
+      "id": 5,
+      "description": "There are exactly 2 animal(s) on GRASS",
+      "complexity": 5
+    },
+    {
+      "id": 6,
+      "description": "Fox is on a space with a ROCK",
+      "complexity": 2
+    }
+  ],
+  "solution": {
+    "frog": {"row": 2, "column": "C"},
+    "monkey": {"row": 3, "column": "A"},
+    "elephant": {"row": 2, "column": "B"},
+    "rabbit": {"row": 2, "column": "A"},
+    "fox": {"row": 3, "column": "B"},
+    "panda": {"row": 1, "column": "C"}
+  }
+},
+  "26": {
+  "difficulty": "hard",
+  "grid": [
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "grass", "object": "tree"},
+      {"terrain": "sand", "object": "none"}
+    ],
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "mud", "object": "ruin"}
+    ],
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Frog is exactly 2 steps away from Elephant",
+      "complexity": 5
+    },
+    {
+      "id": 2,
+      "description": "Monkey is adjacent to Fox",
+      "complexity": 4
+    },
+    {
+      "id": 3,
+      "description": "Frog and Monkey are on the same terrain type",
+      "complexity": 3
+    },
+    {
+      "id": 4,
+      "description": "Elephant is adjacent to an empty MUD space",
+      "complexity": 5
+    },
+    {
+      "id": 5,
+      "description": "Rabbit is in Row 2",
+      "complexity": 2
+    },
+    {
+      "id": 6,
+      "description": "Elephant is in a corner",
+      "complexity": 2
+    },
+    {
+      "id": 7,
+      "description": "Rabbit and Elephant are on different terrain types",
+      "complexity": 2
+    },
+    {
+      "id": 8,
+      "description": "Rabbit is adjacent to an empty MUD space",
+      "complexity": 5
+    },
+    {
+      "id": 9,
+      "description": "Monkey is on SAND OR GRASS",
+      "complexity": 4
+    }
+  ],
+  "solution": {
+    "frog": {"row": 1, "column": "C"},
+    "monkey": {"row": 3, "column": "B"},
+    "elephant": {"row": 3, "column": "C"},
+    "rabbit": {"row": 2, "column": "B"},
+    "fox": {"row": 3, "column": "A"}
+  }
+},
+  "27": {
+  "difficulty": "expert",
+  "grid": [
+    [
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ],
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "grass", "object": "none"}
+    ],
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "grass", "object": "tree"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant",
+    "panda"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Rabbit is exactly 4 steps away from Monkey",
+      "complexity": 5
+    },
+    {
+      "id": 2,
+      "description": "Rabbit is in Column A",
+      "complexity": 2
+    },
+    {
+      "id": 3,
+      "description": "Fox and Panda are on different terrain types",
+      "complexity": 2
+    },
+    {
+      "id": 4,
+      "description": "Panda is a Knight's move away from Fox",
+      "complexity": 4
+    },
+    {
+      "id": 5,
+      "description": "Elephant is adjacent to an empty WATER space",
+      "complexity": 5
+    },
+    {
+      "id": 6,
+      "description": "Panda is adjacent to an empty MUD space",
+      "complexity": 5
+    },
+    {
+      "id": 7,
+      "description": "Frog is adjacent to an empty GRASS space",
+      "complexity": 5
+    },
+    {
+      "id": 8,
+      "description": "Panda is exactly 2 steps away from Frog",
+      "complexity": 5
+    },
+    {
+      "id": 9,
+      "description": "Elephant is NOT adjacent to Fox",
+      "complexity": 3
+    }
+  ],
+  "solution": {
+    "frog": {"row": 2, "column": "B"},
+    "monkey": {"row": 3, "column": "C"},
+    "elephant": {"row": 2, "column": "A"},
+    "rabbit": {"row": 1, "column": "A"},
+    "fox": {"row": 3, "column": "B"},
+    "panda": {"row": 1, "column": "C"}
+  }
+},
+  "28": {
+  "difficulty": "expert",
+  "grid": [
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ],
+    [
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "sand", "object": "none"}
+    ],
+    [
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "mud", "object": "tree"},
+      {"terrain": "mud", "object": "ruin"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant",
+    "panda"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Elephant is directly to the right of Frog",
+      "complexity": 4
+    },
+    {
+      "id": 2,
+      "description": "Elephant is diagonally adjacent to Monkey",
+      "complexity": 4
+    },
+    {
+      "id": 3,
+      "description": "Monkey is adjacent to Panda",
+      "complexity": 4
+    },
+    {
+      "id": 4,
+      "description": "Fox is in Column C",
+      "complexity": 2
+    },
+    {
+      "id": 5,
+      "description": "Rabbit is diagonally adjacent to Elephant",
+      "complexity": 4
+    },
+    {
+      "id": 6,
+      "description": "Frog and Fox are on different terrain types",
+      "complexity": 2
+    },
+    {
+      "id": 7,
+      "description": "Frog is in a corner",
+      "complexity": 2
+    },
+    {
+      "id": 8,
+      "description": "Frog is in Row 1 OR Row 2",
+      "complexity": 4
+    },
+    {
+      "id": 9,
+      "description": "Fox and Panda are on the same terrain type",
+      "complexity": 3
+    }
+  ],
+  "solution": {
+    "frog": {"row": 1, "column": "A"},
+    "monkey": {"row": 2, "column": "A"},
+    "elephant": {"row": 1, "column": "B"},
+    "rabbit": {"row": 2, "column": "C"},
+    "fox": {"row": 3, "column": "C"},
+    "panda": {"row": 3, "column": "A"}
+  }
+},
+  "29": {
+  "difficulty": "expert",
+  "grid": [
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "mud", "object": "none"}
+    ],
+    [
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "sand", "object": "none"}
+    ],
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "grass", "object": "ruin"},
+      {"terrain": "water", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant",
+    "panda"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Frog is diagonally adjacent to Elephant",
+      "complexity": 4
+    },
+    {
+      "id": 2,
+      "description": "Fox is NOT adjacent to GRASS",
+      "complexity": 4
+    },
+    {
+      "id": 3,
+      "description": "Rabbit is in a corner",
+      "complexity": 2
+    },
+    {
+      "id": 4,
+      "description": "Panda is exactly 3 steps away from Monkey",
+      "complexity": 5
+    },
+    {
+      "id": 5,
+      "description": "Rabbit is adjacent to Panda",
+      "complexity": 4
+    },
+    {
+      "id": 6,
+      "description": "Panda and Elephant are on the same terrain type",
+      "complexity": 3
+    },
+    {
+      "id": 7,
+      "description": "There are exactly 2 animals in Column A",
+      "complexity": 4
+    },
+    {
+      "id": 8,
+      "description": "Elephant is in the same row as Rabbit",
+      "complexity": 3
+    }
+  ],
+  "solution": {
+    "frog": {"row": 2, "column": "C"},
+    "monkey": {"row": 3, "column": "C"},
+    "elephant": {"row": 1, "column": "B"},
+    "rabbit": {"row": 1, "column": "A"},
+    "fox": {"row": 1, "column": "C"},
+    "panda": {"row": 2, "column": "A"}
+  }
+},
+  "30": {
+  "difficulty": "hard",
+  "grid": [
+    [
+      {"terrain": "sand", "object": "rock"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "grass", "object": "none"}
+    ],
+    [
+      {"terrain": "grass", "object": "ruin"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ],
+    [
+      {"terrain": "water", "object": "none"},
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Elephant is in the same row as Rabbit",
+      "complexity": 3
+    },
+    {
+      "id": 2,
+      "description": "Monkey and Fox are on the same terrain type",
+      "complexity": 3
+    },
+    {
+      "id": 3,
+      "description": "There is exactly 1 animal(s) on GRASS",
+      "complexity": 5
+    },
+    {
+      "id": 4,
+      "description": "Fox is NOT adjacent to WATER",
+      "complexity": 4
+    },
+    {
+      "id": 5,
+      "description": "Rabbit is a Knight's move away from Monkey",
+      "complexity": 4
+    },
+    {
+      "id": 6,
+      "description": "Rabbit and Frog are on the same terrain type",
+      "complexity": 3
+    },
+    {
+      "id": 7,
+      "description": "There are exactly 2 animals in Column B",
+      "complexity": 4
+    }
+  ],
+  "solution": {
+    "frog": {"row": 2, "column": "B"},
+    "monkey": {"row": 3, "column": "C"},
+    "elephant": {"row": 1, "column": "C"},
+    "rabbit": {"row": 1, "column": "B"},
+    "fox": {"row": 3, "column": "A"}
+  }
+},
+  "31": {
+  "difficulty": "hard",
+  "grid": [
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "water", "object": "none"}
+    ],
+    [
+      {"terrain": "grass", "object": "none"},
+      {"terrain": "water", "object": "none"},
+      {"terrain": "grass", "object": "tree"}
+    ],
+    [
+      {"terrain": "mud", "object": "none"},
+      {"terrain": "sand", "object": "none"},
+      {"terrain": "sand", "object": "ruin"}
+    ]
+  ],
+  "animals": [
+    "fox",
+    "monkey",
+    "frog",
+    "rabbit",
+    "elephant"
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "description": "Elephant and Rabbit are on different terrain types",
+      "complexity": 2
+    },
+    {
+      "id": 2,
+      "description": "Elephant is diagonally adjacent to Monkey",
+      "complexity": 4
+    },
+    {
+      "id": 3,
+      "description": "Frog is on SAND OR GRASS",
+      "complexity": 4
+    },
+    {
+      "id": 4,
+      "description": "Rabbit is NOT adjacent to SAND",
+      "complexity": 4
+    },
+    {
+      "id": 5,
+      "description": "Elephant is on SAND OR GRASS",
+      "complexity": 4
+    },
+    {
+      "id": 6,
+      "description": "Frog and Fox are on different terrain types",
+      "complexity": 2
+    },
+    {
+      "id": 7,
+      "description": "Fox and Monkey are on the same terrain type",
+      "complexity": 3
+    },
+    {
+      "id": 8,
+      "description": "Monkey is diagonally adjacent to Rabbit",
+      "complexity": 4
+    },
+    {
+      "id": 9,
+      "description": "There are exactly 2 animals in Row 1",
+      "complexity": 4
+    },
+    {
+      "id": 10,
+      "description": "Frog is NOT adjacent to Monkey",
+      "complexity": 3
+    }
+  ],
+  "solution": {
+    "frog": {"row": 3, "column": "C"},
+    "monkey": {"row": 2, "column": "A"},
+    "elephant": {"row": 3, "column": "B"},
+    "rabbit": {"row": 1, "column": "B"},
+    "fox": {"row": 1, "column": "A"}
+  }
+}
+}

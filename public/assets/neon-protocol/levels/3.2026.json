@@ -1,0 +1,455 @@
+{
+  "1": {
+  "solution": [5, 5, 2, 3, 3],
+  "codeLength": 5,
+  "mode": "standard",
+  "clues": [
+    "The sum of B + C is 7",
+    "The sum of B + E is a multiple of 4",
+    "D is less than 4",
+    "A and E are both Odd",
+    "A is greater than E",
+    "The code contains exactly one - 2",
+    "The smallest number in the code is 2"
+  ]
+},
+  "2": {
+  "solution": [4, 1, 3, 4, 1],
+  "codeLength": 5,
+  "mode": "glitched",
+  "clues": [
+    "C is NOT 1",
+    "There are exactly 3 Odd numbers",
+    "B and C are both Even",
+    "A equals D",
+    "The sum of B + C is less than 6",
+    "The code does NOT contain the number 2",
+    "B is NOT equal to C",
+    "The sum of C + E is less than 6"
+  ]
+},
+  "3": {
+  "solution": [4, 5, 5, 5, 2],
+  "codeLength": 5,
+  "mode": "standard",
+  "clues": [
+    "The range (Max - Min) is exactly 3",
+    "A is NOT equal to C",
+    "C is greater than E",
+    "B equals D",
+    "The sum of D + E is greater than 5",
+    "C and D are both Odd",
+    "The sum of A + C is a multiple of 3"
+  ]
+},
+  "4": {
+  "solution": [4, 5, 1, 2, 1],
+  "codeLength": 5,
+  "mode": "glitched",
+  "clues": [
+    "The sum of C + D is 3",
+    "The sum of A + B is greater than 7",
+    "There are exactly 2 Even numbers",
+    "The code contains exactly four - 1's",
+    "A is less than 5",
+    "D is greater than E"
+  ]
+},
+  "5": {
+  "solution": [4, 1, 5, 3, 5],
+  "codeLength": 5,
+  "mode": "standard",
+  "clues": [
+    "B is less than 4",
+    "A is NOT equal to E",
+    "The sum of all numbers is 18",
+    "D is less than E",
+    "B is NOT 2",
+    "The sum of B + E is less than 8",
+    "D and E are both Odd"
+  ]
+},
+  "6": {
+  "solution": [1, 1, 2, 2, 1],
+  "codeLength": 5,
+  "mode": "standard",
+  "clues": [
+    "The sum of D + E is 3",
+    "B is NOT 3",
+    "C is less than 3",
+    "The sum of A + B is less than 6",
+    "C and D are both Even",
+    "There are exactly 3 Odd numbers",
+    "A is less than 3"
+  ]
+},
+  "7": {
+  "solution": [1, 3, 5, 2],
+  "codeLength": 4,
+  "mode": "glitched",
+  "clues": [
+    "The sum of B + D is 5",
+    "The sum of C + D is less than 8",
+    "The range (Max - Min) is exactly 4",
+    "A is less than B",
+    "C and D are both Odd",
+    "The sum of A + B is a multiple of 4",
+    "A is NOT equal to D",
+    "B is less than 4",
+    "D is less than 4"
+  ]
+},
+  "8": {
+  "solution": [5, 5, 4, 2],
+  "codeLength": 4,
+  "mode": "standard",
+  "clues": [
+    "The sum of A + C is a multiple of 3",
+    "D is less than 3",
+    "There are exactly 2 Even numbers",
+    "The code contains NO 3's",
+    "The sum of A + D is Odd",
+    "The code does NOT contain the number 1"
+  ]
+},
+  "9": {
+  "solution": [5, 2, 3, 3, 1],
+  "codeLength": 5,
+  "mode": "standard",
+  "clues": [
+    "The largest number in the code is 5",
+    "C and E are both Odd",
+    "D is greater than E",
+    "The sum C + D + E is Odd",
+    "The code contains at least one 2",
+    "A is greater than D",
+    "The sum of B + C is 5"
+  ]
+},
+  "10": {
+  "solution": [4, 3, 2, 1, 4],
+  "codeLength": 5,
+  "mode": "glitched",
+  "clues": [
+    "The sum of A + B is greater than 5",
+    "The code contains exactly one - 2",
+    "D is less than 3",
+    "A is NOT equal to C",
+    "The code does NOT contain the number 5",
+    "A is greater than B",
+    "C and E are both Even",
+    "C equals E",
+    "The sum of A + E is 8",
+    "The sum B + D + E is Even"
+  ]
+},
+  "11": {
+  "solution": [3, 1, 5, 2],
+  "codeLength": 4,
+  "mode": "glitched",
+  "clues": [
+    "A is greater than 1",
+    "A is greater than C",
+    "The sum of A + B is Even",
+    "B is less than 4",
+    "The sum of A + D is 5",
+    "The sum A + B + C is Odd",
+    "The code contains at least one 1",
+    "C is NOT 1",
+    "B is NOT 2",
+    "A is less than C"
+  ]
+},
+  "12": {
+  "solution": [3, 1, 1, 3, 4],
+  "codeLength": 5,
+  "mode": "glitched",
+  "clues": [
+    "The sum A + B + D is Odd",
+    "The sum of A + E is greater than 6",
+    "E is less than 5",
+    "The code contains exactly two - 2's",
+    "B equals C",
+    "A is NOT 4",
+    "The sum of A + C is less than 7",
+    "The range (Max - Min) is exactly 3",
+    "D is NOT 2",
+    "A equals D"
+  ]
+},
+  "13": {
+  "solution": [4, 5, 1, 5, 5],
+  "codeLength": 5,
+  "mode": "standard",
+  "clues": [
+    "B is greater than 3",
+    "The smallest number in the code is 1",
+    "The sum of A + E is a multiple of 3",
+    "B and E are both Odd",
+    "C is less than 3",
+    "The code contains exactly one - 4",
+    "B equals D"
+  ]
+},
+  "14": {
+  "solution": [1, 5, 1, 4, 2],
+  "codeLength": 5,
+  "mode": "standard",
+  "clues": [
+    "The code contains exactly two - 1's",
+    "B and C are both Odd",
+    "The sum of A + D is less than 6",
+    "B is NOT 1",
+    "D is greater than E",
+    "The sum B + D + E is Odd",
+    "The code contains NO 3's"
+  ]
+},
+  "15": {
+  "solution": [1, 4, 1, 3, 2],
+  "codeLength": 5,
+  "mode": "standard",
+  "clues": [
+    "The sum of B + C is 5",
+    "B and E are both Even",
+    "The sum of A + B is 5",
+    "C is NOT 3",
+    "D is greater than E",
+    "The code contains at least one 3"
+  ]
+},
+  "16": {
+  "solution": [4, 4, 4, 2],
+  "codeLength": 4,
+  "mode": "standard",
+  "clues": [
+    "A is NOT equal to D",
+    "C and D are both Even",
+    "B equals C",
+    "A and C are both Even",
+    "A is greater than 2",
+    "The sum of B + C is greater than 6"
+  ]
+},
+  "17": {
+  "solution": [4, 5, 1, 4, 3],
+  "codeLength": 5,
+  "mode": "glitched",
+  "clues": [
+    "The code contains at least one 3",
+    "The code does NOT contain the number 2",
+    "The code contains NO 3's",
+    "The sum of A + E is 7",
+    "D is NOT 5",
+    "The sum of A + C is less than 6",
+    "The code contains exactly two - 4's",
+    "The largest number in the code is 5",
+    "The sum B + C + E is Odd"
+  ]
+},
+  "18": {
+  "solution": [4, 4, 4, 5],
+  "codeLength": 4,
+  "mode": "glitched",
+  "clues": [
+    "The range (Max - Min) is exactly 1",
+    "C is less than D",
+    "A is less than B",
+    "The code contains NO 2's",
+    "The sum of C + D is Odd",
+    "The sum of A + D is a multiple of 3",
+    "A is greater than 3"
+  ]
+},
+  "19": {
+  "solution": [2, 3, 1, 3, 1],
+  "codeLength": 5,
+  "mode": "standard",
+  "clues": [
+    "A is less than 3",
+    "B and D are both Odd",
+    "A is NOT equal to C",
+    "The sum of B + D is greater than 4",
+    "The sum of C + E is 2",
+    "The range (Max - Min) is exactly 2"
+  ]
+},
+  "20": {
+  "solution": [1, 1, 3, 1, 5],
+  "codeLength": 5,
+  "mode": "glitched",
+  "clues": [
+    "B equals D",
+    "The range (Max - Min) is exactly 4",
+    "The code contains exactly four - 4's",
+    "E is greater than 3",
+    "The sum of B + C is a multiple of 4",
+    "D is NOT 3",
+    "A equals B",
+    "D is NOT 4"
+  ]
+},
+  "21": {
+  "solution": [2, 3, 1, 4],
+  "codeLength": 4,
+  "mode": "glitched",
+  "clues": [
+    "The range (Max - Min) is exactly 3",
+    "A is less than B",
+    "There are exactly 2 Odd numbers",
+    "The sum of A + D is 6",
+    "The sum of B + C is 4",
+    "There is exactly 1 Odd number"
+  ]
+},
+  "22": {
+  "solution": [2, 2, 4, 3, 5],
+  "codeLength": 5,
+  "mode": "standard",
+  "clues": [
+    "A equals B",
+    "The code contains exactly one - 4",
+    "The sum of A + C is a multiple of 3",
+    "A is less than C",
+    "The code does NOT contain the number 1",
+    "A is NOT equal to D",
+    "The sum of B + E is greater than 6",
+    "C is greater than D"
+  ]
+},
+  "23": {
+  "solution": [5, 3, 4, 5],
+  "codeLength": 4,
+  "mode": "glitched",
+  "clues": [
+    "B and D are both Even",
+    "B is less than D",
+    "A and D are both Odd",
+    "The sum of C + D is greater than 7",
+    "B is NOT equal to C",
+    "The sum of B + D is a multiple of 4",
+    "A is NOT equal to C",
+    "A is greater than 3"
+  ]
+},
+  "24": {
+  "solution": [5, 4, 1, 1],
+  "codeLength": 4,
+  "mode": "standard",
+  "clues": [
+    "B is greater than D",
+    "The code does NOT contain the number 2",
+    "A is greater than 2",
+    "The sum A + B + C is Even",
+    "The sum of B + D is less than 6",
+    "C is less than 4",
+    "The code does NOT contain the number 3"
+  ]
+},
+  "25": {
+  "solution": [5, 5, 5, 3],
+  "codeLength": 4,
+  "mode": "glitched",
+  "clues": [
+    "C is less than 3",
+    "A is greater than D",
+    "C is NOT 3",
+    "B is greater than 3",
+    "The sum of C + D is greater than 4",
+    "The sum A + C + D is Odd",
+    "The code does NOT contain the number 2",
+    "The code does NOT contain the number 1",
+    "B and C are both Odd"
+  ]
+},
+  "26": {
+  "solution": [3, 5, 5, 5, 3],
+  "codeLength": 5,
+  "mode": "glitched",
+  "clues": [
+    "The sum C + D + E is Odd",
+    "A is less than C",
+    "B is greater than 2",
+    "The sum of A + D is greater than 7",
+    "The sum of A + E is a multiple of 3",
+    "B and D are both Even",
+    "B is NOT equal to E",
+    "A is less than 4",
+    "A and B are both Odd"
+  ]
+},
+  "27": {
+  "solution": [1, 1, 3, 3, 2],
+  "codeLength": 5,
+  "mode": "glitched",
+  "clues": [
+    "B is NOT 3",
+    "A is less than E",
+    "The sum of A + D is 4",
+    "D is NOT equal to E",
+    "The sum of B + C is a multiple of 4",
+    "C and D are both Odd",
+    "The code contains exactly four - 3's",
+    "The largest number in the code is 3"
+  ]
+},
+  "28": {
+  "solution": [3, 2, 4, 4, 1],
+  "codeLength": 5,
+  "mode": "glitched",
+  "clues": [
+    "The sum of B + E is Even",
+    "A is less than C",
+    "There are exactly 3 Even numbers",
+    "D is greater than 2",
+    "A is greater than 2",
+    "The code contains at least one 1",
+    "E is less than 4",
+    "B is NOT 4",
+    "The sum A + B + E is Even",
+    "The sum of A + E is a multiple of 4"
+  ]
+},
+  "29": {
+  "solution": [3, 5, 5, 5, 4],
+  "codeLength": 5,
+  "mode": "glitched",
+  "clues": [
+    "The sum of A + B is greater than 7",
+    "A equals D",
+    "The sum of A + C is a multiple of 4",
+    "A and B are both Odd",
+    "The code contains at least one 4",
+    "B equals D",
+    "C equals D",
+    "A is less than C"
+  ]
+},
+  "30": {
+  "solution": [1, 5, 1, 5, 3],
+  "codeLength": 5,
+  "mode": "standard",
+  "clues": [
+    "B is NOT equal to C",
+    "The code contains exactly two - 1's",
+    "B is NOT equal to E",
+    "The code contains at least one 3",
+    "The sum of D + E is greater than 7",
+    "The sum of A + B is greater than 5"
+  ]
+},
+  "31": {
+  "solution": [1, 4, 3, 2],
+  "codeLength": 4,
+  "mode": "glitched",
+  "clues": [
+    "A equals C",
+    "C is greater than 2",
+    "The sum of A + D is a multiple of 3",
+    "The code contains at least one 3",
+    "The sum of A + B is less than 6",
+    "B is greater than D",
+    "B and D are both Even"
+  ]
+}
+}
