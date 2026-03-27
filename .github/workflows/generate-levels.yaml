@@ -14,7 +14,8 @@ on:
           - neon-protocol
           - logic-gems
           - totem-origins
-          - all # Added "all" option
+          - wild-lies
+          - all
       
       month:
         description: 'Month'
@@ -88,7 +89,7 @@ jobs:
 
           # Determine which games to run
           if [ "$INPUT_GAME" == "all" ]; then
-            GAMES_LIST="symbiomes neon-protocol logic-gems totem-origins"
+            GAMES_LIST="symbiomes neon-protocol logic-gems totem-origins wild-lies"
           else
             GAMES_LIST="$INPUT_GAME"
           fi
@@ -111,8 +112,12 @@ jobs:
 
             mkdir -p "$OUTPUT_DIR"
             
-            # Execute Generator
-            java -Xmx2G -jar "$JAR_FILE" "$GAME" "$MONTH_NAME" "$YEAR" > "$TARGET_FILE"
+            # Execute Generator (Handle wild-lies parameter exception)
+            if [ "$GAME" == "wild-lies" ]; then
+              java -Xmx2G -jar "$JAR_FILE" "$GAME" > "$TARGET_FILE"
+            else
+              java -Xmx2G -jar "$JAR_FILE" "$GAME" "$MONTH_NAME" "$YEAR" > "$TARGET_FILE"
+            fi
           done
 
       - name: Commit and Push

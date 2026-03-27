@@ -8,8 +8,7 @@ import { LogicGems } from './games/logic-gems/LogicGems';
 
 // Import Home
 import { Home } from './Home';
-import HorSudoku from "./games/hor-sudoku/HorSudoku";
-
+import WildLiesGame from "./games/wild-lies/WildLiesGame";
 
 function App() {
   return (
@@ -21,6 +20,7 @@ function App() {
       <Route path="/symbiomes" element={<SymbiomesGame />} />
       <Route path="/neon-protocol" element={<NeonProtocol />} />
       <Route path="/logic-gems" element={<LogicGems />} />
+      <Route path="/wild-lies" element={<WildLiesGame />} />
     </Routes>
   );
 }

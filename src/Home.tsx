@@ -23,6 +23,13 @@ export const Home = () => {
       subtitle: 'Uncover hidden patterns',
       path: '/logic-gems',
       image: `${import.meta.env.BASE_URL}assets/logic-gems/logic-gems-main.jpg`
+    },
+    {
+      id: 'wild-lies',
+      title: 'Wild Lies',
+      subtitle: 'Find the Culprits and Liers',
+      path: '/wild-lies',
+      image: `${import.meta.env.BASE_URL}assets/wild-lies/wild-lies-main.jpg`
     }
   ];
 
