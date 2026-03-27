@@ -416,7 +416,7 @@ const WildLiesGame: React.FC = () => {
       <div className="rules-section">
         <h3>How to Play: Wild Lies</h3>
         <ul>
-          <li><strong>The Goal:</strong> Deduce exactly who committed the crime based on the animals' statements.</li>
+          <li><strong>The Goal:</strong> Deduce exactly who committed the crime based on the animals' statements. You must determine the culprit(s) and liar(s) to solve the case.</li>
           <li><strong>The Catch:</strong> Some animals are lying! Check the header to see exactly how many Culprits and Liars are in the current case.</li>
           <li><strong>Important:</strong> Being a Culprit and being a Liar are two different things. A Culprit might be telling the truth to cover their tracks, and an innocent animal might be lying to protect someone else!</li>
           <li><strong>Adjacency Clues:</strong> The animals are sitting at a round table. The first animal is sitting next to the last animal.</li>
