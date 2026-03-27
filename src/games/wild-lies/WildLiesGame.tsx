@@ -43,6 +43,7 @@ const WildLiesGame: React.FC = () => {
 
   // 1. Load Level & Restore Saved Data
   useEffect(() => {
+    document.title = "Wild Lies";
     const fetchLevel = async () => {
       // Force resets to prevent old UI elements from "sticking"
       setIsLevelSolved(false);
@@ -180,7 +181,7 @@ const WildLiesGame: React.FC = () => {
   const handleCopyResult = () => {
     const dateStr = currentDate.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
     const timeStr = `${Math.floor(timeSpent / 60)}:${(timeSpent % 60).toString().padStart(2, '0')}`;
-    const text = `🕵️ **Wild Lies** • ${dateStr}\n⏱️ Time: ${timeStr}\n❌ Errors: ${errors}\n\nCan you spot the liars? 🦊`;
+    const text = `🕵️ Wild Lies • ${dateStr}\n⏱️ Time: ${timeStr}\n❌ Errors: ${errors}`;
     
     navigator.clipboard.writeText(text).then(() => {
       setCopied(true);
