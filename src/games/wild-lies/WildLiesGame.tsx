@@ -210,7 +210,7 @@ const WildLiesGame: React.FC = () => {
     for (let d = 1; d <= daysInMonth; d++) {
       const date = new Date(year, month, d);
       const isFuture = date > new Date(); 
-      const isBeforeEarliest = date < new Date('2026-03-01');
+      const isBeforeEarliest = date < new Date(2026, 2, 1); // first of march 2026
       const isSelected = date.toDateString() === currentDate.toDateString();
 
       const dayKey = getDateKey(date);
