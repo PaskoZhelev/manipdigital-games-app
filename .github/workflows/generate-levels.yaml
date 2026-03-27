@@ -112,12 +112,9 @@ jobs:
 
             mkdir -p "$OUTPUT_DIR"
             
-            # Execute Generator (Handle wild-lies parameter exception)
-            if [ "$GAME" == "wild-lies" ]; then
-              java -Xmx2G -jar "$JAR_FILE" "$GAME" > "$TARGET_FILE"
-            else
-              java -Xmx2G -jar "$JAR_FILE" "$GAME" "$MONTH_NAME" "$YEAR" > "$TARGET_FILE"
-            fi
+            # Execute Generator
+            java -Xmx2G -jar "$JAR_FILE" "$GAME" "$MONTH_NAME" "$YEAR" > "$TARGET_FILE"
+            
           done
 
       - name: Commit and Push
