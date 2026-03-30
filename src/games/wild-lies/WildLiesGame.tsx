@@ -417,9 +417,10 @@ const WildLiesGame: React.FC = () => {
         <h3>How to Play: Wild Lies</h3>
         <ul>
           <li><strong>The Goal:</strong> Deduce exactly who committed the crime based on the animals' statements. You must determine the culprit(s) and liar(s) to solve the case.</li>
-          <li><strong>The Catch:</strong> Some animals are lying! Check the header to see exactly how many Culprits and Liars are in the current case.</li>
-          <li><strong>Important:</strong> Being a Culprit and being a Liar are two different things. A Culprit might be telling the truth to cover their tracks, and an innocent animal might be lying to protect someone else!</li>
+          <li><strong>The Catch:</strong> Some animals are lying! Check the header to see exactly how many Culprits and Liars are in the current case. Sometimes the Liars number will be shown as a range, e.g. 1-2. This means that there might be 1 or 2 Liars in the case.</li>
+          <li><strong>Important:</strong> Being a Culprit and being a Liar are two different things. A Culprit might be telling the truth to cover their tracks, and an innocent animal might be lying to protect someone else! But the culprit might also be lying!</li>
           <li><strong>Adjacency Clues:</strong> The animals are sitting at a round table. The first animal is sitting next to the last animal.</li>
+          <li><strong>One Solution:</strong> There is always only one solution to the case.</li>
         </ul>
       </div>
 
@@ -438,7 +439,7 @@ const WildLiesGame: React.FC = () => {
                    {copied ? "✅ Copied!" : "📋 Copy Result"}
                 </button>
                 <div style={{ marginTop: '15px' }}>
-                  <button className="btn-secondary" onClick={() => setShowResult(null)}>Review Board</button>
+                  <button className="btn-secondary" onClick={() => setShowResult(null)}>Okay</button>
                   <button className="btn-secondary" style={{ marginLeft: '10px' }} onClick={() => { setShowResult(null); setShowCalendar(true); }}>
                     Play Another Day
                   </button>
