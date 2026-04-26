@@ -1,0 +1,250 @@
+{
+  "1": {
+  "difficulty": 2,
+  "solution":["All pieces","is / are","RED"],
+  "examples": {
+    "true_koan": [{"color":"RED","shape":"SQUARE","pips":1}],
+    "false_koan": [{"color":"YELLOW","shape":"TRIANGLE","pips":1},{"color":"BLUE","shape":"TRIANGLE","pips":2}]
+  }
+},
+  "2": {
+  "difficulty": 2,
+  "solution":["At least one piece","is / are","RED STAR"],
+  "examples": {
+    "true_koan": [{"color":"RED","shape":"SQUARE","pips":1},{"color":"RED","shape":"STAR","pips":3},{"color":"BLUE","shape":"TRIANGLE","pips":1},{"color":"RED","shape":"SQUARE","pips":3}],
+    "false_koan": [{"color":"BLUE","shape":"SQUARE","pips":3},{"color":"RED","shape":"TRIANGLE","pips":3},{"color":"RED","shape":"SQUARE","pips":1},{"color":"GREEN","shape":"TRIANGLE","pips":1}]
+  }
+},
+  "3": {
+  "difficulty": 2,
+  "solution":["At least one piece","is / are","YELLOW STAR"],
+  "examples": {
+    "true_koan": [{"color":"YELLOW","shape":"STAR","pips":3}],
+    "false_koan": [{"color":"RED","shape":"TRIANGLE","pips":2},{"color":"BLUE","shape":"STAR","pips":2},{"color":"RED","shape":"STAR","pips":2},{"color":"GREEN","shape":"CIRCLE","pips":2}]
+  }
+},
+  "4": {
+  "difficulty": 3,
+  "solution":["All RED pieces","is / are","CIRCLE"],
+  "examples": {
+    "true_koan": [{"color":"GREEN","shape":"TRIANGLE","pips":3},{"color":"GREEN","shape":"TRIANGLE","pips":1},{"color":"RED","shape":"CIRCLE","pips":3},{"color":"GREEN","shape":"STAR","pips":3}],
+    "false_koan": [{"color":"BLUE","shape":"CIRCLE","pips":2},{"color":"RED","shape":"SQUARE","pips":2},{"color":"BLUE","shape":"STAR","pips":2}]
+  }
+},
+  "5": {
+  "difficulty": 3,
+  "solution":["All RED pieces","is / are","STAR"],
+  "examples": {
+    "true_koan": [{"color":"BLUE","shape":"STAR","pips":3},{"color":"RED","shape":"STAR","pips":1},{"color":"GREEN","shape":"STAR","pips":1},{"color":"RED","shape":"STAR","pips":1}],
+    "false_koan": [{"color":"RED","shape":"CIRCLE","pips":1},{"color":"BLUE","shape":"SQUARE","pips":1}]
+  }
+},
+  "6": {
+  "difficulty": 3,
+  "solution":["All TRIANGLE pieces","is / are","YELLOW"],
+  "examples": {
+    "true_koan": [{"color":"BLUE","shape":"SQUARE","pips":1},{"color":"RED","shape":"CIRCLE","pips":2},{"color":"YELLOW","shape":"TRIANGLE","pips":1}],
+    "false_koan": [{"color":"YELLOW","shape":"STAR","pips":2},{"color":"RED","shape":"STAR","pips":2},{"color":"BLUE","shape":"TRIANGLE","pips":3},{"color":"YELLOW","shape":"SQUARE","pips":3}]
+  }
+},
+  "7": {
+  "difficulty": 2,
+  "solution":["The sum of pips","is / are","ODD"],
+  "examples": {
+    "true_koan": [{"color":"YELLOW","shape":"SQUARE","pips":2},{"color":"GREEN","shape":"CIRCLE","pips":1}],
+    "false_koan": [{"color":"RED","shape":"TRIANGLE","pips":2},{"color":"BLUE","shape":"STAR","pips":2}]
+  }
+},
+  "8": {
+  "difficulty": 1,
+  "solution":["At least one piece","is / are","CIRCLE"],
+  "examples": {
+    "true_koan": [{"color":"BLUE","shape":"TRIANGLE","pips":1},{"color":"GREEN","shape":"TRIANGLE","pips":1},{"color":"YELLOW","shape":"CIRCLE","pips":2}],
+    "false_koan": [{"color":"YELLOW","shape":"SQUARE","pips":2},{"color":"GREEN","shape":"STAR","pips":3}]
+  }
+},
+  "9": {
+  "difficulty": 2,
+  "solution":["At least one piece","is / are","BLUE STAR"],
+  "examples": {
+    "true_koan": [{"color":"BLUE","shape":"STAR","pips":3},{"color":"GREEN","shape":"STAR","pips":3},{"color":"GREEN","shape":"STAR","pips":2}],
+    "false_koan": [{"color":"RED","shape":"CIRCLE","pips":1}]
+  }
+},
+  "10": {
+  "difficulty": 1,
+  "solution":["At least one piece","is / are","STAR"],
+  "examples": {
+    "true_koan": [{"color":"RED","shape":"SQUARE","pips":2},{"color":"RED","shape":"STAR","pips":1}],
+    "false_koan": [{"color":"YELLOW","shape":"CIRCLE","pips":1},{"color":"RED","shape":"TRIANGLE","pips":3}]
+  }
+},
+  "11": {
+  "difficulty": 3,
+  "solution":["All YELLOW pieces","is / are","STAR"],
+  "examples": {
+    "true_koan": [{"color":"GREEN","shape":"CIRCLE","pips":3},{"color":"YELLOW","shape":"STAR","pips":2},{"color":"GREEN","shape":"STAR","pips":2}],
+    "false_koan": [{"color":"RED","shape":"SQUARE","pips":3},{"color":"YELLOW","shape":"SQUARE","pips":2},{"color":"GREEN","shape":"STAR","pips":3},{"color":"YELLOW","shape":"SQUARE","pips":2}]
+  }
+},
+  "12": {
+  "difficulty": 3,
+  "solution":["All CIRCLE pieces","is / are","GREEN"],
+  "examples": {
+    "true_koan": [{"color":"GREEN","shape":"CIRCLE","pips":1},{"color":"GREEN","shape":"STAR","pips":2}],
+    "false_koan": [{"color":"YELLOW","shape":"CIRCLE","pips":1},{"color":"GREEN","shape":"TRIANGLE","pips":3},{"color":"YELLOW","shape":"STAR","pips":3},{"color":"YELLOW","shape":"SQUARE","pips":2}]
+  }
+},
+  "13": {
+  "difficulty": 1,
+  "solution":["At least one piece","is / are","GREEN"],
+  "examples": {
+    "true_koan": [{"color":"RED","shape":"CIRCLE","pips":2},{"color":"BLUE","shape":"STAR","pips":1},{"color":"YELLOW","shape":"STAR","pips":3},{"color":"GREEN","shape":"TRIANGLE","pips":1}],
+    "false_koan": [{"color":"YELLOW","shape":"CIRCLE","pips":1}]
+  }
+},
+  "14": {
+  "difficulty": 3,
+  "solution":["All BLUE pieces","is / are","CIRCLE"],
+  "examples": {
+    "true_koan": [{"color":"YELLOW","shape":"CIRCLE","pips":3},{"color":"BLUE","shape":"CIRCLE","pips":1}],
+    "false_koan": [{"color":"GREEN","shape":"TRIANGLE","pips":2},{"color":"BLUE","shape":"STAR","pips":3}]
+  }
+},
+  "15": {
+  "difficulty": 3,
+  "solution":["All CIRCLE pieces","is / are","YELLOW"],
+  "examples": {
+    "true_koan": [{"color":"BLUE","shape":"STAR","pips":2},{"color":"YELLOW","shape":"CIRCLE","pips":1}],
+    "false_koan": [{"color":"BLUE","shape":"CIRCLE","pips":1},{"color":"GREEN","shape":"STAR","pips":1}]
+  }
+},
+  "16": {
+  "difficulty": 3,
+  "solution":["All GREEN pieces","is / are","CIRCLE"],
+  "examples": {
+    "true_koan": [{"color":"GREEN","shape":"CIRCLE","pips":2}],
+    "false_koan": [{"color":"GREEN","shape":"TRIANGLE","pips":3},{"color":"BLUE","shape":"STAR","pips":3}]
+  }
+},
+  "17": {
+  "difficulty": 3,
+  "solution":["All BLUE pieces","is / are","SQUARE"],
+  "examples": {
+    "true_koan": [{"color":"BLUE","shape":"SQUARE","pips":1},{"color":"RED","shape":"TRIANGLE","pips":1}],
+    "false_koan": [{"color":"BLUE","shape":"TRIANGLE","pips":3}]
+  }
+},
+  "18": {
+  "difficulty": 2,
+  "solution":["All pieces","is / are","YELLOW"],
+  "examples": {
+    "true_koan": [{"color":"YELLOW","shape":"STAR","pips":1}],
+    "false_koan": [{"color":"GREEN","shape":"TRIANGLE","pips":1},{"color":"YELLOW","shape":"STAR","pips":2},{"color":"GREEN","shape":"STAR","pips":3},{"color":"GREEN","shape":"SQUARE","pips":3}]
+  }
+},
+  "19": {
+  "difficulty": 2,
+  "solution":["At least one piece","is / are","BLUE TRIANGLE"],
+  "examples": {
+    "true_koan": [{"color":"BLUE","shape":"TRIANGLE","pips":2},{"color":"RED","shape":"CIRCLE","pips":1},{"color":"RED","shape":"TRIANGLE","pips":3},{"color":"GREEN","shape":"CIRCLE","pips":2}],
+    "false_koan": [{"color":"YELLOW","shape":"STAR","pips":3},{"color":"RED","shape":"TRIANGLE","pips":3},{"color":"RED","shape":"CIRCLE","pips":2},{"color":"RED","shape":"CIRCLE","pips":3}]
+  }
+},
+  "20": {
+  "difficulty": 3,
+  "solution":["All YELLOW pieces","is / are","STAR"],
+  "examples": {
+    "true_koan": [{"color":"RED","shape":"CIRCLE","pips":2},{"color":"GREEN","shape":"CIRCLE","pips":2},{"color":"YELLOW","shape":"STAR","pips":1}],
+    "false_koan": [{"color":"BLUE","shape":"STAR","pips":2},{"color":"BLUE","shape":"SQUARE","pips":2},{"color":"GREEN","shape":"CIRCLE","pips":1},{"color":"YELLOW","shape":"SQUARE","pips":3}]
+  }
+},
+  "21": {
+  "difficulty": 2,
+  "solution":["No pieces","is / are","STAR"],
+  "examples": {
+    "true_koan": [{"color":"RED","shape":"SQUARE","pips":3},{"color":"GREEN","shape":"CIRCLE","pips":2}],
+    "false_koan": [{"color":"YELLOW","shape":"STAR","pips":2},{"color":"RED","shape":"SQUARE","pips":2},{"color":"BLUE","shape":"CIRCLE","pips":1}]
+  }
+},
+  "22": {
+  "difficulty": 1,
+  "solution":["At least one piece","is / are","YELLOW"],
+  "examples": {
+    "true_koan": [{"color":"GREEN","shape":"TRIANGLE","pips":2},{"color":"YELLOW","shape":"SQUARE","pips":2}],
+    "false_koan": [{"color":"GREEN","shape":"SQUARE","pips":2},{"color":"RED","shape":"CIRCLE","pips":1}]
+  }
+},
+  "23": {
+  "difficulty": 1,
+  "solution":["At least one piece","is / are","YELLOW"],
+  "examples": {
+    "true_koan": [{"color":"YELLOW","shape":"STAR","pips":3}],
+    "false_koan": [{"color":"BLUE","shape":"TRIANGLE","pips":2},{"color":"BLUE","shape":"CIRCLE","pips":2}]
+  }
+},
+  "24": {
+  "difficulty": 2,
+  "solution":["At least one piece","is / are","YELLOW SQUARE"],
+  "examples": {
+    "true_koan": [{"color":"YELLOW","shape":"SQUARE","pips":3},{"color":"BLUE","shape":"SQUARE","pips":2},{"color":"BLUE","shape":"CIRCLE","pips":3},{"color":"BLUE","shape":"SQUARE","pips":2}],
+    "false_koan": [{"color":"GREEN","shape":"TRIANGLE","pips":2},{"color":"BLUE","shape":"SQUARE","pips":1},{"color":"BLUE","shape":"CIRCLE","pips":1},{"color":"BLUE","shape":"TRIANGLE","pips":2}]
+  }
+},
+  "25": {
+  "difficulty": 3,
+  "solution":["All RED pieces","is / are","STAR"],
+  "examples": {
+    "true_koan": [{"color":"BLUE","shape":"CIRCLE","pips":3},{"color":"RED","shape":"STAR","pips":2}],
+    "false_koan": [{"color":"RED","shape":"SQUARE","pips":1},{"color":"GREEN","shape":"STAR","pips":1},{"color":"GREEN","shape":"STAR","pips":2}]
+  }
+},
+  "26": {
+  "difficulty": 2,
+  "solution":["At least one piece","is / are","YELLOW TRIANGLE"],
+  "examples": {
+    "true_koan": [{"color":"YELLOW","shape":"TRIANGLE","pips":1}],
+    "false_koan": [{"color":"GREEN","shape":"STAR","pips":3},{"color":"YELLOW","shape":"SQUARE","pips":2},{"color":"GREEN","shape":"SQUARE","pips":2}]
+  }
+},
+  "27": {
+  "difficulty": 3,
+  "solution":["All GREEN pieces","is / are","CIRCLE"],
+  "examples": {
+    "true_koan": [{"color":"BLUE","shape":"CIRCLE","pips":3},{"color":"GREEN","shape":"CIRCLE","pips":1},{"color":"BLUE","shape":"STAR","pips":3},{"color":"RED","shape":"TRIANGLE","pips":2}],
+    "false_koan": [{"color":"BLUE","shape":"CIRCLE","pips":2},{"color":"YELLOW","shape":"TRIANGLE","pips":3},{"color":"GREEN","shape":"STAR","pips":2},{"color":"RED","shape":"CIRCLE","pips":1}]
+  }
+},
+  "28": {
+  "difficulty": 3,
+  "solution":["All SQUARE pieces","is / are","BLUE"],
+  "examples": {
+    "true_koan": [{"color":"RED","shape":"STAR","pips":1},{"color":"BLUE","shape":"SQUARE","pips":1}],
+    "false_koan": [{"color":"RED","shape":"SQUARE","pips":3},{"color":"GREEN","shape":"STAR","pips":1},{"color":"BLUE","shape":"SQUARE","pips":2}]
+  }
+},
+  "29": {
+  "difficulty": 2,
+  "solution":["All pieces","is / are","YELLOW"],
+  "examples": {
+    "true_koan": [{"color":"YELLOW","shape":"STAR","pips":1}],
+    "false_koan": [{"color":"BLUE","shape":"SQUARE","pips":3},{"color":"RED","shape":"CIRCLE","pips":2},{"color":"GREEN","shape":"SQUARE","pips":3},{"color":"YELLOW","shape":"CIRCLE","pips":2}]
+  }
+},
+  "30": {
+  "difficulty": 3,
+  "solution":["All TRIANGLE pieces","is / are","YELLOW"],
+  "examples": {
+    "true_koan": [{"color":"YELLOW","shape":"CIRCLE","pips":2},{"color":"GREEN","shape":"STAR","pips":2},{"color":"YELLOW","shape":"TRIANGLE","pips":2}],
+    "false_koan": [{"color":"GREEN","shape":"SQUARE","pips":2},{"color":"BLUE","shape":"TRIANGLE","pips":1}]
+  }
+},
+  "31": {
+  "difficulty": 3,
+  "solution":["All RED pieces","is / are","TRIANGLE"],
+  "examples": {
+    "true_koan": [{"color":"BLUE","shape":"SQUARE","pips":2},{"color":"RED","shape":"TRIANGLE","pips":2},{"color":"YELLOW","shape":"CIRCLE","pips":3}],
+    "false_koan": [{"color":"YELLOW","shape":"CIRCLE","pips":1},{"color":"BLUE","shape":"SQUARE","pips":1},{"color":"RED","shape":"STAR","pips":2},{"color":"GREEN","shape":"CIRCLE","pips":3}]
+  }
+}
+}
