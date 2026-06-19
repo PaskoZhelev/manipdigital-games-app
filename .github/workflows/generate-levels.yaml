@@ -2,13 +2,15 @@ name: Generate Game Levels
 run-name: Generate ${{ inputs.game }} levels (${{ inputs.month }} ${{ inputs.year }})
 
 on:
+  schedule:
+    - cron: '0 0 20 * *'     # 20th of every month at 00:00 UTC
   workflow_dispatch:
     inputs:
       game:
         description: 'Select Game'
-        required: true
+        required: false
         type: choice
-        default: 'symbiomes'
+        default: 'all'
         options:
           - symbiomes
           - neon-protocol
@@ -16,30 +18,13 @@ on:
           - totem-origins
           - wild-lies
           - all
-      
       month:
-        description: 'Month'
-        required: true
-        type: choice
-        default: 'january'
-        options:
-          - january
-          - february
-          - march
-          - april
-          - may
-          - june
-          - july
-          - august
-          - september
-          - october
-          - november
-          - december
-      
+        description: 'Month (optional). If omitted, workflow will pick next month.'
+        required: false
+        type: string
       year:
-        description: 'Year'
-        required: true
-        default: '2026'
+        description: 'Year (optional). If omitted, workflow will pick appropriate year.'
+        required: false
         type: string
 
 permissions:
@@ -63,58 +48,87 @@ jobs:
 
       - name: Generate Level JSON
         run: |
-          # --- INPUTS ---
+          # Inputs (may be empty for scheduled runs)
           INPUT_GAME="${{ inputs.game }}"
-          MONTH_NAME="${{ inputs.month }}"
-          YEAR="${{ inputs.year }}"
-          
-          # Convert Month Name to Number for Filename
-          case "$MONTH_NAME" in
-            "january")   MONTH_NUM="1" ;;
-            "february")  MONTH_NUM="2" ;;
-            "march")     MONTH_NUM="3" ;;
-            "april")     MONTH_NUM="4" ;;
-            "may")       MONTH_NUM="5" ;;
-            "june")      MONTH_NUM="6" ;;
-            "july")      MONTH_NUM="7" ;;
-            "august")    MONTH_NUM="8" ;;
-            "september") MONTH_NUM="9" ;;
-            "october")   MONTH_NUM="10" ;;
-            "november")  MONTH_NUM="11" ;;
-            "december")  MONTH_NUM="12" ;;
-          esac
+          INPUT_MONTH="${{ inputs.month }}"
+          INPUT_YEAR="${{ inputs.year }}"
+
+          # Default game
+          if [ -z "$INPUT_GAME" ]; then
+            INPUT_GAME="all"
+          fi
+
+          # Compute next month/year (UTC) if month/year not provided
+          if [ -z "$INPUT_MONTH" ] || [ -z "$INPUT_YEAR" ]; then
+            CUR_MONTH=$(date -u +%m)
+            CUR_YEAR=$(date -u +%Y)
+            if [ "$CUR_MONTH" -eq 12 ]; then
+              NEXT_MONTH_NUM=1
+              NEXT_YEAR=$((CUR_YEAR + 1))
+            else
+              NEXT_MONTH_NUM=$((10#$CUR_MONTH + 1))
+              NEXT_YEAR=$CUR_YEAR
+            fi
+            # Map to month name (lowercase)
+            case $NEXT_MONTH_NUM in
+              1) MONTH_NAME="january" ;;
+              2) MONTH_NAME="february" ;;
+              3) MONTH_NAME="march" ;;
+              4) MONTH_NAME="april" ;;
+              5) MONTH_NAME="may" ;;
+              6) MONTH_NAME="june" ;;
+              7) MONTH_NAME="july" ;;
+              8) MONTH_NAME="august" ;;
+              9) MONTH_NAME="september" ;;
+              10) MONTH_NAME="october" ;;
+              11) MONTH_NAME="november" ;;
+              12) MONTH_NAME="december" ;;
+            esac
+            MONTH_NUM=$NEXT_MONTH_NUM
+            TARGET_YEAR=$NEXT_YEAR
+          else
+            # Use provided month/year — normalize month name to lowercase
+            MONTH_NAME=$(echo "$INPUT_MONTH" | tr '[:upper:]' '[:lower:]')
+            TARGET_YEAR="$INPUT_YEAR"
+            case "$MONTH_NAME" in
+              january) MONTH_NUM=1 ;;
+              february) MONTH_NUM=2 ;;
+              march) MONTH_NUM=3 ;;
+              april) MONTH_NUM=4 ;;
+              may) MONTH_NUM=5 ;;
+              june) MONTH_NUM=6 ;;
+              july) MONTH_NUM=7 ;;
+              august) MONTH_NUM=8 ;;
+              september) MONTH_NUM=9 ;;
+              october) MONTH_NUM=10 ;;
+              november) MONTH_NUM=11 ;;
+              december) MONTH_NUM=12 ;;
+              *) echo "Invalid month: $MONTH_NAME"; exit 1 ;;
+            esac
+          fi
+
+          echo "TARGET: game=$INPUT_GAME month=$MONTH_NAME month_num=$MONTH_NUM year=$TARGET_YEAR"
 
           # Export MONTH_NUM for the next step to use
           echo "MONTH_NUM=$MONTH_NUM" >> $GITHUB_ENV
 
-          # Determine which games to run
-          if [ "$INPUT_GAME" == "all" ]; then
-            GAMES_LIST="symbiomes neon-protocol logic-gems totem-origins wild-lies"
+          # Determine games list
+          if [ "$INPUT_GAME" = "all" ]; then
+            GAMES_LIST="symbiomes neon-protocol logic-gems wild-lies"
           else
             GAMES_LIST="$INPUT_GAME"
           fi
-          
+
           JAR_FILE="tools/manip-games-level-generator.jar"
 
-          # Loop through selected games
           for GAME in $GAMES_LIST; do
             echo "----------------------------------------"
             echo "Generating levels for: $GAME"
-            
-            # Define Output Directory
             OUTPUT_DIR="public/assets/${GAME}/levels"
-            
-            # Define Output Filename as MM.YYYY.json
-            TARGET_FILE="${OUTPUT_DIR}/${MONTH_NUM}.${YEAR}.json"
-            
-            echo "Args: $MONTH_NAME $YEAR"
-            echo "File: $TARGET_FILE"
-
+            TARGET_FILE="${OUTPUT_DIR}/${MONTH_NUM}.${TARGET_YEAR}.json"
             mkdir -p "$OUTPUT_DIR"
-            
-            # Execute Generator
-            java -Xmx2G -jar "$JAR_FILE" "$GAME" "$MONTH_NAME" "$YEAR" > "$TARGET_FILE"
-            
+            java -Xmx2G -jar "$JAR_FILE" "$GAME" "$MONTH_NAME" "$TARGET_YEAR" > "$TARGET_FILE"
+            echo "Wrote $TARGET_FILE"
           done
 
       - name: Commit and Push
@@ -122,17 +136,15 @@ jobs:
           GAME="${{ inputs.game }}"
           MONTH="${{ inputs.month }}"
           YEAR="${{ inputs.year }}"
-          
+
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          
-          # Add generated files using wildcard to catch all games (MM.YYYY.json)
-          # We use the MONTH_NUM env var exported from the previous step
-          git add public/assets/*/levels/${MONTH_NUM}.${YEAR}.json
-          
+
+          git add public/assets/*/levels/${MONTH_NUM}.${TARGET_YEAR}.json
+
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Generate levels ($GAME): $MONTH $YEAR"
+            git commit -m "Generate levels ($GAME): ${MONTH_NAME} ${TARGET_YEAR}"
             git push
           fi
