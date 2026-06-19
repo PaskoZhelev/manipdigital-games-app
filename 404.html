@@ -4,8 +4,9 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script type="text/javascript">
-      // Redirect all 404s to the index.html
-      window.location.replace(window.location.origin + '/manipdigital-games-app/');
+      // Store the original route and redirect to index
+      sessionStorage.redirect = location.pathname.replace('/manipdigital-games-app', '') + location.search + location.hash;
+      location.href = "/manipdigital-games-app/";
     </script>
   </head>
   <body>
