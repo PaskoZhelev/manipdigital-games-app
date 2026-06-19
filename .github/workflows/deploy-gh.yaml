@@ -24,7 +24,7 @@ jobs:
       - name: Build
         run: npm run build:no-check -- --base /manipdigital-games-app/
         
-      - name: Deploy to GitHub Pages
+      - name: Deploying to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         if: github.ref == 'refs/heads/master'
         with:
