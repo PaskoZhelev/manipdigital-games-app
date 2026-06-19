@@ -1,5 +1,5 @@
 name: Generate Game Levels
-run-name: Generate ${{ inputs.game }} levels (${{ inputs.month }} ${{ inputs.year }})
+run-name: Generate ${{ inputs.game || 'all' }} levels (${{ inputs.month || 'auto' }} ${{ inputs.year || 'auto' }})
 
 on:
   schedule:
