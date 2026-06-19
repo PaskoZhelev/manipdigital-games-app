@@ -14,5 +14,6 @@ createRoot(document.getElementById('root')!).render(
 
 // Navigate to the stored route after app loads
 if (redirect && redirect !== '/') {
-  window.history.replaceState(null, '', import.meta.env.BASE_URL + redirect);
+  const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
+  window.history.replaceState(null, '', basePath + redirect);
 }
