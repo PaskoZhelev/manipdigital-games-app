@@ -4,9 +4,13 @@ ManipDigital Games is a collection of small, single-player logic puzzle games bu
 
 # Game URLs
 [Main Page](https://paskozhelev.github.io/manipdigital-games-app/)
+
 [Symbiomes Game](https://paskozhelev.github.io/manipdigital-games-app/symbiomes/)
+
 [Neon Protocol Game](https://paskozhelev.github.io/manipdigital-games-app/neon-protocol/)
+
 [Logic Gems Game](https://paskozhelev.github.io/manipdigital-games-app/logic-gems/)
+
 [Wild Lies Game](https://paskozhelev.github.io/manipdigital-games-app/wild-lies/)
 
 Included games (high level):
