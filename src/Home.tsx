@@ -27,7 +27,7 @@ export const Home = () => {
     {
       id: 'wild-lies',
       title: 'Wild Lies',
-      subtitle: 'Find the Culprits and Liers',
+      subtitle: 'Find the Culprits and Liars',
       path: '/wild-lies',
       image: `${import.meta.env.BASE_URL}assets/wild-lies/wild-lies-main.jpg`
     }
