@@ -147,3 +147,8 @@ jobs:
             git commit -m "Generate levels ($GAME): ${MONTH_NAME} ${TARGET_YEAR}"
             git push
           fi
+
+      - name: Trigger Deploy Workflow
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run "Deploy to GitHub Pages" --ref master    
