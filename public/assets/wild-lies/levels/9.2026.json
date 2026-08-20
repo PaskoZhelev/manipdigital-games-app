@@ -1,0 +1,599 @@
+{
+  "1": {
+  "levelSetup": {
+    "difficultyId": "HARD_1",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP", "DOG", "HORSE"],
+    "exactNumberOfCulprits": 1,
+    "possibleNumberOfLiars": [1, 2]
+  },
+  "puzzle": {
+    "FOX": "Giraffe and I didn't do it",
+    "GIRAFFE": "Dog and Horse are telling the truth",
+    "BEAR": "Someone heavier than 90 kg did it",
+    "SHEEP": "I am sitting next to a liar",
+    "DOG": "Giraffe didn't do it",
+    "HORSE": "Giraffe or Bear did it (or both)"
+  },
+  "solution": {
+    "culprits": ["BEAR"],
+    "liars": ["SHEEP"]
+  }
+},
+  "2": {
+  "levelSetup": {
+    "difficultyId": "EASY_0",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP"],
+    "exactNumberOfCulprits": 1,
+    "possibleNumberOfLiars": [1, 1]
+  },
+  "puzzle": {
+    "FOX": "The suspects next to me didn't do it",
+    "GIRAFFE": "A carnivore did it",
+    "BEAR": "Someone heavier than 75 kg did it",
+    "SHEEP": "Someone lighter than 80 kg did it"
+  },
+  "solution": {
+    "culprits": ["BEAR"],
+    "liars": ["SHEEP"]
+  }
+},
+  "3": {
+  "levelSetup": {
+    "difficultyId": "HARD_1",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP", "DOG", "HORSE"],
+    "exactNumberOfCulprits": 1,
+    "possibleNumberOfLiars": [1, 2]
+  },
+  "puzzle": {
+    "FOX": "A carnivore did it",
+    "GIRAFFE": "Dog did it",
+    "BEAR": "A culprit is telling the truth",
+    "SHEEP": "Giraffe is lying",
+    "DOG": "I did it",
+    "HORSE": "Bear is lying"
+  },
+  "solution": {
+    "culprits": ["DOG"],
+    "liars": ["HORSE", "SHEEP"]
+  }
+},
+  "4": {
+  "levelSetup": {
+    "difficultyId": "EXPERT_1",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP", "DOG", "HORSE", "TIGER"],
+    "exactNumberOfCulprits": 2,
+    "possibleNumberOfLiars": [3, 4]
+  },
+  "puzzle": {
+    "FOX": "Someone lighter than 80 kg did it",
+    "GIRAFFE": "A culprit is in between two innocent suspects",
+    "BEAR": "Someone lighter than me did it",
+    "SHEEP": "A culprit is telling the truth",
+    "DOG": "A carnivore did it",
+    "HORSE": "Two liars are next to each other",
+    "TIGER": "Bear did it"
+  },
+  "solution": {
+    "culprits": ["HORSE", "TIGER"],
+    "liars": ["FOX", "GIRAFFE", "TIGER"]
+  }
+},
+  "5": {
+  "levelSetup": {
+    "difficultyId": "HARD_1",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP", "DOG", "HORSE"],
+    "exactNumberOfCulprits": 1,
+    "possibleNumberOfLiars": [1, 2]
+  },
+  "puzzle": {
+    "FOX": "Horse or I did it (or both)",
+    "GIRAFFE": "Fox did it",
+    "BEAR": "A carnivore did it",
+    "SHEEP": "Someone heavier than 75 kg did it",
+    "DOG": "Someone lighter than me did it",
+    "HORSE": "Dog is lying"
+  },
+  "solution": {
+    "culprits": ["FOX"],
+    "liars": ["DOG"]
+  }
+},
+  "6": {
+  "levelSetup": {
+    "difficultyId": "EASY_1",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP", "DOG"],
+    "exactNumberOfCulprits": 1,
+    "possibleNumberOfLiars": [1, 1]
+  },
+  "puzzle": {
+    "FOX": "Bear is lying",
+    "GIRAFFE": "Sheep didn't do it",
+    "BEAR": "A carnivore did it",
+    "SHEEP": "A suspect next to me did it",
+    "DOG": "Fox or I did it (or both)"
+  },
+  "solution": {
+    "culprits": ["DOG"],
+    "liars": ["FOX"]
+  }
+},
+  "7": {
+  "levelSetup": {
+    "difficultyId": "EXPERT_0",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP", "DOG", "HORSE", "TIGER"],
+    "exactNumberOfCulprits": 2,
+    "possibleNumberOfLiars": [1, 1]
+  },
+  "puzzle": {
+    "FOX": "Sheep didn't do it",
+    "GIRAFFE": "At least one culprit is lying and at least one is telling the truth",
+    "BEAR": "Horse or I did it (or both)",
+    "SHEEP": "Dog and Horse are telling the truth",
+    "DOG": "Fox or Giraffe did it (or both)",
+    "HORSE": "Someone lighter than me did it",
+    "TIGER": "Giraffe or Bear did it (or both)"
+  },
+  "solution": {
+    "culprits": ["BEAR", "FOX"],
+    "liars": ["GIRAFFE"]
+  }
+},
+  "8": {
+  "levelSetup": {
+    "difficultyId": "HARD_0",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP", "DOG", "HORSE"],
+    "exactNumberOfCulprits": 1,
+    "possibleNumberOfLiars": [1, 1]
+  },
+  "puzzle": {
+    "FOX": "Someone lighter than me did it",
+    "GIRAFFE": "A culprit is lying",
+    "BEAR": "Dog did it",
+    "SHEEP": "Dog and Horse are telling the truth",
+    "DOG": "Neither Giraffe nor Bear did it",
+    "HORSE": "A culprit is telling the truth"
+  },
+  "solution": {
+    "culprits": ["DOG"],
+    "liars": ["GIRAFFE"]
+  }
+},
+  "9": {
+  "levelSetup": {
+    "difficultyId": "MEDIUM_0",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP", "DOG"],
+    "exactNumberOfCulprits": 1,
+    "possibleNumberOfLiars": [1, 2]
+  },
+  "puzzle": {
+    "FOX": "Giraffe didn't do it",
+    "GIRAFFE": "Bear and Sheep are telling the truth",
+    "BEAR": "Dog is lying",
+    "SHEEP": "Dog did it",
+    "DOG": "Someone lighter than 70 kg did it"
+  },
+  "solution": {
+    "culprits": ["DOG"],
+    "liars": ["DOG"]
+  }
+},
+  "10": {
+  "levelSetup": {
+    "difficultyId": "EXPERT_1",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP", "DOG", "HORSE", "TIGER"],
+    "exactNumberOfCulprits": 2,
+    "possibleNumberOfLiars": [3, 4]
+  },
+  "puzzle": {
+    "FOX": "Dog and I didn't do it",
+    "GIRAFFE": "A suspect next to me did it",
+    "BEAR": "Dog and Horse are telling the truth",
+    "SHEEP": "Horse is lying",
+    "DOG": "Bear did it",
+    "HORSE": "Bear is lying",
+    "TIGER": "Dog did it"
+  },
+  "solution": {
+    "culprits": ["DOG", "FOX"],
+    "liars": ["BEAR", "DOG", "FOX", "SHEEP"]
+  }
+},
+  "11": {
+  "levelSetup": {
+    "difficultyId": "EXPERT_1",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP", "DOG", "HORSE", "TIGER"],
+    "exactNumberOfCulprits": 2,
+    "possibleNumberOfLiars": [3, 4]
+  },
+  "puzzle": {
+    "FOX": "Bear and Sheep are telling the truth",
+    "GIRAFFE": "Two culprits have a different diet",
+    "BEAR": "Dog and I didn't do it",
+    "SHEEP": "Two liars are next to each other",
+    "DOG": "Horse and Tiger are lying",
+    "HORSE": "A herbivore did it",
+    "TIGER": "A carnivore did it"
+  },
+  "solution": {
+    "culprits": ["FOX", "TIGER"],
+    "liars": ["DOG", "GIRAFFE", "HORSE"]
+  }
+},
+  "12": {
+  "levelSetup": {
+    "difficultyId": "HARD_0",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP", "DOG", "HORSE"],
+    "exactNumberOfCulprits": 1,
+    "possibleNumberOfLiars": [1, 1]
+  },
+  "puzzle": {
+    "FOX": "A culprit is lying",
+    "GIRAFFE": "I didn't do it",
+    "BEAR": "Horse didn't do it",
+    "SHEEP": "Giraffe is lying",
+    "DOG": "Giraffe didn't do it",
+    "HORSE": "Neither Giraffe nor Bear did it"
+  },
+  "solution": {
+    "culprits": ["SHEEP"],
+    "liars": ["SHEEP"]
+  }
+},
+  "13": {
+  "levelSetup": {
+    "difficultyId": "HARD_0",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP", "DOG", "HORSE"],
+    "exactNumberOfCulprits": 1,
+    "possibleNumberOfLiars": [1, 1]
+  },
+  "puzzle": {
+    "FOX": "Horse or I did it (or both)",
+    "GIRAFFE": "I didn't do it",
+    "BEAR": "Someone lighter than 80 kg did it",
+    "SHEEP": "A culprit is telling the truth",
+    "DOG": "The suspects next to me didn't do it",
+    "HORSE": "Someone lighter than me did it"
+  },
+  "solution": {
+    "culprits": ["DOG"],
+    "liars": ["FOX"]
+  }
+},
+  "14": {
+  "levelSetup": {
+    "difficultyId": "EXPERT_0",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP", "DOG", "HORSE", "TIGER"],
+    "exactNumberOfCulprits": 2,
+    "possibleNumberOfLiars": [1, 1]
+  },
+  "puzzle": {
+    "FOX": "Someone lighter than 80 kg did it",
+    "GIRAFFE": "Sheep didn't do it",
+    "BEAR": "A suspect next to me did it",
+    "SHEEP": "Fox or I did it (or both)",
+    "DOG": "Giraffe is lying",
+    "HORSE": "Dog and I didn't do it",
+    "TIGER": "A culprit is lying"
+  },
+  "solution": {
+    "culprits": ["GIRAFFE", "SHEEP"],
+    "liars": ["GIRAFFE"]
+  }
+},
+  "15": {
+  "levelSetup": {
+    "difficultyId": "MEDIUM_0",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP", "DOG"],
+    "exactNumberOfCulprits": 1,
+    "possibleNumberOfLiars": [1, 2]
+  },
+  "puzzle": {
+    "FOX": "Someone heavier than 90 kg did it",
+    "GIRAFFE": "Someone lighter than 70 kg did it",
+    "BEAR": "Fox or Giraffe did it (or both)",
+    "SHEEP": "Dog is lying",
+    "DOG": "I didn't do it"
+  },
+  "solution": {
+    "culprits": ["GIRAFFE"],
+    "liars": ["FOX", "SHEEP"]
+  }
+},
+  "16": {
+  "levelSetup": {
+    "difficultyId": "HARD_2",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP", "DOG", "HORSE", "TIGER"],
+    "exactNumberOfCulprits": 1,
+    "possibleNumberOfLiars": [1, 1]
+  },
+  "puzzle": {
+    "FOX": "Horse or I did it (or both)",
+    "GIRAFFE": "Dog did it",
+    "BEAR": "The suspects next to me didn't do it",
+    "SHEEP": "Horse didn't do it",
+    "DOG": "Giraffe didn't do it",
+    "HORSE": "Someone heavier than 75 kg did it",
+    "TIGER": "Someone lighter than 80 kg did it"
+  },
+  "solution": {
+    "culprits": ["FOX"],
+    "liars": ["GIRAFFE"]
+  }
+},
+  "17": {
+  "levelSetup": {
+    "difficultyId": "HARD_0",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP", "DOG", "HORSE"],
+    "exactNumberOfCulprits": 1,
+    "possibleNumberOfLiars": [1, 1]
+  },
+  "puzzle": {
+    "FOX": "Dog is lying",
+    "GIRAFFE": "Someone lighter than me did it",
+    "BEAR": "Someone lighter than 80 kg did it",
+    "SHEEP": "Giraffe didn't do it",
+    "DOG": "Horse or I did it (or both)",
+    "HORSE": "Giraffe and I didn't do it"
+  },
+  "solution": {
+    "culprits": ["SHEEP"],
+    "liars": ["DOG"]
+  }
+},
+  "18": {
+  "levelSetup": {
+    "difficultyId": "HARD_1",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP", "DOG", "HORSE"],
+    "exactNumberOfCulprits": 1,
+    "possibleNumberOfLiars": [1, 2]
+  },
+  "puzzle": {
+    "FOX": "A culprit is lying",
+    "GIRAFFE": "Bear and Sheep are lying",
+    "BEAR": "Someone heavier than me did it",
+    "SHEEP": "Two liars are next to each other",
+    "DOG": "Sheep didn't do it",
+    "HORSE": "The heaviest liar is a culprit"
+  },
+  "solution": {
+    "culprits": ["BEAR"],
+    "liars": ["BEAR", "GIRAFFE"]
+  }
+},
+  "19": {
+  "levelSetup": {
+    "difficultyId": "HARD_0",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP", "DOG", "HORSE"],
+    "exactNumberOfCulprits": 1,
+    "possibleNumberOfLiars": [1, 1]
+  },
+  "puzzle": {
+    "FOX": "Bear and Sheep are telling the truth",
+    "GIRAFFE": "Horse is lying",
+    "BEAR": "I am sitting next to a liar",
+    "SHEEP": "Neither Giraffe nor Bear did it",
+    "DOG": "A carnivore did it",
+    "HORSE": "Fox or Giraffe did it (or both)"
+  },
+  "solution": {
+    "culprits": ["FOX"],
+    "liars": ["GIRAFFE"]
+  }
+},
+  "20": {
+  "levelSetup": {
+    "difficultyId": "EASY_0",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP"],
+    "exactNumberOfCulprits": 1,
+    "possibleNumberOfLiars": [1, 1]
+  },
+  "puzzle": {
+    "FOX": "I am sitting next to a liar",
+    "GIRAFFE": "I did it",
+    "BEAR": "A herbivore did it",
+    "SHEEP": "Fox or Giraffe did it (or both)"
+  },
+  "solution": {
+    "culprits": ["GIRAFFE"],
+    "liars": ["FOX"]
+  }
+},
+  "21": {
+  "levelSetup": {
+    "difficultyId": "EASY_0",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP"],
+    "exactNumberOfCulprits": 1,
+    "possibleNumberOfLiars": [1, 1]
+  },
+  "puzzle": {
+    "FOX": "Someone heavier than me did it",
+    "GIRAFFE": "A culprit is lying",
+    "BEAR": "The suspects next to me didn't do it",
+    "SHEEP": "Giraffe is lying"
+  },
+  "solution": {
+    "culprits": ["BEAR"],
+    "liars": ["GIRAFFE"]
+  }
+},
+  "22": {
+  "levelSetup": {
+    "difficultyId": "EASY_0",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP"],
+    "exactNumberOfCulprits": 1,
+    "possibleNumberOfLiars": [1, 1]
+  },
+  "puzzle": {
+    "FOX": "A culprit is lying",
+    "GIRAFFE": "Someone heavier than 90 kg did it",
+    "BEAR": "Someone heavier than me did it",
+    "SHEEP": "Someone heavier than 75 kg did it"
+  },
+  "solution": {
+    "culprits": ["BEAR"],
+    "liars": ["BEAR"]
+  }
+},
+  "23": {
+  "levelSetup": {
+    "difficultyId": "HARD_0",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP", "DOG", "HORSE"],
+    "exactNumberOfCulprits": 1,
+    "possibleNumberOfLiars": [1, 1]
+  },
+  "puzzle": {
+    "FOX": "Neither Sheep nor Dog did it",
+    "GIRAFFE": "Someone heavier than 75 kg did it",
+    "BEAR": "Someone lighter than me did it",
+    "SHEEP": "Someone heavier than 90 kg did it",
+    "DOG": "Fox or Giraffe did it (or both)",
+    "HORSE": "I didn't do it"
+  },
+  "solution": {
+    "culprits": ["FOX"],
+    "liars": ["SHEEP"]
+  }
+},
+  "24": {
+  "levelSetup": {
+    "difficultyId": "MEDIUM_0",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP", "DOG"],
+    "exactNumberOfCulprits": 1,
+    "possibleNumberOfLiars": [1, 2]
+  },
+  "puzzle": {
+    "FOX": "Someone lighter than 70 kg did it",
+    "GIRAFFE": "Someone heavier than me did it",
+    "BEAR": "Dog is lying",
+    "SHEEP": "Dog did it",
+    "DOG": "A herbivore did it"
+  },
+  "solution": {
+    "culprits": ["DOG"],
+    "liars": ["DOG", "FOX"]
+  }
+},
+  "25": {
+  "levelSetup": {
+    "difficultyId": "HARD_2",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP", "DOG", "HORSE", "TIGER"],
+    "exactNumberOfCulprits": 1,
+    "possibleNumberOfLiars": [1, 1]
+  },
+  "puzzle": {
+    "FOX": "Dog and I didn't do it",
+    "GIRAFFE": "Bear is lying",
+    "BEAR": "Someone heavier than 90 kg did it",
+    "SHEEP": "Neither Giraffe nor Bear did it",
+    "DOG": "Someone heavier than 75 kg did it",
+    "HORSE": "Giraffe is lying",
+    "TIGER": "Giraffe and I didn't do it"
+  },
+  "solution": {
+    "culprits": ["HORSE"],
+    "liars": ["GIRAFFE"]
+  }
+},
+  "26": {
+  "levelSetup": {
+    "difficultyId": "HARD_1",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP", "DOG", "HORSE"],
+    "exactNumberOfCulprits": 1,
+    "possibleNumberOfLiars": [1, 2]
+  },
+  "puzzle": {
+    "FOX": "I did it",
+    "GIRAFFE": "Bear and Sheep are telling the truth",
+    "BEAR": "A suspect next to me did it",
+    "SHEEP": "Dog and I didn't do it",
+    "DOG": "Giraffe and I didn't do it",
+    "HORSE": "Giraffe or Bear did it (or both)"
+  },
+  "solution": {
+    "culprits": ["GIRAFFE"],
+    "liars": ["DOG", "FOX"]
+  }
+},
+  "27": {
+  "levelSetup": {
+    "difficultyId": "MEDIUM_1",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP", "DOG", "HORSE"],
+    "exactNumberOfCulprits": 1,
+    "possibleNumberOfLiars": [4, 4]
+  },
+  "puzzle": {
+    "FOX": "Two liars are next to each other",
+    "GIRAFFE": "Horse is lying",
+    "BEAR": "I did it",
+    "SHEEP": "Fox did it",
+    "DOG": "Giraffe didn't do it",
+    "HORSE": "I didn't do it"
+  },
+  "solution": {
+    "culprits": ["GIRAFFE"],
+    "liars": ["BEAR", "DOG", "GIRAFFE", "SHEEP"]
+  }
+},
+  "28": {
+  "levelSetup": {
+    "difficultyId": "EXPERT_0",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP", "DOG", "HORSE", "TIGER"],
+    "exactNumberOfCulprits": 2,
+    "possibleNumberOfLiars": [1, 1]
+  },
+  "puzzle": {
+    "FOX": "Horse or Tiger did it (or both)",
+    "GIRAFFE": "Two culprits are next to each other",
+    "BEAR": "Tiger did it",
+    "SHEEP": "A culprit is telling the truth",
+    "DOG": "Fox did it",
+    "HORSE": "A culprit is in between two innocent suspects",
+    "TIGER": "Two culprits have a weight difference of 10 kg or less"
+  },
+  "solution": {
+    "culprits": ["FOX", "TIGER"],
+    "liars": ["HORSE"]
+  }
+},
+  "29": {
+  "levelSetup": {
+    "difficultyId": "EXPERT_1",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP", "DOG", "HORSE", "TIGER"],
+    "exactNumberOfCulprits": 2,
+    "possibleNumberOfLiars": [3, 4]
+  },
+  "puzzle": {
+    "FOX": "Bear and Sheep are telling the truth",
+    "GIRAFFE": "Bear is lying",
+    "BEAR": "Dog and Horse are telling the truth",
+    "SHEEP": "Fox did it",
+    "DOG": "Two culprits are next to each other",
+    "HORSE": "Two culprits have a weight difference of 10 kg or less",
+    "TIGER": "Giraffe is lying"
+  },
+  "solution": {
+    "culprits": ["DOG", "FOX"],
+    "liars": ["BEAR", "DOG", "FOX", "TIGER"]
+  }
+},
+  "30": {
+  "levelSetup": {
+    "difficultyId": "HARD_1",
+    "suspectsPlaying": ["FOX", "GIRAFFE", "BEAR", "SHEEP", "DOG", "HORSE"],
+    "exactNumberOfCulprits": 1,
+    "possibleNumberOfLiars": [1, 2]
+  },
+  "puzzle": {
+    "FOX": "Horse or I did it (or both)",
+    "GIRAFFE": "Someone heavier than 90 kg did it",
+    "BEAR": "Dog and I didn't do it",
+    "SHEEP": "Two liars are next to each other",
+    "DOG": "Fox or Giraffe did it (or both)",
+    "HORSE": "Dog did it"
+  },
+  "solution": {
+    "culprits": ["HORSE"],
+    "liars": ["DOG", "HORSE"]
+  }
+}
+}
